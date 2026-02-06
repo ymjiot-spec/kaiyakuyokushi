@@ -1,0 +1,25 @@
+{
+  "name": "star-service-cancellation-retention",
+  "version": "1.0.0",
+  "description": "スターサービス解約抑止ページ - 解約を検討しているユーザーに対してコース変更や継続利用を促すWebページ",
+  "main": "index.html",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:pbt": "node --test tests/**/*.test.js",
+    "serve": "npx http-server -p 8080"
+  },
+  "keywords": [
+    "mvno",
+    "cancellation",
+    "retention",
+    "star-service"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "fast-check": "^3.15.0",
+    "playwright": "^1.40.0",
+    "@playwright/test": "^1.40.0",
+    "http-server": "^14.1.1"
+  }
+}

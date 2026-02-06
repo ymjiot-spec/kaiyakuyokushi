@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="スターサービス Wコース1日3GBの解約をご検討中のお客様へ。解約前にコース変更のご検討をお願いいたします。">
+  <title>解約をご検討中のお客様へ | Wコース1日3GB | スターサービス</title>
+  <style>
+    :root{--color-primary:#4361ee;--color-softbank:#868686;--color-white:#fff;--color-gray-900:#111827}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN',sans-serif;font-size:16px;line-height:1.6;color:var(--color-gray-900);-webkit-font-smoothing:antialiased}
+    .header{position:sticky;top:0;z-index:1020;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:none}
+    .header__inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 16px;max-width:1200px;margin:0 auto}
+    .header__logo{display:flex;align-items:center;gap:12px}
+    .header__logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#4361ee 0%,#7c3aed 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+    .header__logo-text{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .hero{position:relative;padding:48px 16px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);text-align:center;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+    .hero__content{position:relative;z-index:1}
+    .hero__title{font-size:2rem;font-weight:800;color:#fff;margin-bottom:16px;text-shadow:0 2px 4px rgba(0,0,0,0.1)}
+    .hero__subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);line-height:1.8;margin:0}
+    @media(min-width:768px){.header__inner{height:72px;padding:0 24px}.header__logo-icon{width:60px;height:60px}.header__logo-text{font-size:20px}.hero{padding:80px 24px}.hero__title{font-size:3rem}}
+  </style>
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <div class="header__logo">
+        <img src="images/logo.png" alt="スターサービス" class="header__logo-icon" style="width:auto;height:60px;object-fit:contain;border:none;">
+      </div>
+      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+        <a href="https://www.starservice.jp/" class="header__link" target="_blank">公式サイト</a>
+        <a href="#" class="header__link">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+  <main role="main">
+    <section class="hero">
+      <div class="hero__content">
+        <div class="hero__course-badge">
+          <span class="hero__carrier-badge bg-carrier-softbank">ソフトバンク回線</span>
+          <span class="hero__course-name">Wコース1日3GB</span>
+        </div>
+        <h1 class="hero__title">解約をご検討中のお客様へ</h1>
+        <p class="hero__subtitle">スターサービスをご利用いただきありがとうございます。<br>解約の前に、今の使い方を見直してみませんか？</p>
+      </div>
+    </section>
+
+    <section class="reason-selector" aria-labelledby="reason-title">
+      <div class="container">
+        <h2 id="reason-title" class="reason-selector__title">解約を検討されている理由を教えてください</h2>
+        <div class="reason-selector__options" role="group" aria-label="解約理由の選択">
+          <button class="reason-card" data-reason="price" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">💰</span>
+            <span class="reason-card__text">料金が高い</span>
+          </button>
+          <button class="reason-card" data-reason="data-shortage" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">📶</span>
+            <span class="reason-card__text">データ量が足りない</span>
+          </button>
+          <button class="reason-card" data-reason="data-excess" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">📉</span>
+            <span class="reason-card__text">データ量が余っている</span>
+          </button>
+          <button class="reason-card" data-reason="switch" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">🔄</span>
+            <span class="reason-card__text">他社に乗り換えたい</span>
+          </button>
+          <button class="reason-card" data-reason="other" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">❓</span>
+            <span class="reason-card__text">その他</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-price" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">💰</div>
+          <h2 class="proposal__title">料金でお悩みのあなたへ</h2>
+          <p class="proposal__description">Wコース1日3GBは月額5,346円（税込）でFS030W専用のデータ専用SIMです。<br>プラチナバンド対応で建物内でも安定した通信が可能です。</p>
+        </div>
+        <div class="proposal__recommendations">
+          <div class="course-card">
+            <div class="course-card__header" style="background-color: var(--color-softbank);">
+              <div class="course-card__name">Wコース50GB</div>
+              <div class="course-card__carrier">ソフトバンク回線</div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__price">
+                <span class="course-card__price-value">5,346</span>
+                <span class="course-card__price-unit">円/月</span>
+                <div class="course-card__price-tax">（税込）</div>
+              </div>
+              <ul class="course-card__features">
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間50GB</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>プラチナバンド対応</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>日ごとの制限なし</span></li>
+              </ul>
+            </div>
+            <div class="course-card__footer">
+              <a href="#" class="btn btn--secondary btn--block">Wコース50GBに変更する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-data-shortage" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">📶</div>
+          <h2 class="proposal__title">データ量が足りないあなたへ</h2>
+          <p class="proposal__description">Wコース1日3GBは月間約90GB相当で、Wコースの中で最大容量のプランです。<br>現在のプランが最大容量ですので、ぜひ継続してご利用ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-data-excess" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">📉</div>
+          <h2 class="proposal__title">データ量が余っているあなたへ</h2>
+          <p class="proposal__description">より小容量のWコース50GBへの変更がおすすめです。同じ料金で日ごとの制限なくご利用いただけます。</p>
+        </div>
+        <div class="proposal__recommendations">
+          <div class="course-card course-card--recommended">
+            <div class="course-card__header" style="background-color: var(--color-softbank);">
+              <div class="course-card__name">Wコース50GB</div>
+              <div class="course-card__carrier">ソフトバンク回線</div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__price">
+                <span class="course-card__price-value">5,346</span>
+                <span class="course-card__price-unit">円/月</span>
+              </div>
+              <ul class="course-card__features">
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間50GB</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>日ごとの制限なし</span></li>
+              </ul>
+            </div>
+            <div class="course-card__footer">
+              <a href="#" class="btn btn--primary btn--block">Wコース50GBに変更する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-switch" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">🔄</div>
+          <h2 class="proposal__title">他社への乗り換えをご検討中のあなたへ</h2>
+          <p class="proposal__description">乗り換え前に、スターサービスならではのメリットをご確認ください。<br>ソフトバンクのプラチナバンド対応で、建物内でも安定した通信が可能です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-other" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">❓</div>
+          <h2 class="proposal__title">お困りごとがございましたら</h2>
+          <p class="proposal__description">お気軽にお問い合わせください。</p>
+        </div>
+        <div style="text-align: center; margin-top: 24px;">
+          <a href="#" class="btn btn--primary btn--lg">お問い合わせはこちら</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="current-plan" aria-labelledby="current-plan-title">
+      <div class="container">
+        <h2 id="current-plan-title" class="current-plan__title">現在ご契約中のプラン</h2>
+        <div class="current-plan__card">
+          <div class="current-plan__header" style="background-color: var(--color-softbank);">
+            <div class="current-plan__name">Wコース1日3GB</div>
+            <div class="current-plan__carrier">ソフトバンク回線</div>
+          </div>
+          <div class="current-plan__body">
+            <div class="current-plan__price">
+              <div class="current-plan__price-label">月額料金</div>
+              <span class="current-plan__price-value">5,346</span>
+              <span class="current-plan__price-unit">円（税込）</span>
+              <div class="current-plan__price-tax">税抜4,860円</div>
+            </div>
+            <div class="current-plan__details">
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">データ量</span>
+                <span class="current-plan__detail-value">1日3GB（月間約90GB相当）</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">通話</span>
+                <span class="current-plan__detail-value">データ専用（通話不可）</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">対応端末</span>
+                <span class="current-plan__detail-value">FS030W専用</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">契約期間</span>
+                <span class="current-plan__detail-value">36ヶ月</span>
+              </div>
+            </div>
+            <div class="current-plan__merits">
+              <h3 class="current-plan__merits-title">✨ Wコース1日3GBのメリット</h3>
+              <ul class="current-plan__merits-list">
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>ソフトバンクのプラチナバンド対応</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>建物内・地下でも安定した通信</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>月間約90GB相当の大容量データ</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>FS030Wで持ち運び可能なWi-Fi環境</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carrier-merits" aria-labelledby="carrier-merits-title">
+      <div class="container">
+        <h2 id="carrier-merits-title" class="carrier-merits__title">ソフトバンク回線のメリット</h2>
+        <div class="carrier-merits__card">
+          <div class="carrier-merits__header">
+            <div class="carrier-merits__name" style="color: var(--color-softbank);">ソフトバンク回線</div>
+          </div>
+          <div class="carrier-merits__list">
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">プラチナバンド（900MHz帯）対応</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">建物内・地下でも電波が届きやすい</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">全国エリアで安定した通信品質</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">高速データ通信に対応</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 他社比較セクション -->
+    <section class="competitor-comparison" aria-labelledby="competitor-title">
+      <div class="container">
+        <h2 id="competitor-title" class="competitor-comparison__title">🔍 他社ポケットWi-Fi・データSIMとの比較</h2>
+        <p class="competitor-comparison__subtitle">スターサービスはソフトバンク本体回線を使用。一般的なMVNOのポケットWi-Fiとは通信品質が違います</p>
+        <div class="competitor-comparison__table-wrapper">
+          <table class="competitor-comparison__table">
+            <thead>
+              <tr>
+                <th scope="col">比較項目</th>
+                <th scope="col" class="highlight-col">スターサービス<br>Wコース1日3GB</th>
+                <th scope="col">一般的な<br>MVNOポケットWi-Fi</th>
+                <th scope="col">クラウドSIM系<br>ポケットWi-Fi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>回線品質</td>
+                <td class="highlight-col"><strong>ソフトバンク本体回線</strong></td>
+                <td>MVNO回線</td>
+                <td>複数キャリア切替</td>
+              </tr>
+              <tr>
+                <td>プラチナバンド</td>
+                <td class="highlight-col"><strong>✓ 900MHz対応</strong></td>
+                <td>△ 制限あり</td>
+                <td>△ 不安定</td>
+              </tr>
+              <tr>
+                <td>建物内・地下</td>
+                <td class="highlight-col"><strong>◎ 繋がりやすい</strong></td>
+                <td>○ 普通</td>
+                <td>△ 不安定</td>
+              </tr>
+              <tr>
+                <td>混雑時の速度</td>
+                <td class="highlight-col"><strong>安定</strong></td>
+                <td>低下しやすい</td>
+                <td>低下しやすい</td>
+              </tr>
+              <tr>
+                <td>通信の安定性</td>
+                <td class="highlight-col"><strong>◎ 高い</strong></td>
+                <td>○ 普通</td>
+                <td>△ 切替時に不安定</td>
+              </tr>
+              <tr>
+                <td>データ量</td>
+                <td class="highlight-col"><strong>1日3GB（月間約90GB相当）</strong></td>
+                <td>20〜100GB</td>
+                <td>無制限（実質制限あり）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="competitor-comparison__highlight">
+          <p><strong>💡 ソフトバンク本体回線だから違う！</strong></p>
+          <p>一般的なMVNOは大手キャリアから帯域を借りて運営していますが、Wコースはソフトバンクの本体回線を使用。<br>プラチナバンド（900MHz帯）にフル対応しているため、建物の奥や地下でも電波が届きやすく、安定した通信が可能です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison" aria-labelledby="comparison-title">
+      <div class="container">
+        <h2 id="comparison-title" class="comparison__title">Wコース比較</h2>
+        <div class="comparison__table-wrapper">
+          <table class="comparison__table" data-current-course="w-3gb">
+            <thead>
+              <tr><th scope="col">コース名</th><th scope="col">月額料金</th><th scope="col">データ量</th><th scope="col">特徴</th><th scope="col"></th></tr>
+            </thead>
+            <tbody>
+              <tr data-course-id="w-50gb"><td><strong>Wコース50GB</strong><br><small>ソフトバンク回線</small></td><td>5,346円</td><td>月間50GB</td><td>データ専用<br><small>FS030W専用</small></td><td><a href="#" class="btn btn--sm btn--secondary">変更する</a></td></tr>
+              <tr class="current" data-course-id="w-3gb"><td><strong>Wコース1日3GB</strong><br><small>ソフトバンク回線</small></td><td>5,346円</td><td>1日3GB<br><small>（月間約90GB相当）</small></td><td>データ専用<br><small>FS030W専用</small></td><td><span class="text-muted">現在のコース</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="text-align: center; margin-top: 16px; font-size: 14px; color: #6c757d;">※コース変更手数料: 1,100円（税込）</p>
+      </div>
+    </section>
+
+    <section class="cancellation" aria-labelledby="cancellation-title">
+      <div class="container">
+        <h2 id="cancellation-title" class="cancellation__title">それでも解約をご希望の場合</h2>
+        <div class="cancellation__options">
+          <div class="cancellation__option">
+            <h3 class="cancellation__option-title">解約する</h3>
+            <p class="cancellation__option-description">データ専用SIMのため、MNPは対象外です</p>
+            <a href="#" class="cancellation__link" data-modal-target="cancel-modal">解約手続きへ進む →</a>
+          </div>
+        </div>
+        <div class="cancellation__notice">
+          <h3 class="cancellation__notice-title">⚠️ 解約時のご注意</h3>
+          <ul class="cancellation__notice-list">
+            <li>契約期間: 36ヶ月</li>
+            <li>契約期間内の解約の場合、解約金が発生する場合があります</li>
+            <li>データ専用SIMのため、MNP転出はできません</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__links">
+        <a href="#" class="footer__link">利用規約</a>
+        <a href="#" class="footer__link">プライバシーポリシー</a>
+        <a href="#" class="footer__link">特定商取引法に基づく表記</a>
+        <a href="#" class="footer__link">お問い合わせ</a>
+      </div>
+      <p class="footer__copyright">© 2025 スターサービス株式会社 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="cancel-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-modal-title" aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <div class="modal__header"><h2 class="modal__title" id="cancel-modal-title">解約手続き</h2><button class="modal__close" type="button" aria-label="閉じる">×</button></div>
+      <div class="modal__body"><p>解約手続きを進めると、現在のSIMカードは使用できなくなります。</p><ul><li>データ専用SIMのため、MNP転出はできません</li><li>解約は月末での処理となります</li></ul></div>
+      <div class="modal__footer"><button class="btn btn--outline" type="button" onclick="StarService.closeModal(document.getElementById('cancel-modal'))">キャンセル</button><a href="#" class="btn btn--danger" style="background-color: var(--color-danger); color: white;">解約手続きへ進む</a></div>
+    </div>
+  </div>
+
+  <script src="js/courseData.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

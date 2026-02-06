@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="スターサービス Sコースの解約をご検討中のお客様へ。解約前にコース変更のご検討をお願いいたします。">
+  <title>解約をご検討中のお客様へ | Sコース | スターサービス</title>
+  <style>
+    :root{--color-primary:#4361ee;--color-softbank:#868686;--color-white:#fff;--color-gray-900:#111827}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN',sans-serif;font-size:16px;line-height:1.6;color:var(--color-gray-900);-webkit-font-smoothing:antialiased}
+    .header{position:sticky;top:0;z-index:1020;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:none}
+    .header__inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 16px;max-width:1200px;margin:0 auto}
+    .header__logo{display:flex;align-items:center;gap:12px}
+    .header__logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#4361ee 0%,#7c3aed 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+    .header__logo-text{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .hero{position:relative;padding:48px 16px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);text-align:center;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+    .hero__content{position:relative;z-index:1}
+    .hero__title{font-size:2rem;font-weight:800;color:#fff;margin-bottom:16px;text-shadow:0 2px 4px rgba(0,0,0,0.1)}
+    .hero__subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);line-height:1.8;margin:0}
+    @media(min-width:768px){.header__inner{height:72px;padding:0 24px}.header__logo-icon{width:60px;height:60px}.header__logo-text{font-size:20px}.hero{padding:80px 24px}.hero__title{font-size:3rem}}
+  </style>
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <div class="header__logo">
+        <img src="images/logo.png" alt="スターサービス" class="header__logo-icon" style="width:auto;height:60px;object-fit:contain;border:none;">
+      </div>
+      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+        <a href="https://www.starservice.jp/" class="header__link" target="_blank">公式サイト</a>
+        <a href="#" class="header__link">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+  <main role="main">
+    <section class="hero">
+      <div class="hero__content">
+        <div class="hero__course-badge">
+          <span class="hero__carrier-badge bg-carrier-softbank">ソフトバンク回線</span>
+          <span class="hero__course-name">Sコース</span>
+        </div>
+        <h1 class="hero__title">解約をご検討中のお客様へ</h1>
+        <p class="hero__subtitle">スターサービスをご利用いただきありがとうございます。<br>解約の前に、今の使い方を見直してみませんか？</p>
+      </div>
+    </section>
+
+    <section class="reason-selector" aria-labelledby="reason-title">
+      <div class="container">
+        <h2 id="reason-title" class="reason-selector__title">解約を検討されている理由を教えてください</h2>
+        <div class="reason-selector__options" role="group" aria-label="解約理由の選択">
+          <button class="reason-card" data-reason="price" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">💰</span>
+            <span class="reason-card__text">料金が高い</span>
+          </button>
+          <button class="reason-card" data-reason="data-shortage" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">📶</span>
+            <span class="reason-card__text">データ量が足りない</span>
+          </button>
+          <button class="reason-card" data-reason="data-excess" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">📉</span>
+            <span class="reason-card__text">データ量が余っている</span>
+          </button>
+          <button class="reason-card" data-reason="call-option" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">📞</span>
+            <span class="reason-card__text">通話オプションを変更したい</span>
+          </button>
+          <button class="reason-card" data-reason="switch" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">🔄</span>
+            <span class="reason-card__text">他社に乗り換えたい</span>
+          </button>
+          <button class="reason-card" data-reason="other" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">❓</span>
+            <span class="reason-card__text">その他</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-price" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">💰</div>
+          <h2 class="proposal__title">料金でお悩みのあなたへ</h2>
+          <p class="proposal__description">Sコースは月額5,346円（税込）で24時間かけ放題+留守番電話付き。<br>スターサービスで唯一、GB追加ができるプランです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-data-shortage" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">📶</div>
+          <h2 class="proposal__title">データ量が足りないあなたへ</h2>
+          <p class="proposal__description">Sコースは月間20GBですが、<strong>GB追加ができる唯一のプラン</strong>です！<br>1GB/1,000円で必要な分だけ追加できます。</p>
+        </div>
+        <div class="proposal__recommendations">
+          <div class="course-card course-card--recommended">
+            <div class="course-card__header" style="background-color: var(--color-primary);">
+              <div class="course-card__name">GB追加オプション</div>
+              <div class="course-card__carrier">Sコース限定</div>
+            </div>
+            <div class="course-card__body">
+              <ul class="course-card__features">
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>1GB追加: 1,000円（税込1,100円）</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>必要な時に必要な分だけ追加可能</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>スターサービスで唯一のGB追加対応プラン</span></li>
+              </ul>
+            </div>
+            <div class="course-card__footer">
+              <a href="#" class="btn btn--primary btn--block">GB追加を申し込む</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-data-excess" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">📉</div>
+          <h2 class="proposal__title">データ量が余っているあなたへ</h2>
+          <p class="proposal__description">Sコースは月間20GBで、24時間かけ放題+留守番電話付きのお得なプランです。<br>GB追加ができる唯一のプランなので、ぜひ継続してご利用ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-call-option" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">📞</div>
+          <h2 class="proposal__title">通話オプションを変更したいあなたへ</h2>
+          <p class="proposal__description">Sコースは24時間かけ放題+留守番電話が標準付帯。<br>通話を多くされる方に最適なプランです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-switch" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">🔄</div>
+          <h2 class="proposal__title">他社への乗り換えをご検討中のあなたへ</h2>
+          <p class="proposal__description">乗り換え前に、スターサービスならではのメリットをご確認ください。<br>Sコースは<strong>GB追加ができる唯一のプラン</strong>で、24時間かけ放題+留守番電話付きです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-other" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">❓</div>
+          <h2 class="proposal__title">お困りごとがございましたら</h2>
+          <p class="proposal__description">お気軽にお問い合わせください。</p>
+        </div>
+        <div style="text-align: center; margin-top: 24px;">
+          <a href="#" class="btn btn--primary btn--lg">お問い合わせはこちら</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="current-plan" aria-labelledby="current-plan-title">
+      <div class="container">
+        <h2 id="current-plan-title" class="current-plan__title">現在ご契約中のプラン</h2>
+        <div class="current-plan__card">
+          <div class="current-plan__header" style="background-color: var(--color-softbank);">
+            <div class="current-plan__name">Sコース</div>
+            <div class="current-plan__carrier">ソフトバンク回線</div>
+          </div>
+          <div class="current-plan__body">
+            <div class="current-plan__price">
+              <div class="current-plan__price-label">月額料金</div>
+              <span class="current-plan__price-value">5,346</span>
+              <span class="current-plan__price-unit">円（税込）</span>
+              <div class="current-plan__price-tax">税抜4,860円</div>
+            </div>
+            <div class="current-plan__details">
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">データ量</span>
+                <span class="current-plan__detail-value">月間20GB</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">通話</span>
+                <span class="current-plan__detail-value">24時間かけ放題+留守番電話付き</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">GB追加</span>
+                <span class="current-plan__detail-value">1GB/1,000円（税込1,100円）</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">契約期間</span>
+                <span class="current-plan__detail-value">36ヶ月</span>
+              </div>
+            </div>
+            <div class="current-plan__merits">
+              <h3 class="current-plan__merits-title">✨ Sコースのメリット</h3>
+              <ul class="current-plan__merits-list">
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>スターサービスで唯一のGB追加対応プラン</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>24時間通話かけ放題が標準付帯</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>留守番電話サービス付き</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>ソフトバンク回線で安定した通信</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carrier-merits" aria-labelledby="carrier-merits-title">
+      <div class="container">
+        <h2 id="carrier-merits-title" class="carrier-merits__title">ソフトバンク回線のメリット</h2>
+        <div class="carrier-merits__card">
+          <div class="carrier-merits__header">
+            <div class="carrier-merits__name" style="color: var(--color-softbank);">ソフトバンク回線</div>
+          </div>
+          <div class="carrier-merits__list">
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">全国エリアで安定した通信品質</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">高速データ通信に対応</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">都市部での通信速度が高速</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">5G対応エリア順次拡大中</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 他社比較セクション -->
+    <section class="competitor-comparison" aria-labelledby="competitor-title">
+      <div class="container">
+        <h2 id="competitor-title" class="competitor-comparison__title">🔍 他社音声SIMとの比較</h2>
+        <p class="competitor-comparison__subtitle">Sコースは大手キャリア品質の音声SIM。24時間かけ放題+GB追加ができる唯一のプランです</p>
+        <div class="competitor-comparison__table-wrapper">
+          <table class="competitor-comparison__table">
+            <thead>
+              <tr>
+                <th scope="col">比較項目</th>
+                <th scope="col" class="highlight-col">スターサービス<br>Sコース</th>
+                <th scope="col">LINEMO<br>スマホプラン</th>
+                <th scope="col">Y!mobile<br>シンプル2 M</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>月額料金</td>
+                <td class="highlight-col"><strong>5,346円</strong></td>
+                <td>2,728円</td>
+                <td>4,015円</td>
+              </tr>
+              <tr>
+                <td>データ量</td>
+                <td class="highlight-col"><strong>20GB</strong></td>
+                <td>20GB</td>
+                <td>20GB</td>
+              </tr>
+              <tr>
+                <td>24時間かけ放題</td>
+                <td class="highlight-col"><strong>✓ 標準付帯</strong></td>
+                <td>+1,650円/月</td>
+                <td>+1,980円/月</td>
+              </tr>
+              <tr>
+                <td>留守番電話</td>
+                <td class="highlight-col"><strong>✓ 標準付帯</strong></td>
+                <td>✗ なし</td>
+                <td>+330円/月</td>
+              </tr>
+              <tr>
+                <td>GB追加</td>
+                <td class="highlight-col"><strong>✓ 1GB/1,100円</strong></td>
+                <td>1GB/550円</td>
+                <td>0.5GB/550円</td>
+              </tr>
+              <tr>
+                <td>回線品質</td>
+                <td class="highlight-col"><strong>ソフトバンク品質</strong></td>
+                <td>ソフトバンク品質</td>
+                <td>ソフトバンク品質</td>
+              </tr>
+              <tr>
+                <td>かけ放題込み総額</td>
+                <td class="highlight-col"><strong>5,346円</strong></td>
+                <td>4,378円</td>
+                <td>5,995円</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="competitor-comparison__highlight">
+          <p><strong>💡 Sコースだけの特長！</strong></p>
+          <p>スターサービスで唯一、GB追加ができるプランです。24時間かけ放題+留守番電話が標準付帯で、<br>通話をよく使う方に最適。データが足りなくなっても1GB単位で追加できるので安心です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cancellation" aria-labelledby="cancellation-title">
+      <div class="container">
+        <h2 id="cancellation-title" class="cancellation__title">それでも解約をご希望の場合</h2>
+        <div class="cancellation__options">
+          <div class="cancellation__option">
+            <h3 class="cancellation__option-title">電話番号を引き継ぐ（MNP）</h3>
+            <p class="cancellation__option-description">他社でも同じ電話番号を使い続けたい方</p>
+            <a href="#" class="cancellation__link" data-modal-target="mnp-modal">MNP予約番号を発行する →</a>
+          </div>
+          <div class="cancellation__option">
+            <h3 class="cancellation__option-title">解約する</h3>
+            <p class="cancellation__option-description">電話番号を引き継がない方</p>
+            <a href="#" class="cancellation__link" data-modal-target="cancel-modal">解約手続きへ進む →</a>
+          </div>
+        </div>
+        <div class="cancellation__notice">
+          <h3 class="cancellation__notice-title">⚠️ 解約時のご注意</h3>
+          <ul class="cancellation__notice-list">
+            <li>契約期間: 36ヶ月</li>
+            <li>契約期間内の解約の場合、解約金が発生する場合があります</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__links">
+        <a href="#" class="footer__link">利用規約</a>
+        <a href="#" class="footer__link">プライバシーポリシー</a>
+        <a href="#" class="footer__link">特定商取引法に基づく表記</a>
+        <a href="#" class="footer__link">お問い合わせ</a>
+      </div>
+      <p class="footer__copyright">© 2025 スターサービス株式会社 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="mnp-modal" role="dialog" aria-modal="true" aria-labelledby="mnp-modal-title" aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <div class="modal__header"><h2 class="modal__title" id="mnp-modal-title">MNP予約番号の発行</h2><button class="modal__close" type="button" aria-label="閉じる">×</button></div>
+      <div class="modal__body"><p>MNP予約番号を発行すると、他社への乗り換え手続きが可能になります。</p><ul><li>予約番号の有効期限は発行日を含めて15日間です</li><li>MNP転出手数料は無料です</li></ul></div>
+      <div class="modal__footer"><button class="btn btn--outline" type="button" onclick="StarService.closeModal(document.getElementById('mnp-modal'))">キャンセル</button><a href="#" class="btn btn--primary">MNP予約番号を発行する</a></div>
+    </div>
+  </div>
+
+  <div class="modal" id="cancel-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-modal-title" aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <div class="modal__header"><h2 class="modal__title" id="cancel-modal-title">解約手続き</h2><button class="modal__close" type="button" aria-label="閉じる">×</button></div>
+      <div class="modal__body"><p>解約手続きを進めると、現在の電話番号は使用できなくなります。</p></div>
+      <div class="modal__footer"><button class="btn btn--outline" type="button" onclick="StarService.closeModal(document.getElementById('cancel-modal'))">キャンセル</button><a href="#" class="btn btn--danger" style="background-color: var(--color-danger); color: white;">解約手続きへ進む</a></div>
+    </div>
+  </div>
+
+  <script src="js/courseData.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
