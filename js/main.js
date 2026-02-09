@@ -578,50 +578,10 @@
   
   /**
    * カードのインタラクションを設定
+   * 節約詳細は常に表示のまま（開閉しない）
    */
   function setupCardInteraction(card) {
-    const detail = card.querySelector('.savings-detail');
-    if (!detail) return;
-    
-    // スマホ: スクロールで画面に入ったら自動展開
-    if (window.innerWidth < 768) {
-      // 少し遅延させてからObserverを設定（提案表示直後だとまだ画面内にない）
-      setTimeout(function() {
-        var savingsObserver = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              detail.classList.add('savings-detail--visible');
-              savingsObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15 });
-        savingsObserver.observe(card);
-      }, 300);
-      
-      // タップでも開閉できるようにしておく
-      card.addEventListener('click', function(e) {
-        if (e.target.closest('a, button')) return;
-        detail.classList.toggle('savings-detail--visible');
-      });
-      return;
-    }
-    
-    // デスクトップ: クリックで詳細を表示/非表示
-    card.addEventListener('click', function(e) {
-      if (e.target.closest('a, button')) return;
-      detail.classList.toggle('savings-detail--visible');
-    });
-    
-    // ホバーでも表示（デスクトップ）
-    if (window.matchMedia('(hover: hover)').matches) {
-      card.addEventListener('mouseenter', function() {
-        detail.classList.add('savings-detail--visible');
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        detail.classList.remove('savings-detail--visible');
-      });
-    }
+    // 何もしない - 詳細パネルはaddSavingsDetailで常時表示済み
   }
 
   // ============================================

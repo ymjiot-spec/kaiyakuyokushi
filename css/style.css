@@ -1776,13 +1776,26 @@ table {
    スマホ用スクロールアニメーション
    ============================================ */
 @media (max-width: 767px) {
-  .course-card {
+  .proposal__recommendations .course-card {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .course-card.is-visible {
+  .proposal__recommendations .course-card.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ============================================
+   乗り換えセクション Dシリーズ4コースグリッド
+   ============================================ */
+.d-switch-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .d-switch-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
