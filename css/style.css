@@ -336,19 +336,31 @@ table {
 .header__nav {
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
+  gap: 2px;
+  flex-shrink: 0;
 }
 
 .header__link {
   display: inline-flex;
   align-items: center;
   min-height: var(--touch-target-min);
-  padding: var(--spacing-2) var(--spacing-4);
-  font-size: var(--font-size-sm);
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: 11px;
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
   border-radius: var(--border-radius-md);
   transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .header__link {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+  .header__nav {
+    gap: var(--spacing-2);
+  }
 }
 
 .header__link:hover {
@@ -1758,4 +1770,21 @@ table {
 .savings-badge--max::after {
   content: '🔥';
   margin-left: var(--spacing-1);
+}
+
+}
+
+/* ============================================
+   スマホ用スクロールアニメーション
+   ============================================ */
+@media (max-width: 767px) {
+  .course-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .course-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

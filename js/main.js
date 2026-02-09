@@ -19,6 +19,7 @@
     initComparisonTable();
     initSmoothScroll();
     initSavingsSimulator();
+    initScrollAnimation();
   });
 
   // ============================================
@@ -597,6 +598,33 @@
         detail.classList.remove('savings-detail--visible');
       });
     }
+  }
+
+  // ============================================
+  // スマホ用スクロールアニメーション
+  // ============================================
+  function initScrollAnimation() {
+    if (window.innerWidth >= 768) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.course-card').forEach(function(card) {
+      observer.observe(card);
+    });
+
+    // 提案セクションが表示されたときに新しいカードも監視する
+    var mutationObserver = new MutationObserver(function() {
+      document.querySelectorAll('.course-card:not(.is-visible)').forEach(function(card) {
+        observer.observe(card);
+      });
+    });
+    mutationObserver.observe(document.querySelector('main'), { childList: true, subtree: true, attributes: true });
   }
 
 })();
