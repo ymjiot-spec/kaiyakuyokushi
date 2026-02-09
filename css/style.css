@@ -1791,11 +1791,26 @@ table {
    乗り換えセクション Dシリーズ4コースグリッド
    ============================================ */
 .d-switch-grid {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .d-switch-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.d-switch-grid .course-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-switch-grid .course-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.d-switch-grid .course-card__body > div:last-child {
+  margin-top: auto;
 }
