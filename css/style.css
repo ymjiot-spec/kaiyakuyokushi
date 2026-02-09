@@ -378,7 +378,7 @@ table {
 .hero {
   position: relative;
   padding: var(--spacing-8) var(--spacing-3);
-  background: url('/images/Gemini_Generated_Image_bilej9bilej9bile.png') center/cover no-repeat;
+  background: url('../images/Gemini_Generated_Image_bilej9bilej9bile.png') center/cover no-repeat;
   overflow: hidden;
 }
 
