@@ -385,8 +385,8 @@
     const currentCourse = courseData[currentCourseId];
     if (!currentCourse) return;
     
-    // コースカードに節約バッジと詳細を追加
-    var courseCards = document.querySelectorAll('.course-card');
+    // コースカードに節約バッジと詳細を追加（乗り換えセクションのカードは除外）
+    var courseCards = document.querySelectorAll('.course-card:not(#proposal-switch .course-card)');
     var maxSavings = 0;
     var maxCard = null;
     
