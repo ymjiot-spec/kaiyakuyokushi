@@ -606,6 +606,22 @@
   function initScrollAnimation() {
     if (window.innerWidth >= 768) return;
 
+    // スマホでは全提案セクションを最初から表示する（ボタン不要）
+    document.querySelectorAll('.proposal').forEach(function(section) {
+      section.hidden = false;
+      section.setAttribute('aria-hidden', 'false');
+    });
+    // 解約セクション・比較セクションも表示
+    var ids = ['below-reason', 'competitor-section', 'cancellation-section'];
+    ids.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.hidden = false;
+    });
+    // 理由選択ボタンを非表示にする
+    var reasonSelector = document.querySelector('.reason-selector');
+    if (reasonSelector) reasonSelector.style.display = 'none';
+
+    // スクロールでフワッと出るアニメーション
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -617,14 +633,6 @@
     document.querySelectorAll('.course-card').forEach(function(card) {
       observer.observe(card);
     });
-
-    // 提案セクションが表示されたときに新しいカードも監視する
-    var mutationObserver = new MutationObserver(function() {
-      document.querySelectorAll('.course-card:not(.is-visible)').forEach(function(card) {
-        observer.observe(card);
-      });
-    });
-    mutationObserver.observe(document.querySelector('main'), { childList: true, subtree: true, attributes: true });
   }
 
 })();
