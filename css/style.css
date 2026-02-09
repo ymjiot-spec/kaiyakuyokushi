@@ -1193,7 +1193,7 @@ table {
 .competitor-comparison__table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin: 0 -var(--spacing-4);
+  margin: 0 calc(-1 * var(--spacing-4));
   padding: 0 var(--spacing-4);
 }
 
@@ -1770,8 +1770,6 @@ table {
 .savings-badge--max::after {
   content: '🔥';
   margin-left: var(--spacing-1);
-}
-
 }
 
 /* ============================================
