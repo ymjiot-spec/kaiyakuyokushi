@@ -544,6 +544,9 @@
     } else {
       card.appendChild(detail);
     }
+    
+    // 最初から表示状態にする
+    detail.classList.add('savings-detail--visible');
   }
   
   /**
