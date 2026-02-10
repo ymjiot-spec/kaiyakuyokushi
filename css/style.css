@@ -1233,12 +1233,12 @@ table {
 }
 
 .competitor-comparison__table th.highlight-col {
-  background: var(--color-au);
+  background: #1e3a6e;
   color: white;
 }
 
 .competitor-comparison__table td.highlight-col {
-  background: #fff7ed;
+  background: #fdf8ef;
   font-weight: var(--font-weight-semibold);
 }
 
@@ -1251,7 +1251,7 @@ table {
 }
 
 .competitor-comparison__table tbody tr:hover td.highlight-col {
-  background: #fed7aa;
+  background: #f0e6d2;
 }
 
 .competitor-comparison__highlight {
@@ -1655,6 +1655,18 @@ table {
 
   50% {
     box-shadow: 0 4px 24px rgba(220, 38, 38, 0.7);
+  }
+}
+
+@keyframes pulse-glow-gold {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 14px rgba(212, 168, 83, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 4px 24px rgba(212, 168, 83, 0.7);
   }
 }
 
