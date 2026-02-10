@@ -576,72 +576,70 @@
     return shuffled.slice(0, 3);
   }
   /**
-   * ミニ比較表をコースカードに追加
-   * 現在のプランと提案プランを4項目で横並び比較
+   * コースカード内に現在プランとの比較行を注入
+   * カードの料金・特徴エリアに「現在→変更後」を横並びで表示
    */
-  /**
-     * ミニ比較表をコースカードの下に追加
-     * 現在のプランと提案プランを4項目で比較（カードの外に配置）
-     */
-    /**
-       * ミニ比較表をコースカードの下に追加
-       * 解約抑止の観点で、ポジティブな訴求ポイントだけを表示する
-       * - 安くなる → 節約額をアピール
-       * - データ増える → 「たった○○円で○倍」のお得感をアピール
-       * - マイナス要素は表示しない
-       */
-      /**
-         * ミニ比較バーをコースカードの直後に追加
-         * カード自体のサイズは変えず、カードの下にコンパクトな比較情報を表示
-         */
-        function addMiniComparison(card, currentCourse, targetCourse) {
-          // 既に追加済みならスキップ
-          if (card.nextElementSibling && card.nextElementSibling.classList.contains('mini-compare')) return;
+  function addMiniComparison(card, currentCourse, targetCourse) {
+    // 既に追加済みならスキップ
+    if (card.querySelector('.compare-inline')) return;
 
-          var priceDiff = currentCourse.price.taxIncluded - targetCourse.price.taxIncluded;
-          var currentMonthly = currentCourse.data.monthly || (currentCourse.data.daily * 30);
-          var targetMonthly = targetCourse.data.monthly || (targetCourse.data.daily * 30);
+    var priceDiff = currentCourse.price.taxIncluded - targetCourse.price.taxIncluded;
+    var targetData = targetCourse.data.monthly
+      ? '月間' + targetCourse.data.monthly + 'GB'
+      : '1日' + targetCourse.data.daily + 'GB';
+    var curData = currentCourse.data.monthly
+      ? '月間' + currentCourse.data.monthly + 'GB'
+      : '1日' + currentCourse.data.daily + 'GB';
+    var targetCall = targetCourse.call.included || targetCourse.call.rate;
+    var curCall = currentCourse.call.included || currentCourse.call.rate;
 
-          var currentCall = currentCourse.call.included || currentCourse.call.rate;
-          var targetCall = targetCourse.call.included || targetCourse.call.rate;
+    // 差額表示
+    var diffHtml;
+    if (priceDiff > 0) {
+      diffHtml = '<span class="ci__diff ci__diff--save">▼ 月 ' + formatNumber(priceDiff) + '円おトク</span>';
+    } else if (priceDiff < 0) {
+      diffHtml = '<span class="ci__diff ci__diff--up">▲ 月 +' + formatNumber(Math.abs(priceDiff)) + '円</span>';
+    } else {
+      diffHtml = '<span class="ci__diff ci__diff--even">± 同額</span>';
+    }
 
-          // 差額表示
-          var diffHtml;
-          if (priceDiff > 0) {
-            diffHtml = '<span class="mini-compare__saving">▼年間' + formatNumber(priceDiff * 12) + '円お得</span>';
-          } else if (priceDiff < 0) {
-            diffHtml = '<span class="mini-compare__increase">▲月額' + formatNumber(Math.abs(priceDiff)) + '円UP</span>';
-          } else {
-            diffHtml = '<span class="mini-compare__same">同額</span>';
-          }
+    // 比較テーブルをカードbody内の料金セクションの直後に挿入
+    var priceSection = card.querySelector('.course-card__price');
+    if (!priceSection) return;
 
-          var currentData = currentCourse.data.monthly
-            ? currentCourse.data.monthly + 'GB'
-            : currentCourse.data.daily + 'GB/日';
-          var targetData = targetCourse.data.monthly
-            ? targetCourse.data.monthly + 'GB'
-            : targetCourse.data.daily + 'GB/日';
+    var compareEl = document.createElement('div');
+    compareEl.className = 'compare-inline';
+    compareEl.innerHTML =
+        '<div class="ci__header">'
+      + '<span class="ci__tag ci__tag--now">現在</span>'
+      + '<span class="ci__arrow">→</span>'
+      + '<span class="ci__tag ci__tag--new">変更後</span>'
+      + '</div>'
+      + '<div class="ci__rows">'
+      + '<div class="ci__row">'
+      + '<span class="ci__label">月額</span>'
+      + '<span class="ci__val ci__val--now">' + formatNumber(currentCourse.price.taxIncluded) + '円</span>'
+      + '<span class="ci__arrow-sm">→</span>'
+      + '<span class="ci__val ci__val--new">' + formatNumber(targetCourse.price.taxIncluded) + '円</span>'
+      + '</div>'
+      + '<div class="ci__row">'
+      + '<span class="ci__label">データ</span>'
+      + '<span class="ci__val ci__val--now">' + curData + '</span>'
+      + '<span class="ci__arrow-sm">→</span>'
+      + '<span class="ci__val ci__val--new">' + targetData + '</span>'
+      + '</div>'
+      + '<div class="ci__row">'
+      + '<span class="ci__label">通話</span>'
+      + '<span class="ci__val ci__val--now">' + curCall + '</span>'
+      + '<span class="ci__arrow-sm">→</span>'
+      + '<span class="ci__val ci__val--new">' + targetCall + '</span>'
+      + '</div>'
+      + '</div>'
+      + '<div class="ci__bottom">' + diffHtml + '</div>';
 
-          var compareEl = document.createElement('div');
-          compareEl.className = 'mini-compare';
-          compareEl.innerHTML =
-              '<div class="mini-compare__row">'
-            + '<span class="mini-compare__label">現在</span>'
-            + '<span class="mini-compare__cell">' + formatNumber(currentCourse.price.taxIncluded) + '円</span>'
-            + '<span class="mini-compare__cell">' + currentData + '</span>'
-            + '<span class="mini-compare__cell mini-compare__cell--call">' + currentCall + '</span>'
-            + '</div>'
-            + '<div class="mini-compare__row mini-compare__row--target">'
-            + '<span class="mini-compare__label mini-compare__label--target">変更後</span>'
-            + '<span class="mini-compare__cell">' + formatNumber(targetCourse.price.taxIncluded) + '円</span>'
-            + '<span class="mini-compare__cell">' + targetData + '</span>'
-            + '<span class="mini-compare__cell mini-compare__cell--call">' + targetCall + '</span>'
-            + '</div>'
-            + '<div class="mini-compare__diff">' + diffHtml + '</div>';
-
-          // カードの直後に挿入（カード自体には触らない）
-          card.parentNode.insertBefore(compareEl, card.nextSibling);
-        }
+    // 料金セクションの後に挿入
+    priceSection.parentNode.insertBefore(compareEl, priceSection.nextSibling);
+  }
   
   /**
    * カードのインタラクションを設定
