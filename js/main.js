@@ -385,15 +385,12 @@
     const currentCourse = courseData[currentCourseId];
     if (!currentCourse) return;
     
-    // コースカードに節約バッジと詳細を追加（乗り換えセクションのカードは除外）
-    var courseCards = document.querySelectorAll('.course-card:not(#proposal-switch .course-card)');
+    // コースカードにミニ比較表と節約バッジを追加
+    var courseCards = document.querySelectorAll('.course-card');
     var maxSavings = 0;
     var maxCard = null;
     
     courseCards.forEach(function(card) {
-      // 既に処理済みならスキップ
-      if (card.querySelector('.savings-badge')) return;
-      
       // かけ放題オプションカードなどはスキップ
       var nameEl = card.querySelector('.course-card__name');
       if (!nameEl) return;
@@ -403,6 +400,12 @@
       
       var targetCourse = courseData[cardCourseId];
       if (!targetCourse) return;
+      
+      // ミニ比較表を追加（節約有無に関わらず、重複チェックは関数内で実施）
+      addMiniComparison(card, currentCourse, targetCourse);
+      
+      // 節約バッジは既に処理済みならスキップ
+      if (card.querySelector('.savings-badge')) return;
       
       var monthlySavings = currentCourse.price.taxIncluded - targetCourse.price.taxIncluded;
       
@@ -544,9 +547,6 @@
     } else {
       card.appendChild(detail);
     }
-    
-    // 最初から表示状態にする
-    detail.classList.add('savings-detail--visible');
   }
   
   /**
@@ -575,13 +575,97 @@
     const shuffled = applicableIdeas.sort(function() { return 0.5 - Math.random(); });
     return shuffled.slice(0, 3);
   }
+  /**
+   * ミニ比較表をコースカードに追加
+   * 現在のプランと提案プランを4項目で横並び比較
+   */
+  function addMiniComparison(card, currentCourse, targetCourse) {
+    // 既に追加済みならスキップ
+    if (card.querySelector('.mini-compare')) return;
+
+    var currentData = currentCourse.data.monthly
+      ? currentCourse.data.monthly + 'GB/月'
+      : currentCourse.data.daily + 'GB/日';
+    var targetData = targetCourse.data.monthly
+      ? targetCourse.data.monthly + 'GB/月'
+      : targetCourse.data.daily + 'GB/日';
+
+    var currentCall = currentCourse.call.included || currentCourse.call.rate;
+    var targetCall = targetCourse.call.included || targetCourse.call.rate;
+
+    var diff = currentCourse.price.taxIncluded - targetCourse.price.taxIncluded;
+    var diffLabel = diff > 0
+      ? '<span class="mini-compare__saving">年間' + formatNumber(diff * 12) + '円お得</span>'
+      : diff < 0
+        ? '<span class="mini-compare__increase">年間' + formatNumber(Math.abs(diff) * 12) + '円UP</span>'
+        : '<span class="mini-compare__same">同額</span>';
+
+    var html = '<div class="mini-compare">'
+      + '<div class="mini-compare__header">'
+      + '<span class="mini-compare__label mini-compare__label--current">現在</span>'
+      + '<span class="mini-compare__vs">→</span>'
+      + '<span class="mini-compare__label mini-compare__label--target">変更後</span>'
+      + '</div>'
+      + '<table class="mini-compare__table">'
+      + '<tbody>'
+      + '<tr>'
+      + '<td class="mini-compare__item">月額</td>'
+      + '<td class="mini-compare__val mini-compare__val--current">' + formatNumber(currentCourse.price.taxIncluded) + '円</td>'
+      + '<td class="mini-compare__arrow">→</td>'
+      + '<td class="mini-compare__val mini-compare__val--target">' + formatNumber(targetCourse.price.taxIncluded) + '円</td>'
+      + '</tr>'
+      + '<tr>'
+      + '<td class="mini-compare__item">データ</td>'
+      + '<td class="mini-compare__val mini-compare__val--current">' + currentData + '</td>'
+      + '<td class="mini-compare__arrow">→</td>'
+      + '<td class="mini-compare__val mini-compare__val--target">' + targetData + '</td>'
+      + '</tr>'
+      + '<tr>'
+      + '<td class="mini-compare__item">通話</td>'
+      + '<td class="mini-compare__val mini-compare__val--current">' + currentCall + '</td>'
+      + '<td class="mini-compare__arrow">→</td>'
+      + '<td class="mini-compare__val mini-compare__val--target">' + targetCall + '</td>'
+      + '</tr>'
+      + '<tr>'
+      + '<td class="mini-compare__item">差額</td>'
+      + '<td class="mini-compare__val mini-compare__val--diff" colspan="3">' + diffLabel + '</td>'
+      + '</tr>'
+      + '</tbody>'
+      + '</table>'
+      + '</div>';
+
+    // course-card__bodyの末尾（featuresの後）に挿入
+    var body = card.querySelector('.course-card__body');
+    if (body) {
+      body.insertAdjacentHTML('beforeend', html);
+    }
+  }
   
   /**
    * カードのインタラクションを設定
-   * 節約詳細は常に表示のまま（開閉しない）
    */
   function setupCardInteraction(card) {
-    // 何もしない - 詳細パネルはaddSavingsDetailで常時表示済み
+    const detail = card.querySelector('.savings-detail');
+    if (!detail) return;
+    
+    // クリックで詳細を表示/非表示
+    card.addEventListener('click', function(e) {
+      // ボタンやリンクのクリックは除外
+      if (e.target.closest('a, button')) return;
+      
+      detail.classList.toggle('savings-detail--visible');
+    });
+    
+    // ホバーでも表示（デスクトップ）
+    if (window.matchMedia('(hover: hover)').matches) {
+      card.addEventListener('mouseenter', function() {
+        detail.classList.add('savings-detail--visible');
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        detail.classList.remove('savings-detail--visible');
+      });
+    }
   }
 
   // ============================================
