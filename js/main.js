@@ -58,12 +58,14 @@
           initSavingsSimulator();
         }, 50);
         
-        // 提案セクションまでスクロール
-        const targetProposal = document.getElementById('proposal-' + reason);
+        // 提案セクションまでスムーズスクロール（ヘッダー分オフセット）
+        var targetProposal = document.getElementById('proposal-' + reason);
         if (targetProposal) {
           setTimeout(function() {
-            targetProposal.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 100);
+            var headerHeight = document.querySelector('.header') ? document.querySelector('.header').offsetHeight : 0;
+            var targetTop = targetProposal.getBoundingClientRect().top + window.pageYOffset - headerHeight - 12;
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
+          }, 150);
         }
       });
       
@@ -84,11 +86,18 @@
    */
   function showProposal(reason, proposals) {
     proposals.forEach(function(proposal) {
-      const proposalId = proposal.id.replace('proposal-', '');
+      var proposalId = proposal.id.replace('proposal-', '');
       
       if (proposalId === reason) {
         proposal.hidden = false;
         proposal.setAttribute('aria-hidden', 'false');
+        // マッチ度ゲージのアニメーションをリトリガー
+        var fill = proposal.querySelector('.proposal__match-fill');
+        if (fill) {
+          fill.style.animation = 'none';
+          fill.offsetHeight; // reflow
+          fill.style.animation = '';
+        }
       } else {
         proposal.hidden = true;
         proposal.setAttribute('aria-hidden', 'true');

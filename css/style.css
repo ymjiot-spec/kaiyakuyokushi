@@ -1963,3 +1963,256 @@ table {
     font-size: 12px;
   }
 }
+
+/* ============================================
+   理由選択カード v2 - 立体カード型ボタン
+   ============================================ */
+.reason-card--v2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  padding: 16px 12px 12px;
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.reason-card--v2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(67,97,238,0.04) 0%, rgba(124,58,237,0.04) 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.reason-card--v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(67,97,238,0.15), 0 2px 6px rgba(0,0,0,0.08);
+  border-color: var(--color-primary);
+}
+
+.reason-card--v2:hover::before {
+  opacity: 1;
+}
+
+.reason-card--v2:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(67,97,238,0.2);
+  transition-duration: 0.1s;
+}
+
+.reason-card--v2.reason-card--active {
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, #eef2ff 0%, #e8ecff 100%);
+  box-shadow: 0 4px 16px rgba(67,97,238,0.2), inset 0 0 0 1px rgba(67,97,238,0.1);
+}
+
+.reason-card--v2.reason-card--active::after {
+  content: '✓';
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.reason-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  transition: transform 0.25s ease;
+}
+
+.reason-card--v2:hover .reason-card__icon-wrap {
+  transform: scale(1.1);
+}
+
+.reason-card__icon-wrap--blue {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+}
+
+.reason-card__icon-wrap--green {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+}
+
+.reason-card__icon-wrap--purple {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+}
+
+.reason-card__icon-wrap--orange {
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+}
+
+.reason-card__icon-wrap--gray {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+.reason-card--v2 .reason-card__text {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.reason-card__hint {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.reason-card--v2:hover .reason-card__hint {
+  opacity: 1;
+}
+
+.reason-card--other {
+  min-height: 80px;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.reason-card--other .reason-card__icon-wrap {
+  margin-bottom: 0;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.reason-card--other .reason-card__text {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.reason-card--other .reason-card__hint {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .reason-card--v2 {
+    min-height: 160px;
+    padding: 20px 16px 16px;
+  }
+
+  .reason-card__icon-wrap {
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+
+  .reason-card--v2 .reason-card__text {
+    font-size: 14px;
+  }
+
+  .reason-card__hint {
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   マッチ度ゲージ
+   ============================================ */
+.proposal__match-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 280px;
+  margin: 0 auto 16px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  border: 1px solid rgba(67,97,238,0.2);
+  border-radius: 12px;
+  animation: matchFadeIn 0.6s ease-out;
+}
+
+@keyframes matchFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.proposal__match-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #4338ca;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.proposal__match-bar {
+  flex: 1;
+  height: 8px;
+  background: #c7d2fe;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.proposal__match-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4361ee 0%, #7c3aed 100%);
+  border-radius: 4px;
+  animation: matchGrow 1s ease-out 0.3s both;
+}
+
+@keyframes matchGrow {
+  from { width: 0 !important; }
+}
+
+.proposal__match-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #4338ca;
+  flex-shrink: 0;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ============================================
+   スワイプガイド（比較表用）
+   ============================================ */
+.swipe-guide {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 0;
+  font-size: 12px;
+  color: #9ca3af;
+  animation: swipeHint 2s ease-in-out infinite;
+}
+
+@media (max-width: 767px) {
+  .swipe-guide {
+    display: flex;
+  }
+}
+
+@keyframes swipeHint {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}

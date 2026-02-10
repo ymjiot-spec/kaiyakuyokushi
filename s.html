@@ -218,30 +218,37 @@
 
     <section class="reason-selector" aria-labelledby="reason-title">
       <div class="container">
-        <h2 id="reason-title" class="reason-selector__title">「知っていたらスターサービスを解約しなかった」というお客さまの声をもとにご案内します。</h2>
+        <div style="text-align: center; margin-bottom: 8px;">
+          <span style="display: inline-block; padding: 4px 14px; background: linear-gradient(135deg, #4361ee 0%, #7c3aed 100%); color: #fff; font-size: 12px; font-weight: 700; border-radius: 20px; letter-spacing: 0.05em;">🩺 あなた専用の処方箋</span>
+        </div>
+        <h2 id="reason-title" class="reason-selector__title">解決したいお悩みはどれですか？</h2>
+        <p style="text-align: center; font-size: 13px; color: #6b7280; margin-top: -16px; margin-bottom: 24px;">タップすると、あなたに最適なプランをご提案します</p>
         <div class="reason-selector__options" role="group" aria-label="解約理由の選択"
-          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;">
-          <button class="reason-card" data-reason="price" type="button" aria-pressed="false" style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">💰</span>
-            <span class="reason-card__text">料金が高い</span>
+          style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 400px; margin: 0 auto;">
+          <button class="reason-card reason-card--v2" data-reason="price" type="button" aria-pressed="false">
+            <span class="reason-card__icon-wrap reason-card__icon-wrap--blue" aria-hidden="true">💰</span>
+            <span class="reason-card__text">月々の支払いを<br>安くしたい</span>
+            <span class="reason-card__hint">→ 最大年5万円節約</span>
           </button>
-          <button class="reason-card" data-reason="data-shortage" type="button" aria-pressed="false"
-            style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">📶</span>
-            <span class="reason-card__text">データ量が足りない</span>
+          <button class="reason-card reason-card--v2" data-reason="data-shortage" type="button" aria-pressed="false">
+            <span class="reason-card__icon-wrap reason-card__icon-wrap--green" aria-hidden="true">📶</span>
+            <span class="reason-card__text">動画をもっと<br>ストレスなく見たい</span>
+            <span class="reason-card__hint">→ 最大6倍のデータ量</span>
           </button>
-          <button class="reason-card" data-reason="data-excess" type="button" aria-pressed="false"
-            style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">📉</span>
-            <span class="reason-card__text">データ量が余っている</span>
+          <button class="reason-card reason-card--v2" data-reason="data-excess" type="button" aria-pressed="false">
+            <span class="reason-card__icon-wrap reason-card__icon-wrap--purple" aria-hidden="true">📉</span>
+            <span class="reason-card__text">使わないGBを<br>ムダにしたくない</span>
+            <span class="reason-card__hint">→ ぴったりプランあり</span>
           </button>
-          <button class="reason-card" data-reason="switch" type="button" aria-pressed="false" style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">🔄</span>
-            <span class="reason-card__text">他社に乗り換えたい</span>
+          <button class="reason-card reason-card--v2" data-reason="switch" type="button" aria-pressed="false">
+            <span class="reason-card__icon-wrap reason-card__icon-wrap--orange" aria-hidden="true">🔍</span>
+            <span class="reason-card__text">自分に一番合う<br>プランを知りたい</span>
+            <span class="reason-card__hint">→ 他社と徹底比較</span>
           </button>
-          <button class="reason-card" data-reason="other" type="button" aria-pressed="false" style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">❓</span>
-            <span class="reason-card__text">その他</span>
+          <button class="reason-card reason-card--v2 reason-card--other" data-reason="other" type="button" aria-pressed="false" style="grid-column: 1 / -1;">
+            <span class="reason-card__icon-wrap reason-card__icon-wrap--gray" aria-hidden="true">💬</span>
+            <span class="reason-card__text">その他のお悩み・ご相談</span>
+            <span class="reason-card__hint">→ サポートデスクがお答えします</span>
           </button>
         </div>
       </div>
@@ -250,6 +257,11 @@
     <section class="proposal" id="proposal-price" hidden aria-hidden="true">
       <div class="container">
         <div class="proposal__header">
+          <div class="proposal__match-badge" data-match="96">
+            <div class="proposal__match-label">あなたへのマッチ度</div>
+            <div class="proposal__match-bar"><div class="proposal__match-fill" style="width: 96%;"></div></div>
+            <div class="proposal__match-value">96%</div>
+          </div>
           <div class="proposal__icon">💰</div>
           <h2 class="proposal__title">料金でお悩みのあなたへ</h2>
           <p class="proposal__description">同じスターサービス内で、もっと安くできます。</p>
@@ -348,6 +360,11 @@
     <section class="proposal" id="proposal-data-shortage" hidden aria-hidden="true">
       <div class="container">
         <div class="proposal__header">
+          <div class="proposal__match-badge" data-match="94">
+            <div class="proposal__match-label">あなたへのマッチ度</div>
+            <div class="proposal__match-bar"><div class="proposal__match-fill" style="width: 94%;"></div></div>
+            <div class="proposal__match-value">94%</div>
+          </div>
           <div class="proposal__icon">📶</div>
           <h2 class="proposal__title">データ量が足りないあなたへ</h2>
           <p class="proposal__description">同じ価格帯で6倍のデータ量が手に入ります。</p>
@@ -439,6 +456,11 @@
     <section class="proposal" id="proposal-data-excess" hidden aria-hidden="true">
       <div class="container">
         <div class="proposal__header">
+          <div class="proposal__match-badge" data-match="92">
+            <div class="proposal__match-label">あなたへのマッチ度</div>
+            <div class="proposal__match-bar"><div class="proposal__match-fill" style="width: 92%;"></div></div>
+            <div class="proposal__match-value">92%</div>
+          </div>
           <div class="proposal__icon">📉</div>
           <h2 class="proposal__title">データ量が余っているあなたへ</h2>
           <p class="proposal__description">使わないGBにお金を払う必要はありません。</p>
@@ -528,8 +550,13 @@
     <section class="proposal" id="proposal-switch" hidden aria-hidden="true">
       <div class="container">
         <div class="proposal__header">
-          <div class="proposal__icon">🔄</div>
-          <h2 class="proposal__title">他社への乗り換えをご検討中のあなたへ</h2>
+          <div class="proposal__match-badge" data-match="98">
+            <div class="proposal__match-label">あなたへのマッチ度</div>
+            <div class="proposal__match-bar"><div class="proposal__match-fill" style="width: 98%;"></div></div>
+            <div class="proposal__match-value">98%</div>
+          </div>
+          <div class="proposal__icon">🔍</div>
+          <h2 class="proposal__title">あなたに最適なプランを比較しました</h2>
           <p class="proposal__description">ちょっと待ってください。乗り換え先の「本当の月額」、ご存知ですか？</p>
         </div>
 
