@@ -1646,6 +1646,18 @@ table {
   }
 }
 
+@keyframes pulse-glow-red {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 4px 24px rgba(220, 38, 38, 0.7);
+  }
+}
+
 .savings-badge__icon {
   font-size: 0.75rem;
 }
