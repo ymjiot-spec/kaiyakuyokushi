@@ -165,10 +165,11 @@
       </div>
       <!-- メインヒーロー -->
       <div style="max-width: 640px; margin: 0 auto; padding: 32px 16px 28px; text-align: center;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 16px; background: rgba(255,255,255,0.08); border-radius: 20px; margin-bottom: 16px;">
-          <span style="font-size: 11px; color: rgba(255,255,255,0.6);">ソフトバンク回線</span>
-          <span style="font-size: 13px; font-weight: 700; color: #fbbf24;">Sコース</span>
+        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 16px; background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.3); border-radius: 20px; margin-bottom: 12px;">
+          <span style="font-size: 11px; color: #fbbf24; font-weight: 700; letter-spacing: 0.05em;">👑 キャリア本家回線</span>
+          <span style="font-size: 13px; font-weight: 800; color: #fff;">Sコース</span>
         </div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 12px; line-height: 1.6;">LINEMOは格安SIM。Sコースは<span style="color: #fbbf24; font-weight: 700;">キャリア本家回線</span>。<br>混雑時の優先順位が違います。</div>
         <h1 style="font-size: 1.4rem; font-weight: 700; color: rgba(255,255,255,0.8); margin: 0 0 8px; letter-spacing: -0.02em;">あなたが今持っている価値</h1>
         <div style="font-size: 3.5rem; font-weight: 900; color: #fbbf24; line-height: 1; margin-bottom: 4px;">5,346<span style="font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.7);">円/月（税込）</span></div>
         <div style="font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 20px;">割引条件なし・光回線セット不要・家族割不要</div>
@@ -195,17 +196,17 @@
             <div style="font-size: 10px; color: rgba(255,255,255,0.5);">1GB / 1,100円</div>
           </div>
         </div>
-        <!-- 他社との即時比較 -->
+        <!-- 他社との即時比較（階級差フレーミング） -->
         <div style="margin-top: 20px; padding: 14px 16px; background: rgba(220,38,38,0.15); border: 1px solid rgba(220,38,38,0.3); border-radius: 12px;">
-          <div style="font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 6px;">💡 同じ条件を他社で揃えると…</div>
-          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-            <div style="text-align: center;">
-              <div style="font-size: 11px; color: rgba(255,255,255,0.5);">LINEMO</div>
+          <div style="font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 8px;">⚡ 格安SIMに乗り換えると、こうなります</div>
+          <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+            <div style="text-align: center; padding: 8px 12px; background: rgba(255,255,255,0.06); border-radius: 8px;">
+              <div style="font-size: 10px; color: rgba(255,255,255,0.4);">LINEMO（格安SIM）</div>
               <div style="font-size: 1.1rem; font-weight: 800; color: #fca5a5;">4,378円</div>
-              <div style="font-size: 9px; color: #fca5a5;">留守電なし</div>
+              <div style="font-size: 9px; color: #fca5a5;">留守電なし・混雑時低速</div>
             </div>
-            <div style="text-align: center;">
-              <div style="font-size: 11px; color: rgba(255,255,255,0.5);">Y!mobile</div>
+            <div style="text-align: center; padding: 8px 12px; background: rgba(255,255,255,0.06); border-radius: 8px;">
+              <div style="font-size: 10px; color: rgba(255,255,255,0.4);">Y!mobile（サブブランド）</div>
               <div style="font-size: 1.1rem; font-weight: 800; color: #fca5a5;">6,325円</div>
               <div style="font-size: 9px; color: #fca5a5;">+979円高い</div>
             </div>
@@ -555,57 +556,92 @@
         </div>
 
         <!-- ═══════════════════════════════════════
-             Phase 2: 究極の3項目横並び比較表
+             Phase 2: 「階級差」の可視化 比較表
              ═══════════════════════════════════════ -->
         <div style="max-width: 640px; margin: 0 auto 32px;">
           <div style="text-align: center; margin-bottom: 16px;">
-            <div style="font-size: 18px; font-weight: 800; color: #111827;">📊 乗り換え先の「本当の月額」比較</div>
-            <p style="font-size: 13px; color: #6b7280; margin-top: 4px;">かけ放題・留守電を含めた実質総額で比べてください</p>
+            <div style="font-size: 18px; font-weight: 800; color: #111827;">👑 回線の「階級差」を知っていますか？</div>
+            <p style="font-size: 13px; color: #6b7280; margin-top: 4px;">LINEMOは「見かけの安さ」。中身を比べると、削ぎ落とされたプランです。</p>
           </div>
 
-          <!-- 比較テーブル -->
+          <!-- 階級差 比較テーブル -->
           <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;">
             <!-- ヘッダー行 -->
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 2px solid #e5e7eb;">
-              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(135deg, #868686 0%, #616161 100%); color: #fff;">
-                <div style="font-size: 11px; opacity: 0.85;">現在のプラン</div>
+              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff;">
+                <div style="font-size: 10px; color: #fbbf24;">👑 キャリア本家回線</div>
                 <div style="font-size: 15px; font-weight: 800;">Sコース</div>
               </div>
-              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #fff;">
-                <div style="font-size: 11px; opacity: 0.85;">乗り換え先①</div>
+              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(135deg, #64748b 0%, #475569 100%); color: #fff;">
+                <div style="font-size: 10px; opacity: 0.85;">格安SIM</div>
                 <div style="font-size: 15px; font-weight: 800;">LINEMO</div>
               </div>
-              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: #fff;">
-                <div style="font-size: 11px; opacity: 0.85;">乗り換え先②</div>
+              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(135deg, #64748b 0%, #475569 100%); color: #fff;">
+                <div style="font-size: 10px; opacity: 0.85;">サブブランド</div>
                 <div style="font-size: 15px; font-weight: 800;">Y!mobile</div>
               </div>
             </div>
 
-            <!-- 料金行 -->
+            <!-- 回線の格 行 -->
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #f8fafc;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額（税込）</div>
-                <div style="font-size: 11px; color: #9ca3af; text-decoration: line-through;">基本 5,346円</div>
+              <div style="padding: 10px 6px; text-align: center; background: #fffbeb;">
+                <div style="font-size: 10px; color: #92400e; font-weight: 700;">👑 回線の格</div>
+                <div style="font-size: 12px; font-weight: 800; color: #b45309;">キャリア特権</div>
+                <div style="font-size: 9px; color: #92400e;">混雑時も優先通信</div>
+              </div>
+              <div style="padding: 10px 6px; text-align: center; background: #fef2f2;">
+                <div style="font-size: 10px; color: #6b7280;">回線の格</div>
+                <div style="font-size: 12px; font-weight: 800; color: #dc2626;">格安・制限あり</div>
+                <div style="font-size: 9px; color: #dc2626;">混雑時は後回し</div>
+              </div>
+              <div style="padding: 10px 6px; text-align: center; background: #fef2f2;">
+                <div style="font-size: 10px; color: #6b7280;">回線の格</div>
+                <div style="font-size: 12px; font-weight: 800; color: #dc2626;">格安・制限あり</div>
+                <div style="font-size: 9px; color: #dc2626;">混雑時は後回し</div>
+              </div>
+            </div>
+
+            <!-- 全部入り 行 -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+              <div style="padding: 10px 6px; text-align: center; background: #fffbeb;">
+                <div style="font-size: 10px; color: #92400e; font-weight: 700;">🎁 全部入り</div>
+                <div style="font-size: 11px; font-weight: 800; color: #b45309;">通話・留守電 ¥0</div>
+                <div style="font-size: 9px; color: #10b981; font-weight: 700;">標準付帯・追加料金なし</div>
+              </div>
+              <div style="padding: 10px 6px; text-align: center; background: #fef2f2;">
+                <div style="font-size: 10px; color: #6b7280;">オプション地獄</div>
+                <div style="font-size: 11px; font-weight: 800; color: #dc2626;">全部オプション有料</div>
+                <div style="font-size: 9px; color: #dc2626;">留守電は非対応</div>
+              </div>
+              <div style="padding: 10px 6px; text-align: center; background: #fef2f2;">
+                <div style="font-size: 10px; color: #6b7280;">オプション地獄</div>
+                <div style="font-size: 11px; font-weight: 800; color: #dc2626;">全部オプション有料</div>
+                <div style="font-size: 9px; color: #dc2626;">+2,310円/月</div>
+              </div>
+            </div>
+
+            <!-- 実質総額 行 -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+              <div style="padding: 12px 6px; text-align: center; background: #fffbeb;">
+                <div style="font-size: 10px; color: #92400e; font-weight: 700;">💰 実質総額</div>
                 <div style="font-size: 1.3rem; font-weight: 900; color: #111827;">5,346円</div>
-                <div style="font-size: 10px; color: #10b981; font-weight: 700;">かけ放題+留守電 込み</div>
+                <div style="font-size: 10px; color: #10b981; font-weight: 700;">全部込み・これ以上かからない</div>
               </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額（税込）</div>
-                <div style="font-size: 11px; color: #9ca3af;">基本 2,728円</div>
+              <div style="padding: 12px 6px; text-align: center;">
+                <div style="font-size: 10px; color: #6b7280;">💰 実質総額</div>
                 <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">4,378円</div>
-                <div style="font-size: 10px; color: #dc2626; font-weight: 700;">+かけ放題 1,650円</div>
+                <div style="font-size: 10px; color: #dc2626; font-weight: 700;">留守電なし・混雑時低速</div>
               </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額（税込）</div>
-                <div style="font-size: 11px; color: #9ca3af;">基本 4,015円</div>
+              <div style="padding: 12px 6px; text-align: center;">
+                <div style="font-size: 10px; color: #6b7280;">💰 実質総額</div>
                 <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">6,325円</div>
-                <div style="font-size: 10px; color: #dc2626; font-weight: 700;">+かけ放題1,980円 +留守電330円</div>
+                <div style="font-size: 10px; color: #dc2626; font-weight: 700;">Sコースより979円高い</div>
               </div>
             </div>
 
             <!-- データ量行 -->
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #f8fafc;">
+              <div style="padding: 10px 6px; text-align: center; background: #fffbeb;">
                 <div style="font-size: 10px; color: #6b7280;">📶 データ量</div>
                 <div style="font-size: 1.2rem; font-weight: 800; color: #111827;">20GB</div>
                 <div style="font-size: 10px; color: #10b981; font-weight: 700;">＋GB追加OK</div>
@@ -624,7 +660,7 @@
 
             <!-- 通話行 -->
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #f8fafc;">
+              <div style="padding: 10px 6px; text-align: center; background: #fffbeb;">
                 <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
                 <div style="font-size: 13px; font-weight: 800; color: #111827;">24h かけ放題</div>
                 <div style="font-size: 10px; color: #10b981; font-weight: 700;">標準付帯 ¥0</div>
@@ -643,7 +679,7 @@
 
             <!-- 留守電行 -->
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
-              <div style="padding: 10px 6px; text-align: center; background: #f8fafc;">
+              <div style="padding: 10px 6px; text-align: center; background: #fffbeb;">
                 <div style="font-size: 10px; color: #6b7280;">📱 留守番電話</div>
                 <div style="font-size: 13px; font-weight: 800; color: #10b981;">標準付帯 ✓</div>
               </div>
@@ -658,12 +694,12 @@
             </div>
           </div>
 
-          <!-- 差額サマリー -->
+          <!-- 差額サマリー（階級差フレーミング） -->
           <div style="margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
             <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 12px; padding: 14px; text-align: center;">
               <div style="font-size: 11px; color: #1e40af;">LINEMOとの差額</div>
               <div style="font-size: 1.2rem; font-weight: 800; color: #1e40af;">月 968円</div>
-              <div style="font-size: 10px; color: #3b82f6; margin-top: 2px;">でも留守電なし…</div>
+              <div style="font-size: 10px; color: #3b82f6; margin-top: 2px;">留守電なし・混雑時低速</div>
             </div>
             <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-radius: 12px; padding: 14px; text-align: center;">
               <div style="font-size: 11px; color: #991b1b;">Y!mobileとの差額</div>
@@ -679,12 +715,19 @@
         <div style="max-width: 640px; margin: 0 auto 32px;">
           <!-- 結論ボックス -->
           <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 16px; padding: 24px 16px; text-align: center;">
-            <div style="font-size: 2rem; margin-bottom: 8px;">🧮</div>
+            <div style="font-size: 2rem; margin-bottom: 8px;">👑</div>
             <div style="font-size: 16px; font-weight: 800; color: #92400e; line-height: 1.7;">
               LINEMOに乗り換えても<br>
               <span style="font-size: 20px; color: #dc2626;">留守電が使えなくなる</span><br>
               Y!mobileなら<br>
               <span style="font-size: 20px; color: #dc2626;">逆に月979円高くなる</span>
+            </div>
+            <div style="margin-top: 16px; padding: 16px; background: rgba(255,255,255,0.8); border-radius: 12px; border-left: 4px solid #dc2626;">
+              <div style="font-size: 14px; color: #78350f; line-height: 1.8; font-weight: 600;">
+                わずか数百円の差で、キャリアの「<span style="color: #dc2626;">爆速</span>」と「<span style="color: #dc2626;">24時間かけ放題</span>」を手放し、<br>
+                格安SIMの不便さに戻るのは、<br>
+                <span style="font-size: 16px; font-weight: 800; color: #dc2626;">本当に賢い選択でしょうか？</span>
+              </div>
             </div>
             <div style="margin-top: 12px; padding: 12px; background: rgba(255,255,255,0.7); border-radius: 10px;">
               <div style="font-size: 13px; color: #78350f; line-height: 1.7;">
