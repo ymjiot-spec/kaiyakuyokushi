@@ -67,7 +67,20 @@
         resultArea.innerHTML = renderComparison(recommended, current);
       }
       resultArea.hidden = false;
+      
+      // 診断完了時に提案コンテンツを表示
+      revealProposalContent();
+      
       resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    
+    // 提案コンテンツを表示する関数
+    function revealProposalContent() {
+      const hiddenSections = document.querySelectorAll('.hidden-until-diagnosis');
+      hiddenSections.forEach(section => {
+        section.classList.remove('hidden-until-diagnosis');
+        section.classList.add('revealed');
+      });
     }
 
     dataButtons.forEach(btn => {

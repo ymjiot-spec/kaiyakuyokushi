@@ -175,13 +175,24 @@
         background: #eff6ff;
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
       }
+      /* 診断完了まで非表示 */
+      .hidden-until-diagnosis {
+        display: none !important;
+      }
+      .revealed {
+        animation: fadeIn 0.5s ease-in;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
     </style>
 
     <!-- 3. 診断結果エリア -->
     <section id="diagnosis-result" hidden style="background: #fff; padding: 40px 16px;"></section>
 
     <!-- eSIMセクション -->
-    <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 40px 16px;">
+    <section class="hidden-until-diagnosis" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 40px 16px;">
       <div style="max-width: 600px; margin: 0 auto; text-align: center;">
         <h2 style="font-size: 1.1rem; font-weight: 800; color: #1e3a6e; margin: 0 0 12px;">📱 これからはeSIM</h2>
         <p style="font-size: 14px; color: #374151; line-height: 1.9; margin: 0 0 20px;">
@@ -197,7 +208,7 @@
     </section>
 
     <!-- 独自帯域セクション -->
-    <section style="background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%); padding: 40px 16px;">
+    <section class="hidden-until-diagnosis" style="background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%); padding: 40px 16px;">
       <div style="max-width: 600px; margin: 0 auto; text-align: center;">
         <h2 style="font-size: 1.1rem; font-weight: 800; color: #1e3a6e; margin: 0 0 12px;">📡 自社管理の【独自帯域】だから、お昼も夕方もずっと快適</h2>
         <p style="font-size: 14px; color: #374151; line-height: 1.9; margin: 0 0 20px;">
@@ -223,7 +234,7 @@
     </section>
 
     <!-- 5G Coming Soon -->
-    <section style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 40px 16px;">
+    <section class="hidden-until-diagnosis" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 40px 16px;">
       <div style="max-width: 600px; margin: 0 auto; text-align: center;">
         <h2 style="font-size: 1.1rem; font-weight: 800; color: #92400e; margin: 0 0 12px;">🚀 さらに進化するDコース。5G対応、Coming Soon。</h2>
         <p style="font-size: 14px; color: #78350f; line-height: 1.9; margin: 0;">
@@ -234,7 +245,7 @@
     </section>
 
     <!-- 解約検討ブロック -->
-    <section style="background: #f3f4f6; padding: 40px 16px;">
+    <section class="hidden-until-diagnosis" style="background: #f3f4f6; padding: 40px 16px;">
       <div style="max-width: 480px; margin: 0 auto; text-align: center;">
         <p style="font-size: 13px; color: #9ca3af; margin: 0 0 16px;">それでも解約をご希望の方はこちら</p>
         <a href="#" class="cancel-link">解約手続きへ進む</a>
