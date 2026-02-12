@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="スターサービス DMコースの解約をご検討中のお客様へ。解約前にコース変更のご検討をお願いいたします。">
+  <title>解約をご検討中のお客様へ | DMコース | スターサービス</title>
+  <style>
+    :root{--color-primary:#4361ee;--color-docomo:#c00;--color-white:#fff;--color-gray-900:#111827}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN',sans-serif;font-size:16px;line-height:1.6;color:var(--color-gray-900);-webkit-font-smoothing:antialiased}
+    .header{position:sticky;top:0;z-index:1020;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:none}
+    .header__inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 16px;max-width:1200px;margin:0 auto}
+    .header__logo{display:flex;align-items:center;gap:12px}
+    .header__logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#4361ee 0%,#7c3aed 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+    .header__logo-text{font-size:18px;font-weight:700;color:#111827;letter-spacing:-0.02em}
+    .hero{position:relative;padding:48px 16px;background:url('images/Gemini_Generated_Image_bilej9bilej9bile.png') center/cover no-repeat;text-align:center;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.1)}
+    .hero__content{position:relative;z-index:1}
+    .hero__title{font-size:2rem;font-weight:800;color:#fff;margin-bottom:16px;text-shadow:0 2px 4px rgba(0,0,0,0.1)}
+    .hero__subtitle{font-size:1.125rem;color:rgba(255,255,255,0.9);line-height:1.8;margin:0}
+    @media(min-width:768px){.header__inner{height:72px;padding:0 24px}.header__logo-icon{width:60px;height:60px}.header__logo-text{font-size:20px}.hero{padding:80px 24px}.hero__title{font-size:3rem}}
+  </style>
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <div class="header__logo">
+        <img src="images/logo.png" alt="スターサービス" class="header__logo-icon" style="width:auto;height:60px;object-fit:contain;border:none;">
+      </div>
+      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+        <a href="https://www.starservice.jp/" class="header__link" target="_blank">公式サイト</a>
+        <a href="#" class="header__link">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+  <main role="main">
+    <section class="hero">
+      <div class="hero__content">
+        <div class="hero__course-badge">
+          <span class="hero__carrier-badge bg-carrier-docomo">ドコモ回線</span>
+          <span class="hero__course-name">DMコース</span>
+        </div>
+        <h1 class="hero__title">解約をご検討中のお客様へ</h1>
+        <p class="hero__subtitle">スターサービスをご利用いただきありがとうございます。<br>解約の前に、今の使い方を見直してみませんか？</p>
+      </div>
+    </section>
+
+    <section class="reason-selector" aria-labelledby="reason-title">
+      <div class="container">
+        <h2 id="reason-title" class="reason-selector__title">解約を検討されている理由を教えてください</h2>
+        <div class="reason-selector__options" role="group" aria-label="解約理由の選択">
+          <button class="reason-card" data-reason="price" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">💰</span>
+            <span class="reason-card__text">料金が高い</span>
+          </button>
+          <button class="reason-card" data-reason="data-shortage" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">📶</span>
+            <span class="reason-card__text">データ量が足りない</span>
+          </button>
+          <button class="reason-card" data-reason="data-excess" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">📉</span>
+            <span class="reason-card__text">データ量が余っている</span>
+          </button>
+          <button class="reason-card" data-reason="call-option" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">📞</span>
+            <span class="reason-card__text">通話オプションを変更したい</span>
+          </button>
+          <button class="reason-card" data-reason="switch" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">🔄</span>
+            <span class="reason-card__text">他社に乗り換えたい</span>
+          </button>
+          <button class="reason-card" data-reason="other" type="button" aria-pressed="false">
+            <span class="reason-card__icon" aria-hidden="true">❓</span>
+            <span class="reason-card__text">その他</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-price" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">💰</div>
+          <h2 class="proposal__title">料金でお悩みのあなたへ</h2>
+          <p class="proposal__description">DMコースは月額3,520円（税込）で5分かけ放題付き。<br>より安価なDSコースへの変更もご検討ください。</p>
+        </div>
+        <div class="proposal__recommendations">
+          <div class="course-card course-card--recommended">
+            <div class="course-card__header course-card__header--docomo">
+              <div class="course-card__name">DSコース</div>
+              <div class="course-card__carrier">ドコモ回線</div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__price">
+                <span class="course-card__price-value">1,078</span>
+                <span class="course-card__price-unit">円/月</span>
+                <div class="course-card__price-tax">（税込）</div>
+              </div>
+              <ul class="course-card__features">
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間3GB</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>かけ放題オプション選択可</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応</span></li>
+              </ul>
+            </div>
+            <div class="course-card__footer">
+              <a href="#" class="btn btn--primary btn--block">DSコースに変更する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-data-shortage" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">📶</div>
+          <h2 class="proposal__title">データ量が足りないあなたへ</h2>
+          <p class="proposal__description">DMコースは月間30GB（1日1GB）ですが、より大容量のDL/DXコースへ変更できます。</p>
+        </div>
+        <div class="proposal__recommendations">
+          <div class="course-card course-card--recommended">
+            <div class="course-card__header course-card__header--docomo">
+              <div class="course-card__name">DLコース</div>
+              <div class="course-card__carrier">ドコモ回線</div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__price">
+                <span class="course-card__price-value">5,720</span>
+                <span class="course-card__price-unit">円/月</span>
+              </div>
+              <ul class="course-card__features">
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間60GB（1日2GB）</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>24時間通話かけ放題付き</span></li>
+              </ul>
+            </div>
+            <div class="course-card__footer">
+              <a href="#" class="btn btn--primary btn--block">DLコースに変更する</a>
+            </div>
+          </div>
+          <div class="course-card">
+            <div class="course-card__header course-card__header--docomo">
+              <div class="course-card__name">DXコース</div>
+              <div class="course-card__carrier">ドコモ回線</div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__price">
+                <span class="course-card__price-value">5,720</span>
+                <span class="course-card__price-unit">円/月</span>
+              </div>
+              <ul class="course-card__features">
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間120GB相当（1日4GB）</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>かけ放題オプション選択可</span></li>
+              </ul>
+            </div>
+            <div class="course-card__footer">
+              <a href="#" class="btn btn--secondary btn--block">DXコースに変更する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-data-excess" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">📉</div>
+          <h2 class="proposal__title">データ量が余っているあなたへ</h2>
+          <p class="proposal__description">より小容量で安価なDSコースへの変更がおすすめです。</p>
+        </div>
+        <div class="proposal__recommendations">
+          <div class="course-card course-card--recommended">
+            <div class="course-card__header course-card__header--docomo">
+              <div class="course-card__name">DSコース</div>
+              <div class="course-card__carrier">ドコモ回線</div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__price">
+                <span class="course-card__price-value">1,078</span>
+                <span class="course-card__price-unit">円/月</span>
+              </div>
+              <ul class="course-card__features">
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間3GB</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月額2,442円お得！</span></li>
+              </ul>
+            </div>
+            <div class="course-card__footer">
+              <a href="#" class="btn btn--primary btn--block">DSコースに変更する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-call-option" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">📞</div>
+          <h2 class="proposal__title">通話オプションを変更したいあなたへ</h2>
+          <p class="proposal__description">DMコースは5分かけ放題付き。24時間かけ放題をご希望ならDLコースがおすすめです。</p>
+        </div>
+        <div class="proposal__recommendations">
+          <div class="course-card course-card--recommended">
+            <div class="course-card__header course-card__header--docomo">
+              <div class="course-card__name">DLコース</div>
+              <div class="course-card__carrier">24時間かけ放題付き</div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__price">
+                <span class="course-card__price-value">5,720</span>
+                <span class="course-card__price-unit">円/月</span>
+              </div>
+              <ul class="course-card__features">
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>24時間通話かけ放題が標準付帯</span></li>
+                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間60GB（1日2GB）</span></li>
+              </ul>
+            </div>
+            <div class="course-card__footer">
+              <a href="#" class="btn btn--primary btn--block">DLコースに変更する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-switch" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">🔄</div>
+          <h2 class="proposal__title">他社への乗り換えをご検討中のあなたへ</h2>
+          <p class="proposal__description">乗り換え前に、スターサービスならではのメリットをご確認ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="proposal-other" hidden aria-hidden="true">
+      <div class="container">
+        <div class="proposal__header">
+          <div class="proposal__icon">❓</div>
+          <h2 class="proposal__title">お困りごとがございましたら</h2>
+          <p class="proposal__description">お気軽にお問い合わせください。</p>
+        </div>
+        <div style="text-align: center; margin-top: 24px;">
+          <a href="#" class="btn btn--primary btn--lg">お問い合わせはこちら</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="current-plan" aria-labelledby="current-plan-title">
+      <div class="container">
+        <h2 id="current-plan-title" class="current-plan__title">現在ご契約中のプラン</h2>
+        <div class="current-plan__card">
+          <div class="current-plan__header bg-carrier-docomo">
+            <div class="current-plan__name">DMコース</div>
+            <div class="current-plan__carrier">ドコモ回線</div>
+          </div>
+          <div class="current-plan__body">
+            <div class="current-plan__price">
+              <div class="current-plan__price-label">月額料金</div>
+              <span class="current-plan__price-value">3,520</span>
+              <span class="current-plan__price-unit">円（税込）</span>
+              <div class="current-plan__price-tax">税抜3,200円</div>
+            </div>
+            <div class="current-plan__details">
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">データ量</span>
+                <span class="current-plan__detail-value">月間30GB（1日1GB）</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">通話</span>
+                <span class="current-plan__detail-value">5分かけ放題付き</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">SIM種別</span>
+                <span class="current-plan__detail-value">物理SIM / eSIM</span>
+              </div>
+              <div class="current-plan__detail">
+                <span class="current-plan__detail-label">契約期間</span>
+                <span class="current-plan__detail-value">36ヶ月</span>
+              </div>
+            </div>
+            <div class="current-plan__merits">
+              <h3 class="current-plan__merits-title">✨ DMコースのメリット</h3>
+              <ul class="current-plan__merits-list">
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>ドコモ回線を利用した広いエリアカバー</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>5分通話かけ放題が標準付帯</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>月間30GBの大容量</span></li>
+                <li class="current-plan__merit"><span class="current-plan__merit-icon">✓</span><span>eSIM対応で即日開通可能</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carrier-merits" aria-labelledby="carrier-merits-title">
+      <div class="container">
+        <h2 id="carrier-merits-title" class="carrier-merits__title">ドコモ回線のメリット</h2>
+        <div class="carrier-merits__card">
+          <div class="carrier-merits__header">
+            <div class="carrier-merits__name carrier-docomo">NTTドコモ回線</div>
+          </div>
+          <div class="carrier-merits__list">
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">広いエリアで安定した通信</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">5G対応エリア順次拡大中</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">地下鉄・建物内でも安定した通信</div></div>
+            <div class="carrier-merits__item"><div class="carrier-merits__icon">✓</div><div class="carrier-merits__text">災害時の復旧対応が迅速</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 独自帯域セクション -->
+    <section class="bandwidth-section" aria-labelledby="bandwidth-title">
+      <div class="container">
+        <h2 id="bandwidth-title" class="bandwidth-section__title">📡 スターサービス独自帯域で快適な通信を実現</h2>
+        <div class="bandwidth-section__card">
+          <p class="bandwidth-section__description">
+            Dシリーズ（DS/DM/DL/DX）では、NTTドコモから<strong>専用の通信帯域</strong>を確保しています。<br>
+            お昼休みや夕方など回線が混み合う時間帯でも、安定した通信速度を維持できるよう、<br>
+            帯域の増強と品質改善に日々取り組んでいます。
+          </p>
+          <div class="bandwidth-section__features">
+            <div class="bandwidth-section__feature">
+              <span class="bandwidth-section__feature-icon">⚡</span>
+              <span class="bandwidth-section__feature-text">混雑時間帯も安定した速度</span>
+            </div>
+            <div class="bandwidth-section__feature">
+              <span class="bandwidth-section__feature-icon">🔧</span>
+              <span class="bandwidth-section__feature-text">継続的な帯域増強</span>
+            </div>
+            <div class="bandwidth-section__feature">
+              <span class="bandwidth-section__feature-icon">📊</span>
+              <span class="bandwidth-section__feature-text">トラフィック常時監視</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 他社比較セクション -->
+    <section class="competitor-comparison" aria-labelledby="competitor-title">
+      <div class="container">
+        <h2 id="competitor-title" class="competitor-comparison__title">🔍 他社MVNOとの比較</h2>
+        <p class="competitor-comparison__subtitle">スターサービスは独自帯域を確保しているため、他社MVNOと比べて混雑時も安定した通信が可能です</p>
+        <div class="competitor-comparison__table-wrapper">
+          <table class="competitor-comparison__table">
+            <thead>
+              <tr>
+                <th scope="col">比較項目</th>
+                <th scope="col" class="highlight-col">スターサービス<br>DMコース</th>
+                <th scope="col">IIJmio<br>15ギガプラン</th>
+                <th scope="col">mineo<br>マイピタ20GB</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>月額料金</td>
+                <td class="highlight-col"><strong>3,520円</strong></td>
+                <td>1,800円</td>
+                <td>2,178円</td>
+              </tr>
+              <tr>
+                <td>データ量</td>
+                <td class="highlight-col"><strong>30GB</strong></td>
+                <td>15GB</td>
+                <td>20GB</td>
+              </tr>
+              <tr>
+                <td>独自帯域</td>
+                <td class="highlight-col"><strong>✓ あり</strong></td>
+                <td>✗ なし</td>
+                <td>✗ なし</td>
+              </tr>
+              <tr>
+                <td>混雑時の速度</td>
+                <td class="highlight-col"><strong>安定</strong></td>
+                <td>低下しやすい</td>
+                <td>低下しやすい</td>
+              </tr>
+              <tr>
+                <td>かけ放題</td>
+                <td class="highlight-col"><strong>5分かけ放題付き</strong></td>
+                <td>オプション</td>
+                <td>オプション</td>
+              </tr>
+              <tr>
+                <td>eSIM対応</td>
+                <td class="highlight-col"><strong>✓ 対応</strong></td>
+                <td>✓ 対応</td>
+                <td>✓ 対応</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="competitor-comparison__note">
+          ※他社料金・サービス内容は2024年時点の情報です。最新情報は各社公式サイトをご確認ください。
+        </p>
+      </div>
+    </section>
+
+    <section class="comparison" aria-labelledby="comparison-title">
+      <div class="container">
+        <h2 id="comparison-title" class="comparison__title">ドコモ回線コース比較</h2>
+        <div class="comparison__table-wrapper">
+          <table class="comparison__table" data-current-course="dm">
+            <thead>
+              <tr><th scope="col">コース名</th><th scope="col">月額料金</th><th scope="col">データ量</th><th scope="col">通話</th><th scope="col"></th></tr>
+            </thead>
+            <tbody>
+              <tr data-course-id="ds"><td><strong>DSコース</strong><br><small>ドコモ回線</small></td><td class="highlight">1,078円</td><td>月間3GB</td><td>30秒22円</td><td><a href="#" class="btn btn--sm btn--secondary">変更する</a></td></tr>
+              <tr class="current" data-course-id="dm"><td><strong>DMコース</strong><br><small>ドコモ回線</small></td><td>3,520円</td><td>月間30GB<br><small>（1日1GB）</small></td><td>5分かけ放題付き</td><td><span class="text-muted">現在のコース</span></td></tr>
+              <tr data-course-id="dl"><td><strong>DLコース</strong><br><small>ドコモ回線</small></td><td>5,720円</td><td>月間60GB<br><small>（1日2GB）</small></td><td>24時間かけ放題付き</td><td><a href="#" class="btn btn--sm btn--secondary">変更する</a></td></tr>
+              <tr data-course-id="dx"><td><strong>DXコース</strong><br><small>ドコモ回線</small></td><td>5,720円</td><td>月間120GB相当<br><small>（1日4GB）</small></td><td>30秒22円</td><td><a href="#" class="btn btn--sm btn--secondary">変更する</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="text-align: center; margin-top: 16px; font-size: 14px; color: #6c757d;">※コース変更手数料: 1,100円（税込）</p>
+      </div>
+    </section>
+
+    <section class="cancellation" aria-labelledby="cancellation-title">
+      <div class="container">
+        <h2 id="cancellation-title" class="cancellation__title">それでも解約をご希望の場合</h2>
+        <div class="cancellation__options">
+          <div class="cancellation__option">
+            <h3 class="cancellation__option-title">電話番号を引き継ぐ（MNP）</h3>
+            <p class="cancellation__option-description">他社でも同じ電話番号を使い続けたい方</p>
+            <a href="#" class="cancellation__link" data-modal-target="mnp-modal">MNP予約番号を発行する →</a>
+          </div>
+          <div class="cancellation__option">
+            <h3 class="cancellation__option-title">解約する</h3>
+            <p class="cancellation__option-description">電話番号を引き継がない方</p>
+            <a href="#" class="cancellation__link" data-modal-target="cancel-modal">解約手続きへ進む →</a>
+          </div>
+        </div>
+        <div class="cancellation__notice">
+          <h3 class="cancellation__notice-title">⚠️ 解約時のご注意</h3>
+          <ul class="cancellation__notice-list">
+            <li>契約期間: 36ヶ月</li>
+            <li>契約期間内の解約の場合、解約金が発生する場合があります</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__links">
+        <a href="#" class="footer__link">利用規約</a>
+        <a href="#" class="footer__link">プライバシーポリシー</a>
+        <a href="#" class="footer__link">特定商取引法に基づく表記</a>
+        <a href="#" class="footer__link">お問い合わせ</a>
+      </div>
+      <p class="footer__copyright">© 2025 スターサービス株式会社 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="mnp-modal" role="dialog" aria-modal="true" aria-labelledby="mnp-modal-title" aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <div class="modal__header"><h2 class="modal__title" id="mnp-modal-title">MNP予約番号の発行</h2><button class="modal__close" type="button" aria-label="閉じる">×</button></div>
+      <div class="modal__body"><p>MNP予約番号を発行すると、他社への乗り換え手続きが可能になります。</p><ul><li>予約番号の有効期限は発行日を含めて15日間です</li><li>MNP転出手数料は無料です</li></ul></div>
+      <div class="modal__footer"><button class="btn btn--outline" type="button" onclick="StarService.closeModal(document.getElementById('mnp-modal'))">キャンセル</button><a href="#" class="btn btn--primary">MNP予約番号を発行する</a></div>
+    </div>
+  </div>
+
+  <div class="modal" id="cancel-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-modal-title" aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <div class="modal__header"><h2 class="modal__title" id="cancel-modal-title">解約手続き</h2><button class="modal__close" type="button" aria-label="閉じる">×</button></div>
+      <div class="modal__body"><p>解約手続きを進めると、現在の電話番号は使用できなくなります。</p></div>
+      <div class="modal__footer"><button class="btn btn--outline" type="button" onclick="StarService.closeModal(document.getElementById('cancel-modal'))">キャンセル</button><a href="#" class="btn btn--danger" style="background-color: var(--color-danger); color: white;">解約手続きへ進む</a></div>
+    </div>
+  </div>
+
+  <script src="js/courseData.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
