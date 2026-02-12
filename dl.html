@@ -64,45 +64,132 @@
       </div>
     </section>
 
-    <!-- 2. マルチ選択式・お悩み診断 -->
+    <!-- 2. 2ステップ診断 -->
     <section style="background: linear-gradient(180deg, #f9fafb 0%, #fff 100%); padding: 40px 16px;">
-      <div style="max-width: 480px; margin: 0 auto;">
-        <div style="text-align: center; margin-bottom: 24px;">
+      <div style="max-width: 560px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 32px;">
           <div style="display: inline-block; padding: 4px 14px; background: linear-gradient(135deg, #c00 0%, #e00 100%); color: #fff; font-size: 12px; font-weight: 700; border-radius: 20px;">✦ 10秒カンタン診断</div>
           <h2 style="font-size: 1.2rem; font-weight: 800; color: #111827; margin: 12px 0 4px;">解約の前に、今のプランが<br>本当にあなたに合っているか<br>診断してみませんか？</h2>
-          <p style="font-size: 13px; color: #6b7280; margin: 0;">当てはまるものをすべて選んでください（複数可）</p>
         </div>
 
-        <div id="diagnosis-form" data-current-course="dl" style="display: grid; gap: 10px;">
-          <input type="checkbox" id="d-cheap" value="cheap" class="diag-check">
-          <label for="d-cheap" class="diag-label"><span class="diag-box">✓</span>💰 毎月の料金を極限まで安くしたい</label>
+        <div id="diagnosis-form" data-current-course="dl">
+          <!-- ステップ1: データ容量 -->
+          <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 14px; font-weight: 700; color: #374151; margin: 0 0 12px; text-align: center;">📊 STEP 1: データ容量を選んでください</h3>
+            <div style="display: grid; gap: 10px;">
+              <button type="button" data-data-level="light" class="diag-option">
+                <span style="font-size: 1.5rem;">📵</span>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #111827;">ほとんど使わない</div>
+                  <div style="font-size: 12px; color: #6b7280;">月間3GB</div>
+                </div>
+              </button>
+              <button type="button" data-data-level="normal" class="diag-option">
+                <span style="font-size: 1.5rem;">📱</span>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #111827;">普通に使う</div>
+                  <div style="font-size: 12px; color: #6b7280;">月間30GB（1日1GB）</div>
+                </div>
+              </button>
+              <button type="button" data-data-level="heavy" class="diag-option">
+                <span style="font-size: 1.5rem;">🎬</span>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #111827;">たっぷり使う</div>
+                  <div style="font-size: 12px; color: #6b7280;">月間60GB（1日2GB）</div>
+                </div>
+              </button>
+              <button type="button" data-data-level="ultra" class="diag-option">
+                <span style="font-size: 1.5rem;">📺</span>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #111827;">動画三昧</div>
+                  <div style="font-size: 12px; color: #6b7280;">月間120GB（1日4GB）</div>
+                </div>
+              </button>
+            </div>
+          </div>
 
-          <input type="checkbox" id="d-video" value="video" class="diag-check">
-          <label for="d-video" class="diag-label"><span class="diag-box">✓</span>🎬 動画（YouTube/Netflix）を毎日たっぷり見たい</label>
-
-          <input type="checkbox" id="d-call" value="call" class="diag-check">
-          <label for="d-call" class="diag-label"><span class="diag-box">✓</span>📞 通話が多いので、時間を気にせず話したい</label>
-
-          <input type="checkbox" id="d-hassle" value="hassle" class="diag-check">
-          <label for="d-hassle" class="diag-label"><span class="diag-box">✓</span>🔄 他社を検討しているが、初期費用や手続きが面倒</label>
-
-          <div style="text-align: center; margin-top: 16px;">
-            <button type="button" id="diagnosis-submit" class="diag-btn">診断結果を見る →</button>
+          <!-- ステップ2: 通話プラン -->
+          <div>
+            <h3 style="font-size: 14px; font-weight: 700; color: #374151; margin: 0 0 12px; text-align: center;">📞 STEP 2: 通話プランを選んでください</h3>
+            <div style="display: grid; gap: 10px;">
+              <button type="button" data-call-type="pay" class="diag-option">
+                <span style="font-size: 1.5rem;">📵</span>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #111827;">ほとんどかけない</div>
+                  <div style="font-size: 12px; color: #6b7280;">30秒22円（従量課金）</div>
+                </div>
+              </button>
+              <button type="button" data-call-type="5min" class="diag-option">
+                <span style="font-size: 1.5rem;">📞</span>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #111827;">短い通話が多い</div>
+                  <div style="font-size: 12px; color: #6b7280;">5分かけ放題</div>
+                </div>
+              </button>
+              <button type="button" data-call-type="24h" class="diag-option">
+                <span style="font-size: 1.5rem;">☎️</span>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #111827;">長電話が多い</div>
+                  <div style="font-size: 12px; color: #6b7280;">24時間かけ放題</div>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <style>
+      .diag-option {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        background: #fff;
+        border: 2px solid #e5e7eb;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: left;
+        width: 100%;
+      }
+      .diag-option:hover {
+        border-color: #2563eb;
+        background: #eff6ff;
+      }
+      .diag-option.selected {
+        border-color: #2563eb;
+        background: #eff6ff;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+    </style>
+
     <!-- 3. 診断結果エリア -->
     <section id="diagnosis-result" hidden style="background: #fff; padding: 40px 16px;"></section>
+
+    <!-- eSIMセクション -->
+    <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 40px 16px;">
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 1.1rem; font-weight: 800; color: #1e3a6e; margin: 0 0 12px;">📱 これからはeSIM</h2>
+        <p style="font-size: 14px; color: #374151; line-height: 1.9; margin: 0 0 20px;">
+          マイページから即日切り替え申請が可能。<br>
+          カードの到着を待つ必要はありません。<br>
+          マイページから申請するだけの簡単操作で、最短即日に開通。
+        </p>
+        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+          <span style="font-size: 1.2rem;">⚡</span>
+          <span style="font-size: 13px; font-weight: 700; color: #1e40af;">最短即日開通</span>
+        </div>
+      </div>
+    </section>
 
     <!-- 独自帯域セクション -->
     <section style="background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%); padding: 40px 16px;">
       <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 1.1rem; font-weight: 800; color: #1e3a6e; margin: 0 0 12px;">📡 独自帯域で常に快適な通信</h2>
+        <h2 style="font-size: 1.1rem; font-weight: 800; color: #1e3a6e; margin: 0 0 12px;">📡 自社管理の【独自帯域】だから、お昼も夕方もずっと快適</h2>
         <p style="font-size: 14px; color: #374151; line-height: 1.9; margin: 0 0 20px;">
-          一般的な格安SIMのように帯域を借りているだけではなく、<br>
-          自社でコントロールして快適な通信環境を提供しています。<br>
+          一般的な格安SIMのように他社の帯域を単に借りているだけではありません。<br>
+          自社で通信環境を直接コントロール。<br>
           お昼や夕方の混雑時でもストレスのない通信をお楽しみください。
         </p>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
@@ -119,6 +206,17 @@
             <div style="font-size: 12px; font-weight: 700; color: #1e3a6e; margin-top: 4px;">トラフィック常時監視</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 5G Coming Soon -->
+    <section style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 40px 16px;">
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 1.1rem; font-weight: 800; color: #92400e; margin: 0 0 12px;">🚀 さらに進化するDコース。5G対応、Coming Soon。</h2>
+        <p style="font-size: 14px; color: #78350f; line-height: 1.9; margin: 0;">
+          自社管理だからこそ可能な5G導入を予定。<br>
+          より高速で快適な通信環境を、近日中にお届けします。
+        </p>
       </div>
     </section>
 
