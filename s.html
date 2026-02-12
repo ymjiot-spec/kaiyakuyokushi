@@ -4,15 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="スターサービス Sコースの解約をご検討中のお客様へ。解約前にコース変更のご検討をお願いいたします。">
+  <meta name="description" content="スターサービス Sコースの解約をご検討中のお客様へ。">
   <title>解約をご検討中のお客様へ | Sコース | スターサービス</title>
   <style>
     :root {
-      --color-primary: #4361ee;
-      --color-softbank: #868686;
-      --color-white: #fff;
-      --color-gray-900: #111827;
-      /* Premium palette */
       --premium-navy: #0c1a3a;
       --premium-navy-light: #162550;
       --premium-blue: #1e3a6e;
@@ -25,125 +20,105 @@
 
     *,
     *::before,
-    *::after {
-      box-sizing: border-box
-    }
+    *::after { box-sizing: border-box }
 
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
       font-size: 16px;
       line-height: 1.6;
-      color: var(--color-gray-900);
-      -webkit-font-smoothing: antialiased
+      color: #111827;
+      -webkit-font-smoothing: antialiased;
+      background: #fff;
     }
 
     .header {
-      position: sticky;
-      top: 0;
-      z-index: 1020;
+      position: sticky; top: 0; z-index: 1020;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
-      border-bottom: none
     }
-
     .header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      padding: 0 16px;
-      max-width: 1200px;
-      margin: 0 auto
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; padding: 0 16px; max-width: 1200px; margin: 0 auto;
     }
-
-    .header__logo {
-      display: flex;
-      align-items: center;
-      gap: 12px
+    .header__logo { display: flex; align-items: center; gap: 12px }
+    .header__nav { display: flex; align-items: center; gap: 2px; flex-shrink: 0 }
+    .header__link {
+      display: inline-flex; align-items: center; min-height: 44px;
+      padding: 4px 8px; font-size: 11px; font-weight: 500;
+      color: #4b5563; border-radius: 8px; text-decoration: none; white-space: nowrap;
     }
-
-    .header__logo-icon {
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, #4361ee 0%, #7c3aed 100%);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 18px
-    }
-
-    .header__logo-text {
-      font-size: 18px;
-      font-weight: 700;
-      color: #111827;
-      letter-spacing: -0.02em
-    }
+    .header__link:hover { background: #f3f4f6; color: #111827 }
 
     @media(min-width:768px) {
-      .header__inner {
-        height: 72px;
-        padding: 0 24px
-      }
-
-      .header__logo-icon {
-        width: 60px;
-        height: 60px
-      }
-
-      .header__logo-text {
-        font-size: 20px
-      }
+      .header__inner { padding: 0 24px }
+      .header__link { padding: 8px 16px; font-size: 14px }
     }
+
+    /* MNPステップ */
+    .mnp-step {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mnp-step:last-child { border-bottom: none }
+    .mnp-step__num {
+      flex-shrink: 0; width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(212,168,83,0.2); border: 1px solid rgba(212,168,83,0.4);
+      border-radius: 50%; font-size: 16px; font-weight: 800; color: #f0d48a;
+    }
+    .mnp-step__text { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7 }
+    .mnp-step__text strong { color: #f0d48a; font-weight: 700 }
+
+    /* 解約ボタン */
+    .cancel-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 56px; padding: 16px 32px;
+      font-size: 14px; font-weight: 600; text-align: center; text-decoration: none;
+      color: #9ca3af; background: transparent;
+      border: 1px solid #d1d5db; border-radius: 12px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .cancel-btn:hover { background: #f9fafb; color: #6b7280 }
   </style>
-  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="css/style.css">
-  </noscript>
 </head>
 
 <body>
   <header class="header" role="banner">
     <div class="header__inner">
       <div class="header__logo">
-        <img src="images/logo.png" alt="スターサービス" class="header__logo-icon"
-          style="width:auto;height:60px;object-fit:contain;border:none;">
+        <img src="images/logo.png" alt="スターサービス" style="width:auto;height:60px;object-fit:contain;border:none;">
       </div>
       <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
         <a href="https://www.starservice.jp/" class="header__link" target="_blank">公式サイト</a>
-        <a href="#" class="header__link">お問い合わせ</a>
       </nav>
     </div>
   </header>
+
   <main role="main">
 
     <!-- ═══════════════════════════════════════════════
-         ファーストビュー：プラチナチケット - プレミアム演出
+         1. プレミアム・ファーストビュー
          ═══════════════════════════════════════════════ -->
     <section style="background: linear-gradient(160deg, #0c1a3a 0%, #162550 40%, #1e3a6e 100%); padding: 0; overflow: hidden; position: relative;">
-      <!-- 装飾パターン -->
       <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 20%, rgba(212,168,83,0.08) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(37,99,235,0.1) 0%, transparent 50%); pointer-events: none;"></div>
       <!-- プラチナチケット バナー -->
       <div style="background: linear-gradient(90deg, #d4a853 0%, #f0d48a 50%, #d4a853 100%); padding: 10px 16px; text-align: center;">
         <span style="font-size: 13px; font-weight: 800; color: #3b2506; letter-spacing: 0.08em;">✦ プラチナチケット ─ 新規受付終了済み。選ばれた方だけの特別なプランです</span>
       </div>
       <!-- メインヒーロー -->
-      <div style="position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 36px 16px 32px; text-align: center;">
-        <!-- 感謝メッセージ -->
-        <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.9; margin: 0 0 20px;">
+      <div style="position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 40px 16px 36px; text-align: center;">
+        <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.9; margin: 0 0 24px;">
           これまでSコースを大切にお使いいただき、<br>ありがとうございます。<br>
-          実はこのプラン、現在は新規受付を終了している、<br>
-          <span style="color: #f0d48a; font-weight: 700;">選ばれた方だけの「プラチナチケット」</span>のような存在です。
+          あなたは現在、新規受付が終了した<br>
+          <span style="color: #f0d48a; font-weight: 700;">「伝説のプラチナチケット」</span>を手にしています。
         </p>
         <!-- コースバッジ -->
         <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 20px; background: rgba(212,168,83,0.15); border: 1px solid rgba(212,168,83,0.35); border-radius: 24px; margin-bottom: 16px;">
-          <span style="font-size: 12px; color: #f0d48a; font-weight: 700; letter-spacing: 0.05em;">✦ プレミアム回線</span>
+          <span style="font-size: 12px; color: #f0d48a; font-weight: 700; letter-spacing: 0.05em;">✦ ソフトバンクキャリア回線</span>
           <span style="font-size: 14px; font-weight: 800; color: #fff;">Sコース</span>
         </div>
-        <h1 style="font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.7); margin: 0 0 8px; letter-spacing: -0.02em;">あなたが今お持ちの価値</h1>
+        <h1 style="font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.7); margin: 0 0 8px;">あなたが今お持ちの価値</h1>
         <div style="font-size: 3.5rem; font-weight: 900; color: #f0d48a; line-height: 1; margin-bottom: 4px; text-shadow: 0 2px 20px rgba(212,168,83,0.3);">5,346<span style="font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.6);">円/月（税込）</span></div>
         <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 24px;">割引条件なし・光回線セット不要・家族割不要</div>
         <!-- 4つの価値バッジ -->
@@ -169,727 +144,132 @@
             <div style="font-size: 10px; color: rgba(255,255,255,0.45);">1GB / 1,100円</div>
           </div>
         </div>
-        <!-- 他社との優雅な比較 -->
-        <div style="margin-top: 24px; padding: 16px; background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.25); border-radius: 14px;">
-          <div style="font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 10px;">✦ 同条件で他社と比較すると</div>
-          <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-            <div style="text-align: center; padding: 10px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;">
-              <div style="font-size: 10px; color: rgba(255,255,255,0.4);">LINEMO（スタンダード）</div>
-              <div style="font-size: 1.1rem; font-weight: 800; color: rgba(255,255,255,0.8);">4,378円</div>
-              <div style="font-size: 9px; color: rgba(255,255,255,0.4);">留守電非対応</div>
-            </div>
-            <div style="text-align: center; padding: 10px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;">
-              <div style="font-size: 10px; color: rgba(255,255,255,0.4);">Y!mobile（サブブランド）</div>
-              <div style="font-size: 1.1rem; font-weight: 800; color: rgba(255,255,255,0.8);">6,325円</div>
-              <div style="font-size: 9px; color: rgba(255,255,255,0.4);">Sコースより+979円</div>
-            </div>
-          </div>
-        </div>
         <div style="margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.35);">📋 契約期間：36ヶ月</div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════
-         お着替え提案セクション
+         2. 希少性の具体例（例え話の挿入）
          ═══════════════════════════════════════════════ -->
-    <section style="background: linear-gradient(180deg, #fdf8ef 0%, #fff 100%); padding: 32px 16px 16px; text-align: center;">
-      <div style="max-width: 560px; margin: 0 auto;">
-        <div style="font-size: 2rem; margin-bottom: 8px;">👔</div>
-        <p style="font-size: 15px; color: #374151; line-height: 1.9; margin: 0;">
-          他社へ引っ越すという大変な作業の前に、<br>
-          まずは<span style="color: #1e3a6e; font-weight: 700;">「お着替え（コース変更）」</span>を<br>試してみませんか？<br>
-          クローゼットの中には、今のあなたに<br>ぴったりの新しいプランが揃っています。
+    <section style="background: linear-gradient(180deg, #fdf8ef 0%, #fff 100%); padding: 40px 16px;">
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">🏨</div>
+        <h2 style="font-size: 1.2rem; font-weight: 800; color: #1e3a6e; margin: 0 0 20px; line-height: 1.6;">なぜ「プラチナチケット」なのか</h2>
+        <div style="background: #fff; border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); padding: 28px 20px; text-align: left;">
+          <p style="font-size: 14px; color: #374151; line-height: 2; margin: 0 0 20px;">
+            Sコースは<span style="color: #1e3a6e; font-weight: 700;">スターサービス創業期だからこそ実現できた奇跡のプラン</span>です。<br>
+            24時間かけ放題と留守番電話がセットになったこの内容は、現在のモバイル業界ではまずあり得ません。
+          </p>
+          <div style="background: linear-gradient(160deg, #0c1a3a 0%, #1e3a6e 100%); border-radius: 16px; padding: 24px 20px; margin-bottom: 20px;">
+            <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 8px; text-align: center;">✦ たとえるなら</div>
+            <p style="font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.9; margin: 0; text-align: center; font-weight: 600;">
+              <span style="color: #f0d48a; font-weight: 800;">高級ホテルのスイートルームに、<br>生涯当時の安価な一律料金で<br>泊まれるパス</span><br>
+              <span style="font-size: 13px; color: rgba(255,255,255,0.6); font-weight: 400;">を持っているようなものです。</span>
+            </p>
+          </div>
+          <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-size: 1.5rem; margin-bottom: 4px;">⚠️</div>
+            <p style="font-size: 14px; color: #991b1b; line-height: 1.8; margin: 0; font-weight: 700;">
+              一度チェックアウト（解約）してしまえば、<br>
+              二度と同じ条件で戻ることはできません。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         3. MNP手続きの「圧倒的二度手間」の提示
+         ═══════════════════════════════════════════════ -->
+    <section style="background: linear-gradient(160deg, #0c1a3a 0%, #162550 40%, #1e3a6e 100%); padding: 48px 16px; position: relative;">
+      <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(212,168,83,0.06) 0%, transparent 60%); pointer-events: none;"></div>
+      <div style="max-width: 600px; margin: 0 auto; position: relative; z-index: 1;">
+        <div style="text-align: center; margin-bottom: 28px;">
+          <div style="display: inline-block; padding: 6px 18px; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); border-radius: 20px; margin-bottom: 12px;">
+            <span style="font-size: 12px; font-weight: 800; color: #fca5a5; letter-spacing: 0.05em;">⚠ 重要なお知らせ</span>
+          </div>
+          <h2 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin: 0 0 8px; line-height: 1.5;">乗り換え（MNP）には<br><span style="color: #f0d48a;">異例の二度手間</span>が発生します</h2>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.55); margin: 0;">このプランは非常に特殊な回線契約のため、通常のMNPとは手順が異なります。</p>
+        </div>
+
+        <!-- ステップ解説 -->
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 24px 20px;">
+          <div class="mnp-step">
+            <div class="mnp-step__num">1</div>
+            <div class="mnp-step__text">
+              まず、現在の回線を<strong>ソフトバンクへ「譲渡」</strong>する手続きが必要です。<br>
+              <span style="font-size: 12px; color: rgba(255,255,255,0.45);">※通常のMNPでは不要な特殊手続き</span>
+            </div>
+          </div>
+          <div class="mnp-step">
+            <div class="mnp-step__num">2</div>
+            <div class="mnp-step__text">
+              譲渡完了後、改めてソフトバンクから<strong>「MNP予約番号」を取得</strong>します。<br>
+              <span style="font-size: 12px; color: rgba(255,255,255,0.45);">※ソフトバンク側での手続きが別途必要</span>
+            </div>
+          </div>
+          <div class="mnp-step">
+            <div class="mnp-step__num">3</div>
+            <div class="mnp-step__text">
+              MNP予約番号を使って、<strong>乗り換え先の携帯会社で契約</strong>します。<br>
+              <span style="font-size: 12px; color: rgba(255,255,255,0.45);">※ここでようやく通常のMNPと同じ手順に</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 通常との比較 -->
+        <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px; text-align: center;">
+            <div style="font-size: 11px; color: rgba(255,255,255,0.45); margin-bottom: 4px;">通常のMNP</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: rgba(255,255,255,0.6);">1ステップ</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 2px;">予約番号取得 → 乗り換え</div>
+          </div>
+          <div style="background: rgba(212,168,83,0.1); border: 1px solid rgba(212,168,83,0.3); border-radius: 14px; padding: 16px; text-align: center;">
+            <div style="font-size: 11px; color: #f0d48a; margin-bottom: 4px;">Sコースの場合</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #f0d48a;">3ステップ</div>
+            <div style="font-size: 11px; color: rgba(212,168,83,0.7); margin-top: 2px;">譲渡 → 番号取得 → 乗り換え</div>
+          </div>
+        </div>
+
+        <!-- 問いかけ -->
+        <div style="margin-top: 28px; padding: 24px 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(212,168,83,0.2); border-radius: 16px; text-align: center;">
+          <p style="font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.9; margin: 0; font-weight: 600;">
+            通常の乗り換えの<span style="color: #f0d48a; font-weight: 800;">3倍以上の労力</span>が必要です。<br><br>
+            この手間をかけてまで、<br>
+            今の<span style="color: #f0d48a; font-weight: 800;">「神プラン」</span>を捨てる価値は<br>
+            <span style="font-size: 18px; color: #f0d48a; font-weight: 900;">本当にあるでしょうか？</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         4. 解約ボタン（二度手間を了承）
+         ═══════════════════════════════════════════════ -->
+    <section style="background: #f9fafb; padding: 48px 16px;">
+      <div style="max-width: 480px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 13px; color: #9ca3af; line-height: 1.8; margin: 0 0 20px;">
+          上記の手続き（ソフトバンクへの譲渡 → MNP予約番号取得）が<br>
+          必要であることをご了承の上、お進みください。
         </p>
+        <a href="#" class="cancel-btn" id="cancel-proceed-btn">
+          それでも解約手続き（二度手間を了承）へ進む
+        </a>
       </div>
     </section>
 
-    <section class="reason-selector" aria-labelledby="reason-title">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: 8px;">
-          <span style="display: inline-block; padding: 4px 14px; background: linear-gradient(135deg, #1e3a6e 0%, #2563eb 100%); color: #fff; font-size: 12px; font-weight: 700; border-radius: 20px; letter-spacing: 0.05em;">✦ あなた専用のコンシェルジュ</span>
-        </div>
-        <h2 id="reason-title" class="reason-selector__title">どのようなご要望でしょうか？</h2>
-        <p style="text-align: center; font-size: 13px; color: #6b7280; margin-top: -16px; margin-bottom: 24px;">タップすると、あなたに最適なプランをご提案します</p>
-        <div class="reason-selector__options" role="group" aria-label="解約理由の選択"
-          style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 400px; margin: 0 auto;">
-          <button class="reason-card reason-card--v2" data-reason="price" type="button" aria-pressed="false">
-            <span class="reason-card__icon-wrap reason-card__icon-wrap--blue" aria-hidden="true">💰</span>
-            <span class="reason-card__text">月々の支払いを<br>安くしたい</span>
-            <span class="reason-card__hint">→ 最大年5万円節約</span>
-          </button>
-          <button class="reason-card reason-card--v2" data-reason="data-shortage" type="button" aria-pressed="false">
-            <span class="reason-card__icon-wrap reason-card__icon-wrap--green" aria-hidden="true">📶</span>
-            <span class="reason-card__text">動画をもっと<br>ストレスなく見たい</span>
-            <span class="reason-card__hint">→ 最大6倍のデータ量</span>
-          </button>
-          <button class="reason-card reason-card--v2" data-reason="data-excess" type="button" aria-pressed="false">
-            <span class="reason-card__icon-wrap reason-card__icon-wrap--purple" aria-hidden="true">📉</span>
-            <span class="reason-card__text">使わないGBを<br>ムダにしたくない</span>
-            <span class="reason-card__hint">→ ぴったりプランあり</span>
-          </button>
-          <button class="reason-card reason-card--v2" data-reason="switch" type="button" aria-pressed="false">
-            <span class="reason-card__icon-wrap reason-card__icon-wrap--orange" aria-hidden="true">🔍</span>
-            <span class="reason-card__text">自分に一番合う<br>プランを知りたい</span>
-            <span class="reason-card__hint">→ 他社と徹底比較</span>
-          </button>
-          <button class="reason-card reason-card--v2 reason-card--other" data-reason="other" type="button" aria-pressed="false" style="grid-column: 1 / -1;">
-            <span class="reason-card__icon-wrap reason-card__icon-wrap--gray" aria-hidden="true">💬</span>
-            <span class="reason-card__text">その他のお悩み・ご相談</span>
-            <span class="reason-card__hint">→ サポートデスクがお答えします</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         提案：料金 - プレミアムトーン
-         ═══════════════════════════════════════════════ -->
-    <section class="proposal" id="proposal-price" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__match-badge" data-match="96">
-            <div class="proposal__match-label">あなたへのマッチ度</div>
-            <div class="proposal__match-bar"><div class="proposal__match-fill" style="width: 96%;"></div></div>
-            <div class="proposal__match-value">96%</div>
-          </div>
-          <div class="proposal__icon">💰</div>
-          <h2 class="proposal__title">料金でお悩みのあなたへ</h2>
-          <p class="proposal__description">同じスターサービス内で、もっとお得にできます。</p>
-        </div>
-
-        <!-- 3列比較：Sコース vs DM(推奨) vs LINEMO -->
-        <div style="max-width: 640px; margin: 0 auto 24px;">
-          <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 2px solid #e5e7eb;">
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #0c1a3a 0%, #1e3a6e 100%); color: #fff;">
-                <div style="font-size: 10px; color: #f0d48a;">現在</div>
-                <div style="font-size: 14px; font-weight: 800;">Sコース</div>
-              </div>
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #c00 0%, #a00 100%); color: #fff;">
-                <div style="font-size: 10px; opacity: 0.85;">✦ おすすめ</div>
-                <div style="font-size: 14px; font-weight: 800;">DMコース</div>
-              </div>
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #475569 0%, #334155 100%); color: #fff;">
-                <div style="font-size: 10px; opacity: 0.85;">他社参考</div>
-                <div style="font-size: 14px; font-weight: 800;">LINEMO</div>
-              </div>
-            </div>
-            <!-- 料金 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.2rem; font-weight: 900; color: #111827;">5,346円</div>
-                <div style="font-size: 9px; color: #1e3a6e; font-weight: 700;">かけ放題込み</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.2rem; font-weight: 900; color: #1e40af;">3,520円</div>
-                <div style="font-size: 9px; color: #1e40af; font-weight: 800;">▼ 1,826円おトク</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">4,378円</div>
-                <div style="font-size: 9px; color: #6b7280;">かけ放題込み</div>
-              </div>
-            </div>
-            <!-- GB -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">20GB</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #1e40af;">30GB</div>
-                <div style="font-size: 9px; color: #1e40af; font-weight: 800;">▲ +10GB</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">20GB</div>
-              </div>
-            </div>
-            <!-- 通話 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #111827;">24h かけ放題</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #111827;">5分かけ放題</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #111827;">かけ放題</div>
-                <div style="font-size: 9px; color: #6b7280;">+1,650円</div>
-              </div>
-            </div>
-          </div>
-          <!-- 差分ハイライト -->
-          <div style="margin-top: 12px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 2px solid #2563eb; border-radius: 12px; padding: 16px; text-align: center;">
-            <div style="font-size: 14px; font-weight: 800; color: #1e40af;">DMコースなら +10GB増えるのに、月額 −1,826円</div>
-            <div style="font-size: 12px; color: #1e3a6e; margin-top: 4px;">年間 21,912円の節約 ─ eSIM対応で即日開通</div>
-          </div>
-        </div>
-
-        <!-- DSコースも選択肢として -->
-        <div style="max-width: 640px; margin: 0 auto 16px; padding: 14px 16px; background: #f9fafb; border-radius: 12px; text-align: center;">
-          <div style="font-size: 13px; color: #6b7280;">もっとお得にしたいなら → <strong style="color: #111827;">DSコース 月額1,078円</strong>（3GB / 通話従量）<br>年間 51,216円の節約</div>
-        </div>
-
-        <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #6b7280;">※コース変更にはサポートデスクへのご相談が必要です。<br>解約を検討していたが、〇〇コースを契約したいとお伝えいただくとスムーズです。</p>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, #1e3a6e 0%, #2563eb 100%); box-shadow: 0 4px 14px rgba(37,99,235,0.35);" target="_blank">コンシェルジュに相談する</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         提案：データ不足 - プレミアムトーン
-         ═══════════════════════════════════════════════ -->
-    <section class="proposal" id="proposal-data-shortage" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__match-badge" data-match="94">
-            <div class="proposal__match-label">あなたへのマッチ度</div>
-            <div class="proposal__match-bar"><div class="proposal__match-fill" style="width: 94%;"></div></div>
-            <div class="proposal__match-value">94%</div>
-          </div>
-          <div class="proposal__icon">📶</div>
-          <h2 class="proposal__title">データ量が足りないあなたへ</h2>
-          <p class="proposal__description">同じ価格帯で6倍のデータ量が手に入ります。</p>
-        </div>
-
-        <!-- 3列比較：Sコース vs DX(推奨) vs DL -->
-        <div style="max-width: 640px; margin: 0 auto 24px;">
-          <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 2px solid #e5e7eb;">
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #0c1a3a 0%, #1e3a6e 100%); color: #fff;">
-                <div style="font-size: 10px; color: #f0d48a;">現在</div>
-                <div style="font-size: 14px; font-weight: 800;">Sコース</div>
-              </div>
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #c00 0%, #a00 100%); color: #fff;">
-                <div style="font-size: 10px; opacity: 0.85;">✦ 大容量おすすめ</div>
-                <div style="font-size: 14px; font-weight: 800;">DXコース</div>
-              </div>
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #c00 0%, #900 100%); color: #fff;">
-                <div style="font-size: 10px; opacity: 0.85;">かけ放題付き</div>
-                <div style="font-size: 14px; font-weight: 800;">DLコース</div>
-              </div>
-            </div>
-            <!-- 料金 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.2rem; font-weight: 900; color: #111827;">5,346円</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.2rem; font-weight: 900; color: #111827;">5,720円</div>
-                <div style="font-size: 9px; color: #6b7280;">+374円</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.2rem; font-weight: 900; color: #111827;">5,720円</div>
-                <div style="font-size: 9px; color: #6b7280;">+374円</div>
-              </div>
-            </div>
-            <!-- GB -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">20GB</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #1e40af;">120GB</div>
-                <div style="font-size: 9px; color: #1e40af; font-weight: 800;">▲ 6倍！1日4GB</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">60GB</div>
-                <div style="font-size: 9px; color: #1e3a6e; font-weight: 700;">▲ 3倍！1日2GB</div>
-              </div>
-            </div>
-            <!-- 通話 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #111827;">24h かけ放題</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #111827;">30秒22円</div>
-                <div style="font-size: 9px; color: #6b7280;">オプションあり</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #1e3a6e;">24h かけ放題</div>
-                <div style="font-size: 9px; color: #1e3a6e; font-weight: 700;">標準付帯</div>
-              </div>
-            </div>
-          </div>
-          <!-- 差分ハイライト -->
-          <div style="margin-top: 12px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 2px solid #2563eb; border-radius: 12px; padding: 16px; text-align: center;">
-            <div style="font-size: 14px; font-weight: 800; color: #1e40af;">DXコースなら +100GB増えて、月額わずか +374円</div>
-            <div style="font-size: 12px; color: #1e3a6e; margin-top: 4px;">YouTube約4h/日・Netflix約5.5h/日 使える大容量</div>
-          </div>
-        </div>
-
-        <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #6b7280;">※コース変更にはサポートデスクへのご相談が必要です。<br>解約を検討していたが、〇〇コースを契約したいとお伝えいただくとスムーズです。</p>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, #1e3a6e 0%, #2563eb 100%); box-shadow: 0 4px 14px rgba(37,99,235,0.35);" target="_blank">コンシェルジュに相談する</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         提案：データ余り - プレミアムトーン
-         ═══════════════════════════════════════════════ -->
-    <section class="proposal" id="proposal-data-excess" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__match-badge" data-match="92">
-            <div class="proposal__match-label">あなたへのマッチ度</div>
-            <div class="proposal__match-bar"><div class="proposal__match-fill" style="width: 92%;"></div></div>
-            <div class="proposal__match-value">92%</div>
-          </div>
-          <div class="proposal__icon">📉</div>
-          <h2 class="proposal__title">データ量が余っているあなたへ</h2>
-          <p class="proposal__description">使わないGBにお金を払う必要はありません。</p>
-        </div>
-
-        <!-- 3列比較：Sコース vs DM(推奨) vs DS -->
-        <div style="max-width: 640px; margin: 0 auto 24px;">
-          <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 2px solid #e5e7eb;">
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #0c1a3a 0%, #1e3a6e 100%); color: #fff;">
-                <div style="font-size: 10px; color: #f0d48a;">現在</div>
-                <div style="font-size: 14px; font-weight: 800;">Sコース</div>
-              </div>
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #c00 0%, #a00 100%); color: #fff;">
-                <div style="font-size: 10px; opacity: 0.85;">✦ おすすめ</div>
-                <div style="font-size: 14px; font-weight: 800;">DMコース</div>
-              </div>
-              <div style="padding: 12px 6px; text-align: center; background: linear-gradient(135deg, #c00 0%, #900 100%); color: #fff;">
-                <div style="font-size: 10px; opacity: 0.85;">最安</div>
-                <div style="font-size: 14px; font-weight: 800;">DSコース</div>
-              </div>
-            </div>
-            <!-- 料金 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.2rem; font-weight: 900; color: #111827;">5,346円</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.2rem; font-weight: 900; color: #1e40af;">3,520円</div>
-                <div style="font-size: 9px; color: #1e40af; font-weight: 800;">▼ 1,826円おトク</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">💰 月額</div>
-                <div style="font-size: 1.2rem; font-weight: 900; color: #1e40af;">1,078円</div>
-                <div style="font-size: 9px; color: #1e40af; font-weight: 800;">▼ 4,268円おトク</div>
-              </div>
-            </div>
-            <!-- GB -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">20GB</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">30GB</div>
-                <div style="font-size: 9px; color: #1e3a6e; font-weight: 700;">むしろ増える</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">3GB</div>
-                <div style="font-size: 9px; color: #6b7280;">ライト向け</div>
-              </div>
-            </div>
-            <!-- 通話 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #111827;">24h かけ放題</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center; background: #eff6ff;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #111827;">5分かけ放題</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 12px; font-weight: 800; color: #111827;">30秒22円</div>
-              </div>
-            </div>
-          </div>
-          <!-- 差分ハイライト -->
-          <div style="margin-top: 12px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 2px solid #2563eb; border-radius: 12px; padding: 16px; text-align: center;">
-            <div style="font-size: 14px; font-weight: 800; color: #1e40af;">DMコースなら GBが増えて、月額 −1,826円</div>
-            <div style="font-size: 12px; color: #1e3a6e; margin-top: 4px;">年間 21,912円の節約 ─ 余ったGBの悩みも解消</div>
-          </div>
-        </div>
-
-        <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #6b7280;">※コース変更にはサポートデスクへのご相談が必要です。<br>解約を検討していたが、〇〇コースを契約したいとお伝えいただくとスムーズです。</p>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, #1e3a6e 0%, #2563eb 100%); box-shadow: 0 4px 14px rgba(37,99,235,0.35);" target="_blank">コンシェルジュに相談する</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         提案：他社乗り換え - プレミアムトーン
-         ═══════════════════════════════════════════════ -->
-    <section class="proposal" id="proposal-switch" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__match-badge" data-match="98">
-            <div class="proposal__match-label">あなたへのマッチ度</div>
-            <div class="proposal__match-bar"><div class="proposal__match-fill" style="width: 98%;"></div></div>
-            <div class="proposal__match-value">98%</div>
-          </div>
-          <div class="proposal__icon">🔍</div>
-          <h2 class="proposal__title">あなたに最適なプランを比較しました</h2>
-          <p class="proposal__description">乗り換え先の「本当の月額」を、一緒に確認してみましょう。</p>
-        </div>
-
-        <!-- ═══════════════════════════════════════
-             Phase 1: プラチナチケットの価値
-             ═══════════════════════════════════════ -->
-        <div style="max-width: 640px; margin: 0 auto 32px;">
-          <!-- プラチナチケットバッジ -->
-          <div style="text-align: center; margin-bottom: -14px; position: relative; z-index: 2;">
-            <span style="display: inline-block; padding: 6px 20px; background: linear-gradient(135deg, #d4a853 0%, #f0d48a 50%, #d4a853 100%); color: #3b2506; font-size: 13px; font-weight: 800; border-radius: 20px; letter-spacing: 0.05em; box-shadow: 0 4px 14px rgba(212,168,83,0.4);">✦ プラチナチケット ─ 一度手放すと二度と手に入りません</span>
-          </div>
-          <div style="background: linear-gradient(160deg, #0c1a3a 0%, #162550 40%, #1e3a6e 100%); border-radius: 20px; padding: 32px 20px 24px; text-align: center; box-shadow: 0 12px 40px rgba(12,26,58,0.3);">
-            <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 4px;">あなたの現在のプラン</div>
-            <div style="font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 12px;">Sコース<span style="font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); margin-left: 6px;">ソフトバンク回線</span></div>
-            <div style="font-size: 3rem; font-weight: 900; color: #f0d48a; line-height: 1; text-shadow: 0 2px 20px rgba(212,168,83,0.3);">5,346<span style="font-size: 1rem; font-weight: 600; color: rgba(255,255,255,0.7);">円/月（税込）</span></div>
-            <div style="display: flex; justify-content: center; gap: 8px; margin-top: 16px; flex-wrap: wrap;">
-              <span style="display: inline-block; padding: 6px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; font-size: 13px; color: #e2e8f0; font-weight: 600;">📶 20GB</span>
-              <span style="display: inline-block; padding: 6px 14px; background: rgba(212,168,83,0.15); border: 1px solid rgba(212,168,83,0.35); border-radius: 8px; font-size: 13px; color: #f0d48a; font-weight: 700;">📞 24h かけ放題</span>
-              <span style="display: inline-block; padding: 6px 14px; background: rgba(212,168,83,0.15); border: 1px solid rgba(212,168,83,0.35); border-radius: 8px; font-size: 13px; color: #f0d48a; font-weight: 700;">📱 留守電 標準</span>
-              <span style="display: inline-block; padding: 6px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; font-size: 13px; color: #e2e8f0; font-weight: 600;">➕ GB追加OK</span>
-            </div>
-            <div style="margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.6;">割引条件なし・光回線セット不要・家族割不要<br>この価格で全部込み</div>
-          </div>
-        </div>
-
-        <!-- ═══════════════════════════════════════
-             Phase 2: サービス階級の違い 比較表
-             ═══════════════════════════════════════ -->
-        <div style="max-width: 640px; margin: 0 auto 32px;">
-          <div style="text-align: center; margin-bottom: 16px;">
-            <div style="font-size: 18px; font-weight: 800; color: #1e3a6e;">✦ サービス階級の違いをご存知ですか？</div>
-            <p style="font-size: 13px; color: #6b7280; margin-top: 4px;">同じ「20GB」でも、中身のグレードが異なります。</p>
-          </div>
-
-          <!-- サービス階級 比較テーブル -->
-          <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;">
-            <!-- ヘッダー行 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 2px solid #e5e7eb;">
-              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(160deg, #0c1a3a 0%, #1e3a6e 100%); color: #fff;">
-                <div style="font-size: 10px; color: #f0d48a;">✦ プレミアム</div>
-                <div style="font-size: 15px; font-weight: 800;">Sコース</div>
-              </div>
-              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(135deg, #475569 0%, #334155 100%); color: #fff;">
-                <div style="font-size: 10px; opacity: 0.85;">スタンダード</div>
-                <div style="font-size: 15px; font-weight: 800;">LINEMO</div>
-              </div>
-              <div style="padding: 14px 8px; text-align: center; background: linear-gradient(135deg, #475569 0%, #334155 100%); color: #fff;">
-                <div style="font-size: 10px; opacity: 0.85;">サブブランド</div>
-                <div style="font-size: 15px; font-weight: 800;">Y!mobile</div>
-              </div>
-            </div>
-
-            <!-- サービスグレード行 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #92400e; font-weight: 700;">✦ サービスグレード</div>
-                <div style="font-size: 12px; font-weight: 800; color: #1e3a6e;">フルスペック</div>
-                <div style="font-size: 9px; color: #1e3a6e;">すべてが満たされたプレミアム</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">サービスグレード</div>
-                <div style="font-size: 12px; font-weight: 800; color: #475569;">シンプル</div>
-                <div style="font-size: 9px; color: #6b7280;">シンプルさを追求したスタンダード</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">サービスグレード</div>
-                <div style="font-size: 12px; font-weight: 800; color: #475569;">ベーシック</div>
-                <div style="font-size: 9px; color: #6b7280;">必要に応じてオプション追加</div>
-              </div>
-            </div>
-
-            <!-- 付帯サービス行 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #92400e; font-weight: 700;">🎁 付帯サービス</div>
-                <div style="font-size: 11px; font-weight: 800; color: #1e3a6e;">通話・留守電 ¥0</div>
-                <div style="font-size: 9px; color: #1e3a6e; font-weight: 700;">標準付帯・追加料金なし</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">付帯サービス</div>
-                <div style="font-size: 11px; font-weight: 800; color: #475569;">すべて別途有料</div>
-                <div style="font-size: 9px; color: #6b7280;">留守電は非対応</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">付帯サービス</div>
-                <div style="font-size: 11px; font-weight: 800; color: #475569;">すべて別途有料</div>
-                <div style="font-size: 9px; color: #6b7280;">+2,310円/月</div>
-              </div>
-            </div>
-
-            <!-- 実質総額 行 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 12px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #92400e; font-weight: 700;">💰 実質総額</div>
-                <div style="font-size: 1.3rem; font-weight: 900; color: #111827;">5,346円</div>
-                <div style="font-size: 10px; color: #1e3a6e; font-weight: 700;">全部込み・これ以上かからない</div>
-              </div>
-              <div style="padding: 12px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">💰 実質総額</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">4,378円</div>
-                <div style="font-size: 10px; color: #6b7280;">留守電なし</div>
-              </div>
-              <div style="padding: 12px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">💰 実質総額</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #111827;">6,325円</div>
-                <div style="font-size: 10px; color: #6b7280;">Sコースより+979円</div>
-              </div>
-            </div>
-
-            <!-- データ量行 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ量</div>
-                <div style="font-size: 1.2rem; font-weight: 800; color: #111827;">20GB</div>
-                <div style="font-size: 10px; color: #1e3a6e; font-weight: 700;">＋GB追加OK</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ量</div>
-                <div style="font-size: 1.2rem; font-weight: 800; color: #111827;">20GB</div>
-                <div style="font-size: 10px; color: #6b7280;">追加 1GB/550円</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📶 データ量</div>
-                <div style="font-size: 1.2rem; font-weight: 800; color: #111827;">20GB</div>
-                <div style="font-size: 10px; color: #6b7280;">追加 0.5GB/550円</div>
-              </div>
-            </div>
-
-            <!-- 通話行 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 13px; font-weight: 800; color: #111827;">24h かけ放題</div>
-                <div style="font-size: 10px; color: #1e3a6e; font-weight: 700;">標準付帯 ¥0</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 13px; font-weight: 800; color: #111827;">かけ放題</div>
-                <div style="font-size: 10px; color: #6b7280;">+1,650円/月</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📞 通話</div>
-                <div style="font-size: 13px; font-weight: 800; color: #111827;">かけ放題</div>
-                <div style="font-size: 10px; color: #6b7280;">+1,980円/月</div>
-              </div>
-            </div>
-
-            <!-- 留守電行 -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
-              <div style="padding: 10px 6px; text-align: center; background: #fdf8ef;">
-                <div style="font-size: 10px; color: #6b7280;">📱 留守番電話</div>
-                <div style="font-size: 13px; font-weight: 800; color: #1e3a6e;">標準付帯 ✓</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📱 留守番電話</div>
-                <div style="font-size: 13px; font-weight: 800; color: #94a3b8;">非対応 ✗</div>
-              </div>
-              <div style="padding: 10px 6px; text-align: center;">
-                <div style="font-size: 10px; color: #6b7280;">📱 留守番電話</div>
-                <div style="font-size: 13px; font-weight: 800; color: #111827;">+330円/月</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 差額サマリー -->
-          <div style="margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 12px; padding: 14px; text-align: center;">
-              <div style="font-size: 11px; color: #1e40af;">LINEMOとの差額</div>
-              <div style="font-size: 1.2rem; font-weight: 800; color: #1e40af;">月 968円</div>
-              <div style="font-size: 10px; color: #3b82f6; margin-top: 2px;">留守電なし</div>
-            </div>
-            <div style="background: linear-gradient(135deg, #fdf8ef 0%, #fef3c7 100%); border-radius: 12px; padding: 14px; text-align: center;">
-              <div style="font-size: 11px; color: #92400e;">Y!mobileとの差額</div>
-              <div style="font-size: 1.2rem; font-weight: 800; color: #b45309;">月 979円 高い</div>
-              <div style="font-size: 10px; color: #b45309; margin-top: 2px;">Y!mobileの方が高い</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ═══════════════════════════════════════
-             Phase 3: エレガントなクロージング
-             ═══════════════════════════════════════ -->
-        <div style="max-width: 640px; margin: 0 auto 32px;">
-          <!-- 結論ボックス -->
-          <div style="background: linear-gradient(160deg, #0c1a3a 0%, #162550 40%, #1e3a6e 100%); border-radius: 20px; padding: 28px 20px; text-align: center; box-shadow: 0 8px 32px rgba(12,26,58,0.25);">
-            <div style="font-size: 2rem; margin-bottom: 8px;">✦</div>
-            <div style="font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.9;">
-              LINEMOは「シンプルさを追求したスタンダード」。<br>
-              Sコースは「<span style="color: #f0d48a;">すべてが満たされたプレミアム</span>」。
-            </div>
-            <div style="margin-top: 20px; padding: 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(212,168,83,0.25); border-radius: 14px;">
-              <div style="font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.9; font-weight: 500;">
-                数百円の差で、この<span style="color: #f0d48a; font-weight: 700;">フルスペック</span>と<span style="color: #f0d48a; font-weight: 700;">安心感</span>を手放すのは、<br>
-                <span style="font-size: 16px; font-weight: 800; color: #f0d48a;">本当に最善の選択でしょうか？</span>
-              </div>
-            </div>
-            <div style="margin-top: 16px; padding: 14px; background: rgba(212,168,83,0.1); border: 1px solid rgba(212,168,83,0.2); border-radius: 12px;">
-              <div style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8;">
-                Sコースは<span style="color: #f0d48a; font-weight: 700;">プラチナチケット</span>。<br>
-                一度手放すと、同じ条件では二度と手に入りません。<br>
-                かけ放題＋留守電＋GB追加が全部込みのプランは<br>
-                スターサービスでも<span style="color: #f0d48a; font-weight: 700;">Sコースだけ</span>です。
-              </div>
-            </div>
-          </div>
-
-          <!-- 最終CTA -->
-          <div style="text-align: center; margin-top: 24px;">
-            <div style="font-size: 14px; color: #6b7280; margin-bottom: 12px;">解約の前に、一度ご相談ください</div>
-            <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, #1e3a6e 0%, #2563eb 100%); box-shadow: 0 4px 14px rgba(37,99,235,0.35);" target="_blank">コンシェルジュに相談する</a>
-          </div>
-        </div>
-
-        <!-- ═══════════════════════════════════════
-             Dシリーズへのコース変更提案
-             ═══════════════════════════════════════ -->
-        <div style="max-width: 640px; margin: 0 auto; padding-top: 24px; border-top: 2px dashed #e5e7eb;">
-          <div style="text-align: center; margin-bottom: 16px;">
-            <div style="font-size: 16px; font-weight: 700; color: #1e3a6e;">👔 お着替え候補 ─ ドコモ回線Dシリーズ</div>
-            <p style="font-size: 13px; color: #6b7280; margin-top: 4px;">スターサービス内でのコース変更なら、番号そのまま・手続き簡単</p>
-          </div>
-        <div class="d-switch-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 640px; margin: 0 auto; padding-top: 8px;">
-          <div class="course-card" style="width: 100%;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DMコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>3,520円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間30GB（1日1GB）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>5分かけ放題付き</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-              <div style="margin-top: 12px; padding: 14px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 12px; text-align: center;">
-                <div style="font-size: 12px; color: #1e40af; font-weight: 700;">💰 Sコースから変更で</div>
-                <div style="font-size: 1.2rem; font-weight: 800; color: #1e3a6e; margin-top: 4px;">月 1,826円おトク</div>
-                <div style="font-size: 11px; color: #2563eb; font-weight: 700;">年間 21,912円の節約</div>
-              </div>
-            </div>
-          </div>
-          <div class="course-card" style="width: 100%;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DXコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>5,720円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間120GB（1日4GB）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>かけ放題オプションあり</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-              <div style="margin-top: 12px; padding: 14px; background: linear-gradient(135deg, #ede9fe 0%, #dbeafe 100%); border-radius: 12px; text-align: center;">
-                <div style="font-size: 12px; color: #4338ca; font-weight: 700;">📶 大容量ユーザー向け</div>
-                <div style="font-size: 11px; color: #6b7280; margin-top: 4px;">YouTube約4h/日・Netflix約5.5h/日</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #6b7280;">※コース変更にはサポートデスクへのご相談が必要です。<br>解約を検討していたが、〇〇コースを契約したいとお伝えいただくとスムーズです。</p>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, #1e3a6e 0%, #2563eb 100%); box-shadow: 0 4px 14px rgba(37,99,235,0.35);" target="_blank">コンシェルジュに相談する</a>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="proposal" id="proposal-other" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__icon">❓</div>
-          <h2 class="proposal__title">お困りごとがございましたら</h2>
-          <p class="proposal__description">お気軽にサポートデスクまでご相談ください。</p>
-        </div>
-        <div style="text-align: center; margin-top: 24px;">
-          <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, #1e3a6e 0%, #2563eb 100%); box-shadow: 0 4px 14px rgba(37,99,235,0.35);"
-            target="_blank">コンシェルジュに相談する</a>
-        </div>
-      </div>
-    </section>
-
-
-
-
-    <section class="cancellation" aria-labelledby="cancellation-title" id="cancellation-section" hidden>
-      <div class="container">
-        <h2 id="cancellation-title" class="cancellation__title">それでも解約をご希望の場合</h2>
-        <div class="cancellation__notice">
-          <h3 class="cancellation__notice-title">ご確認事項</h3>
-          <ul class="cancellation__notice-list">
-            <li>契約期間: 36ヶ月</li>
-            <li>契約期間内の解約の場合、解約金が発生する場合があります</li>
-          </ul>
-          <div style="text-align: center; margin-top: 16px;">
-            <a href="#" class="btn btn--outline btn--lg" data-modal-target="cancel-modal"
-              style="color: #6b7280; border-color: #d1d5db;">解約手続きへ進む</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner">
-      <div class="footer__links">
-        <a href="#" class="footer__link">利用規約</a>
-        <a href="#" class="footer__link">プライバシーポリシー</a>
-        <a href="#" class="footer__link">特定商取引法に基づく表記</a>
-        <a href="#" class="footer__link">お問い合わせ</a>
+  <footer style="background: #f3f4f6; padding: 24px 16px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px;">
+        <a href="#" style="font-size: 12px; color: #9ca3af; text-decoration: none;">利用規約</a>
+        <a href="#" style="font-size: 12px; color: #9ca3af; text-decoration: none;">プライバシーポリシー</a>
+        <a href="#" style="font-size: 12px; color: #9ca3af; text-decoration: none;">特定商取引法に基づく表記</a>
       </div>
-      <p class="footer__copyright">© 2025 スターサービス株式会社 All Rights Reserved.</p>
+      <p style="font-size: 11px; color: #9ca3af; margin: 0;">© 2025 スターサービス株式会社 All Rights Reserved.</p>
     </div>
   </footer>
-
-  <div class="modal" id="cancel-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-modal-title"
-    aria-hidden="true">
-    <div class="modal__backdrop"></div>
-    <div class="modal__content">
-      <div class="modal__header">
-        <h2 class="modal__title" id="cancel-modal-title">確認</h2><button class="modal__close" type="button"
-          aria-label="閉じる">×</button>
-      </div>
-      <div class="modal__body">
-        <p>本当に解約に進んでよろしいですか？</p>
-      </div>
-      <div class="modal__footer"><button class="btn btn--outline" type="button"
-          onclick="StarService.closeModal(document.getElementById('cancel-modal'))">キャンセル</button><a href="#"
-          class="btn btn--outline" style="color: #6b7280; border-color: #d1d5db;">解約に進む</a></div>
-    </div>
-  </div>
-
-  <script src="js/courseData.js" defer></script>
-  <script src="js/main.js" defer></script>
 </body>
 
 </html>
