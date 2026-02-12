@@ -46,144 +46,142 @@
     const currentCourseId = form.dataset.currentCourse;
     const current = courses[currentCourseId];
 
-    let selectedData = null;
-    let selectedCall = null;
+    const speedLimitButtons = form.querySelectorAll('[data-speed-limit]');
 
-    const dataButtons = form.querySelectorAll('[data-data-level]');
-    const callButtons = form.querySelectorAll('[data-call-type]');
-
-    function updateResults() {
-      if (!selectedData || !selectedCall) {
-        resultArea.hidden = true;
-        return;
-      }
-
-      const recommendedId = findBestCourse(selectedData, selectedCall);
-      
-      if (recommendedId === currentCourseId) {
-        resultArea.innerHTML = renderKeepCurrent(current);
-      } else {
-        const recommended = courses[recommendedId];
-        resultArea.innerHTML = renderComparison(recommended, current);
-      }
-      resultArea.hidden = false;
-      
-      // 診断完了時に提案コンテンツを表示
-      revealProposalContent();
-      
-      resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-    
-    // 提案コンテンツを表示する関数
-    function revealProposalContent() {
-      const hiddenSections = document.querySelectorAll('.hidden-until-diagnosis');
-      hiddenSections.forEach(section => {
-        section.classList.remove('hidden-until-diagnosis');
-        section.classList.add('revealed');
-      });
-    }
-
-    dataButtons.forEach(btn => {
+    speedLimitButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        dataButtons.forEach(b => b.classList.remove('selected'));
+        speedLimitButtons.forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
-        selectedData = btn.dataset.dataLevel;
-        updateResults();
-      });
-    });
-
-    callButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        callButtons.forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        selectedCall = btn.dataset.callType;
-        updateResults();
+        
+        const answer = btn.dataset.speedLimit;
+        showResult(answer, current, currentCourseId);
       });
     });
   }
 
-  function renderComparison(recommended, current) {
-    const diff = current.price - recommended.price;
-    const diffText = diff > 0
-      ? '<div style="font-size:12px;color:#1e40af;font-weight:700;margin-top:4px;">▼ 月額 ' + diff.toLocaleString() + '円おトク（年間 ' + (diff * 12).toLocaleString() + '円節約）</div>'
-      : diff < 0
-        ? '<div style="font-size:12px;color:#6b7280;margin-top:4px;">月額 +' + Math.abs(diff).toLocaleString() + '円</div>'
-        : '<div style="font-size:12px;color:#6b7280;margin-top:4px;">同額</div>';
+  function showResult(answer, current, currentCourseId) {
+    const resultArea = document.getElementById('diagnosis-result');
+    
+    if (answer === 'yes') {
+      // YES: 上位プラン（DX）を提案
+      const recommended = courses.dx;
+      resultArea.innerHTML = renderSpeedLimitYes(recommended, current, currentCourseId);
+    } else {
+      // NO: 現状維持または節約プランを提案
+      resultArea.innerHTML = renderSpeedLimitNo(current, currentCourseId);
+    }
+    
+    resultArea.hidden = false;
+    
+    // 診断完了時に提案コンテンツを表示
+    revealProposalContent();
+    
+    resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  
+  // 提案コンテンツを表示する関数
+  function revealProposalContent() {
+    const hiddenSections = document.querySelectorAll('.hidden-until-diagnosis');
+    hiddenSections.forEach(section => {
+      section.classList.remove('hidden-until-diagnosis');
+      section.classList.add('revealed');
+    });
+  }
 
+  function renderSpeedLimitYes(recommended, current, currentCourseId) {
     let html = '<div style="max-width:800px;margin:0 auto;">';
     html += '<div style="background:#fff;border:2px solid #2563eb;border-radius:20px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08);margin-bottom:20px;">';
-    html += '<div style="background:linear-gradient(90deg,#2563eb 0%,#3b82f6 100%);padding:8px 16px;text-align:center;color:#fff;font-size:13px;font-weight:800;">🏆 あなたへの最適解</div>';
+    html += '<div style="background:linear-gradient(90deg,#2563eb 0%,#3b82f6 100%);padding:8px 16px;text-align:center;color:#fff;font-size:13px;font-weight:800;">📊 診断結果</div>';
 
-    // 横並び比較
-    html += '<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid #e5e7eb;">';
-    html += '  <div style="padding:14px 12px;text-align:center;background:#f9fafb;border-right:1px solid #e5e7eb;">';
-    html += '    <div style="font-size:10px;color:#6b7280;">現在</div>';
-    html += '    <div style="font-size:15px;font-weight:800;color:#111827;">' + current.name + '</div>';
+    html += '<div style="padding:24px;">';
+    html += '  <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:16px;border-radius:8px;margin-bottom:20px;">';
+    html += '    <div style="font-size:15px;font-weight:800;color:#92400e;margin-bottom:8px;">⚠️ 今の' + current.dataGB + 'GBでは足りない可能性があります</div>';
+    html += '    <p style="font-size:14px;color:#78350f;line-height:1.8;margin:0;">速度制限の経験があるということは、データ容量が不足しているサインです。</p>';
     html += '  </div>';
-    html += '  <div style="padding:14px 12px;text-align:center;background:#eff6ff;">';
-    html += '    <div style="font-size:10px;color:#2563eb;">提案</div>';
-    html += '    <div style="font-size:15px;font-weight:800;color:#1e40af;">' + recommended.name + '</div>';
-    html += '  </div>';
-    html += '</div>';
 
-    // 月額料金
-    html += '<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #f3f4f6;">';
-    html += '  <div style="padding:12px;text-align:center;background:#f9fafb;border-right:1px solid #e5e7eb;">';
-    html += '    <div style="font-size:10px;color:#6b7280;">💰 月額</div>';
-    html += '    <div style="font-size:1.5rem;font-weight:900;color:#111827;">' + current.price.toLocaleString() + '<span style="font-size:12px;font-weight:600;color:#6b7280;">円</span></div>';
+    html += '  <div style="background:#eff6ff;border:2px solid #2563eb;border-radius:12px;padding:20px;margin-bottom:20px;">';
+    html += '    <div style="text-align:center;margin-bottom:16px;">';
+    html += '      <div style="font-size:18px;font-weight:800;color:#1e40af;margin-bottom:8px;">🏆 おすすめ：' + recommended.name + '</div>';
+    html += '      <div style="font-size:2.5rem;font-weight:900;color:#1e40af;">' + recommended.price.toLocaleString() + '<span style="font-size:1rem;font-weight:600;color:#6b7280;">円/月</span></div>';
+    html += '    </div>';
+    html += '    <div style="background:#fff;border-radius:8px;padding:14px;margin-bottom:12px;">';
+    html += '      <div style="font-size:13px;color:#6b7280;margin-bottom:4px;">📶 データ容量</div>';
+    html += '      <div style="font-size:16px;font-weight:800;color:#111827;">' + recommended.data + '</div>';
+    html += '    </div>';
+    html += '    <div style="background:#fff;border-radius:8px;padding:14px;">';
+    html += '      <div style="font-size:13px;color:#6b7280;margin-bottom:4px;">📞 通話</div>';
+    html += '      <div style="font-size:16px;font-weight:800;color:#111827;">' + recommended.call + '</div>';
+    html += '    </div>';
     html += '  </div>';
-    html += '  <div style="padding:12px;text-align:center;background:#eff6ff;">';
-    html += '    <div style="font-size:10px;color:#6b7280;">💰 月額</div>';
-    html += '    <div style="font-size:1.5rem;font-weight:900;color:#1e40af;">' + recommended.price.toLocaleString() + '<span style="font-size:12px;font-weight:600;color:#6b7280;">円</span></div>';
-    html += diffText;
-    html += '  </div>';
-    html += '</div>';
 
-    // データ容量
-    html += '<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #f3f4f6;">';
-    html += '  <div style="padding:12px;text-align:center;background:#f9fafb;border-right:1px solid #e5e7eb;">';
-    html += '    <div style="font-size:10px;color:#6b7280;">📶 データ</div>';
-    html += '    <div style="font-size:14px;font-weight:800;color:#111827;">' + current.data + '</div>';
+    html += '  <div style="background:#f9fafb;border-radius:12px;padding:16px;margin-bottom:20px;">';
+    html += '    <div style="font-size:14px;color:#374151;line-height:1.9;text-align:center;">';
+    html += '      <strong>120GBのDXコースなら、ギガを気にせず動画を楽しめます。</strong><br>';
+    html += '      1日4GBの大容量で、速度制限の心配から解放されます。';
+    html += '    </div>';
     html += '  </div>';
-    html += '  <div style="padding:12px;text-align:center;background:#eff6ff;">';
-    html += '    <div style="font-size:10px;color:#6b7280;">📶 データ</div>';
-    html += '    <div style="font-size:14px;font-weight:800;color:#1e40af;">' + recommended.data + '</div>';
-    html += '  </div>';
-    html += '</div>';
 
-    // 通話
-    html += '<div style="display:grid;grid-template-columns:1fr 1fr;">';
-    html += '  <div style="padding:12px;text-align:center;background:#f9fafb;border-right:1px solid #e5e7eb;">';
-    html += '    <div style="font-size:10px;color:#6b7280;">📞 通話</div>';
-    html += '    <div style="font-size:13px;font-weight:800;color:#111827;">' + current.call + '</div>';
-    html += '  </div>';
-    html += '  <div style="padding:12px;text-align:center;background:#eff6ff;">';
-    html += '    <div style="font-size:10px;color:#6b7280;">📞 通話</div>';
-    html += '    <div style="font-size:13px;font-weight:800;color:#1e40af;">' + recommended.call + '</div>';
-    html += '  </div>';
-    html += '</div>';
-
-    html += '<div style="padding:20px;">';
-    html += '  <div style="background:#f9fafb;border-radius:12px;padding:14px;margin-bottom:16px;text-align:center;">';
-    html += '    <div style="font-size:13px;color:#374151;line-height:1.8;">' + recommended.desc + '</div>';
-    html += '  </div>';
     html += '  <div style="text-align:center;">';
     html += '    <a href="https://support.starservice.jp/hc/ja/requests/new" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 32px;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(135deg,#c00 0%,#a00 100%);border-radius:12px;text-decoration:none;box-shadow:0 4px 14px rgba(204,0,0,0.3);">コース変更を申請する</a>';
     html += '    <p style="font-size:12px;color:#6b7280;margin:8px 0 0;">※eSIMへの切り替えもマイページから同時にお手続きいただけます</p>';
     html += '  </div>';
-    html += '</div>';
 
-    html += '</div></div>';
+    html += '</div></div></div>';
     return html;
   }
 
-  function renderKeepCurrent(current) {
-    return ''
-      + '<div style="max-width:560px;margin:0 auto;text-align:center;">'
-      + '  <div style="font-size:2rem;margin-bottom:8px;">✨</div>'
-      + '  <div style="font-size:16px;font-weight:800;color:#1e3a6e;margin-bottom:8px;">今のプランがベストです</div>'
-      + '  <p style="font-size:14px;color:#6b7280;line-height:1.8;">診断の結果、現在の' + current.name + 'があなたに最適です。<br>引き続きスターサービスをお楽しみください。</p>'
-      + '</div>';
+  function renderSpeedLimitNo(current, currentCourseId) {
+    let html = '<div style="max-width:800px;margin:0 auto;">';
+    html += '<div style="background:#fff;border:2px solid #10b981;border-radius:20px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08);margin-bottom:20px;">';
+    html += '<div style="background:linear-gradient(90deg,#10b981 0%,#34d399 100%);padding:8px 16px;text-align:center;color:#fff;font-size:13px;font-weight:800;">✨ 診断結果</div>';
+
+    html += '<div style="padding:24px;">';
+    html += '  <div style="background:#d1fae5;border-left:4px solid #10b981;padding:16px;border-radius:8px;margin-bottom:20px;">';
+    html += '    <div style="font-size:15px;font-weight:800;color:#065f46;margin-bottom:8px;">✅ 今の' + current.dataGB + 'GBで十分足りています</div>';
+    html += '    <p style="font-size:14px;color:#047857;line-height:1.8;margin:0;">速度制限の経験がないということは、現在のデータ容量で問題ありません。</p>';
+    html += '  </div>';
+
+    html += '  <div style="background:#f9fafb;border-radius:12px;padding:20px;margin-bottom:20px;">';
+    html += '    <div style="font-size:16px;font-weight:800;color:#111827;margin-bottom:12px;text-align:center;">💡 もし料金を下げたいなら</div>';
+    html += '    <p style="font-size:14px;color:#374151;line-height:1.9;text-align:center;margin:0 0 16px;">DMやDSコースへの『お着替え』で賢く節約できます。</p>';
+    
+    // 節約プラン提案
+    html += '    <div style="display:grid;gap:12px;">';
+    
+    // DMコース
+    const dm = courses.dm;
+    const dmSaving = current.price - dm.price;
+    html += '      <div style="background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:16px;">';
+    html += '        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">';
+    html += '          <div style="font-size:16px;font-weight:800;color:#111827;">' + dm.name + '</div>';
+    html += '          <div style="font-size:20px;font-weight:900;color:#1e40af;">' + dm.price.toLocaleString() + '<span style="font-size:12px;font-weight:600;color:#6b7280;">円</span></div>';
+    html += '        </div>';
+    html += '        <div style="font-size:12px;color:#6b7280;margin-bottom:4px;">📶 ' + dm.data + ' / 📞 ' + dm.call + '</div>';
+    html += '        <div style="font-size:13px;color:#10b981;font-weight:700;">▼ 月額 ' + dmSaving.toLocaleString() + '円おトク（年間 ' + (dmSaving * 12).toLocaleString() + '円節約）</div>';
+    html += '      </div>';
+    
+    // DSコース
+    const ds = courses.ds;
+    const dsSaving = current.price - ds.price;
+    html += '      <div style="background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:16px;">';
+    html += '        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">';
+    html += '          <div style="font-size:16px;font-weight:800;color:#111827;">' + ds.name + '</div>';
+    html += '          <div style="font-size:20px;font-weight:900;color:#1e40af;">' + ds.price.toLocaleString() + '<span style="font-size:12px;font-weight:600;color:#6b7280;">円</span></div>';
+    html += '        </div>';
+    html += '        <div style="font-size:12px;color:#6b7280;margin-bottom:4px;">📶 ' + ds.data + ' / 📞 ' + ds.call + '</div>';
+    html += '        <div style="font-size:13px;color:#10b981;font-weight:700;">▼ 月額 ' + dsSaving.toLocaleString() + '円おトク（年間 ' + (dsSaving * 12).toLocaleString() + '円節約）</div>';
+    html += '      </div>';
+    
+    html += '    </div>';
+    html += '  </div>';
+
+    html += '  <div style="text-align:center;">';
+    html += '    <a href="https://support.starservice.jp/hc/ja/requests/new" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 32px;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(135deg,#c00 0%,#a00 100%);border-radius:12px;text-decoration:none;box-shadow:0 4px 14px rgba(204,0,0,0.3);">コース変更を申請する</a>';
+    html += '    <p style="font-size:12px;color:#6b7280;margin:8px 0 0;">※eSIMへの切り替えもマイページから同時にお手続きいただけます</p>';
+    html += '  </div>';
+
+    html += '</div></div></div>';
+    return html;
   }
 
   // 初期化

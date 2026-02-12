@@ -86,64 +86,22 @@
         </div>
 
         <div id="diagnosis-form" data-current-course="dl">
-          <!-- ステップ1: データ容量 -->
-          <div style="margin-bottom: 32px;">
-            <h3 style="font-size: 14px; font-weight: 700; color: #374151; margin: 0 0 12px; text-align: center;">📊 STEP 1: データ容量を選んでください</h3>
-            <div style="display: grid; gap: 10px;">
-              <button type="button" data-data-level="light" class="diag-option">
-                <span style="font-size: 1.5rem;">📵</span>
-                <div>
-                  <div style="font-size: 14px; font-weight: 700; color: #111827;">ほとんど使わない</div>
-                  <div style="font-size: 12px; color: #6b7280;">月間3GB</div>
-                </div>
-              </button>
-              <button type="button" data-data-level="normal" class="diag-option">
-                <span style="font-size: 1.5rem;">📱</span>
-                <div>
-                  <div style="font-size: 14px; font-weight: 700; color: #111827;">普通に使う</div>
-                  <div style="font-size: 12px; color: #6b7280;">月間30GB（1日1GB）</div>
-                </div>
-              </button>
-              <button type="button" data-data-level="heavy" class="diag-option">
-                <span style="font-size: 1.5rem;">🎬</span>
-                <div>
-                  <div style="font-size: 14px; font-weight: 700; color: #111827;">たっぷり使う</div>
-                  <div style="font-size: 12px; color: #6b7280;">月間60GB（1日2GB）</div>
-                </div>
-              </button>
-              <button type="button" data-data-level="ultra" class="diag-option">
-                <span style="font-size: 1.5rem;">📺</span>
-                <div>
-                  <div style="font-size: 14px; font-weight: 700; color: #111827;">動画三昧</div>
-                  <div style="font-size: 12px; color: #6b7280;">月間120GB（1日4GB）</div>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <!-- ステップ2: 通話プラン -->
+          <!-- シンプルなYES/NO質問 -->
           <div>
-            <h3 style="font-size: 14px; font-weight: 700; color: #374151; margin: 0 0 12px; text-align: center;">📞 STEP 2: 通話プランを選んでください</h3>
-            <div style="display: grid; gap: 10px;">
-              <button type="button" data-call-type="pay" class="diag-option">
-                <span style="font-size: 1.5rem;">📵</span>
+            <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">過去にスマホの速度制限がかかって<br>困ったことはありますか？</h3>
+            <div style="display: grid; gap: 12px;">
+              <button type="button" data-speed-limit="yes" class="diag-option">
+                <span style="font-size: 2rem;">😰</span>
                 <div>
-                  <div style="font-size: 14px; font-weight: 700; color: #111827;">ほとんどかけない</div>
-                  <div style="font-size: 12px; color: #6b7280;">30秒22円（従量課金）</div>
+                  <div style="font-size: 16px; font-weight: 800; color: #111827;">YES</div>
+                  <div style="font-size: 13px; color: #6b7280;">よくある・あった</div>
                 </div>
               </button>
-              <button type="button" data-call-type="5min" class="diag-option">
-                <span style="font-size: 1.5rem;">📞</span>
+              <button type="button" data-speed-limit="no" class="diag-option">
+                <span style="font-size: 2rem;">😊</span>
                 <div>
-                  <div style="font-size: 14px; font-weight: 700; color: #111827;">短い通話が多い</div>
-                  <div style="font-size: 12px; color: #6b7280;">5分かけ放題</div>
-                </div>
-              </button>
-              <button type="button" data-call-type="24h" class="diag-option">
-                <span style="font-size: 1.5rem;">☎️</span>
-                <div>
-                  <div style="font-size: 14px; font-weight: 700; color: #111827;">長電話が多い</div>
-                  <div style="font-size: 12px; color: #6b7280;">24時間かけ放題</div>
+                  <div style="font-size: 16px; font-weight: 800; color: #111827;">NO</div>
+                  <div style="font-size: 13px; color: #6b7280;">一度もない</div>
                 </div>
               </button>
             </div>
