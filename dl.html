@@ -86,22 +86,43 @@
         </div>
 
         <div id="diagnosis-form" data-current-course="dl">
-          <!-- シンプルなYES/NO質問 -->
-          <div>
-            <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">過去にスマホの速度制限がかかって<br>困ったことはありますか？</h3>
+          <!-- STEP 1: ギガの確認 -->
+          <div id="step1-giga">
+            <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">📊 STEP 1: ギガの確認<br><br>過去にスマホの速度制限がかかって<br>困ったことはありますか？</h3>
             <div style="display: grid; gap: 12px;">
-              <button type="button" data-speed-limit="yes" class="diag-option">
+              <button type="button" data-giga="yes" class="diag-option">
                 <span style="font-size: 2rem;">😰</span>
                 <div>
                   <div style="font-size: 16px; font-weight: 800; color: #111827;">YES</div>
                   <div style="font-size: 13px; color: #6b7280;">よくある・あった</div>
                 </div>
               </button>
-              <button type="button" data-speed-limit="no" class="diag-option">
+              <button type="button" data-giga="no" class="diag-option">
                 <span style="font-size: 2rem;">😊</span>
                 <div>
                   <div style="font-size: 16px; font-weight: 800; color: #111827;">NO</div>
                   <div style="font-size: 13px; color: #6b7280;">一度もない</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: 通話の確認 -->
+          <div id="step2-call" style="display: none; margin-top: 32px;">
+            <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">📞 STEP 2: 通話の確認<br><br>『24時間いつでも、何分でも』<br>無料通話ができる機能は、<br>今後も絶対に必要ですか？</h3>
+            <div style="display: grid; gap: 12px;">
+              <button type="button" data-call="yes" class="diag-option">
+                <span style="font-size: 2rem;">☎️</span>
+                <div>
+                  <div style="font-size: 16px; font-weight: 800; color: #111827;">YES</div>
+                  <div style="font-size: 13px; color: #6b7280;">絶対に必要</div>
+                </div>
+              </button>
+              <button type="button" data-call="no" class="diag-option">
+                <span style="font-size: 2rem;">📱</span>
+                <div>
+                  <div style="font-size: 16px; font-weight: 800; color: #111827;">NO</div>
+                  <div style="font-size: 13px; color: #6b7280;">なくても大丈夫</div>
                 </div>
               </button>
             </div>
