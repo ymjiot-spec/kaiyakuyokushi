@@ -90,13 +90,13 @@
           <div id="step1-giga">
             <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">📊 STEP 1: ギガの確認<br><br>過去にスマホの速度制限がかかって<br>困ったことはありますか？</h3>
             <div style="display: grid; gap: 12px;">
-              <button type="button" data-giga="yes" class="diag-option">
+              <button type="button" data-giga="yes" class="diag-option diag-option-yes">
                 <div>
                   <div style="font-size: 18px; font-weight: 800; color: #111827;">はい（経験がある）</div>
                   <div style="font-size: 13px; color: #6b7280;">速度制限で困ったことがある</div>
                 </div>
               </button>
-              <button type="button" data-giga="no" class="diag-option">
+              <button type="button" data-giga="no" class="diag-option diag-option-no">
                 <div>
                   <div style="font-size: 18px; font-weight: 800; color: #111827;">いいえ（一度もない）</div>
                   <div style="font-size: 13px; color: #6b7280;">速度制限の経験なし</div>
@@ -109,13 +109,13 @@
           <div id="step2-call" style="display: none; margin-top: 32px;">
             <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">📞 STEP 2: 通話の確認<br><br>『24時間いつでも、何分でも』<br>無料通話ができる機能は、<br>今後も絶対に必要ですか？</h3>
             <div style="display: grid; gap: 12px;">
-              <button type="button" data-call="yes" class="diag-option">
+              <button type="button" data-call="yes" class="diag-option diag-option-yes">
                 <div>
                   <div style="font-size: 18px; font-weight: 800; color: #111827;">はい（絶対に必要）</div>
                   <div style="font-size: 13px; color: #6b7280;">24時間かけ放題は必須</div>
                 </div>
               </button>
-              <button type="button" data-call="no" class="diag-option">
+              <button type="button" data-call="no" class="diag-option diag-option-no">
                 <div>
                   <div style="font-size: 18px; font-weight: 800; color: #111827;">いいえ（なくても大丈夫）</div>
                   <div style="font-size: 13px; color: #6b7280;">通話はあまり使わない</div>
@@ -143,16 +143,35 @@
         width: 100%;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       }
-      .diag-option:hover {
-        border-color: #2563eb;
-        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+      .diag-option-yes {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border-color: #f59e0b;
       }
-      .diag-option.selected {
-        border-color: #2563eb;
-        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1), 0 4px 12px rgba(37, 99, 235, 0.2);
+      .diag-option-yes:hover {
+        border-color: #d97706;
+        background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+      }
+      .diag-option-yes.selected {
+        border-color: #d97706;
+        background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%);
+        box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15), 0 4px 12px rgba(245, 158, 11, 0.3);
+      }
+      .diag-option-no {
+        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        border-color: #10b981;
+      }
+      .diag-option-no:hover {
+        border-color: #059669;
+        background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+      }
+      .diag-option-no.selected {
+        border-color: #059669;
+        background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15), 0 4px 12px rgba(16, 185, 129, 0.3);
       }
       /* 診断完了まで非表示 */
       .hidden-until-diagnosis {
