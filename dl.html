@@ -91,17 +91,15 @@
             <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">📊 STEP 1: ギガの確認<br><br>過去にスマホの速度制限がかかって<br>困ったことはありますか？</h3>
             <div style="display: grid; gap: 12px;">
               <button type="button" data-giga="yes" class="diag-option">
-                <span style="font-size: 2rem;">😰</span>
                 <div>
-                  <div style="font-size: 16px; font-weight: 800; color: #111827;">YES</div>
-                  <div style="font-size: 13px; color: #6b7280;">よくある・あった</div>
+                  <div style="font-size: 18px; font-weight: 800; color: #111827;">はい（経験がある）</div>
+                  <div style="font-size: 13px; color: #6b7280;">速度制限で困ったことがある</div>
                 </div>
               </button>
               <button type="button" data-giga="no" class="diag-option">
-                <span style="font-size: 2rem;">😊</span>
                 <div>
-                  <div style="font-size: 16px; font-weight: 800; color: #111827;">NO</div>
-                  <div style="font-size: 13px; color: #6b7280;">一度もない</div>
+                  <div style="font-size: 18px; font-weight: 800; color: #111827;">いいえ（一度もない）</div>
+                  <div style="font-size: 13px; color: #6b7280;">速度制限の経験なし</div>
                 </div>
               </button>
             </div>
@@ -112,17 +110,15 @@
             <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">📞 STEP 2: 通話の確認<br><br>『24時間いつでも、何分でも』<br>無料通話ができる機能は、<br>今後も絶対に必要ですか？</h3>
             <div style="display: grid; gap: 12px;">
               <button type="button" data-call="yes" class="diag-option">
-                <span style="font-size: 2rem;">☎️</span>
                 <div>
-                  <div style="font-size: 16px; font-weight: 800; color: #111827;">YES</div>
-                  <div style="font-size: 13px; color: #6b7280;">絶対に必要</div>
+                  <div style="font-size: 18px; font-weight: 800; color: #111827;">はい（絶対に必要）</div>
+                  <div style="font-size: 13px; color: #6b7280;">24時間かけ放題は必須</div>
                 </div>
               </button>
               <button type="button" data-call="no" class="diag-option">
-                <span style="font-size: 2rem;">📱</span>
                 <div>
-                  <div style="font-size: 16px; font-weight: 800; color: #111827;">NO</div>
-                  <div style="font-size: 13px; color: #6b7280;">なくても大丈夫</div>
+                  <div style="font-size: 18px; font-weight: 800; color: #111827;">いいえ（なくても大丈夫）</div>
+                  <div style="font-size: 13px; color: #6b7280;">通話はあまり使わない</div>
                 </div>
               </button>
             </div>
@@ -135,24 +131,28 @@
       .diag-option {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 16px;
-        padding: 16px;
-        background: #fff;
-        border: 2px solid #e5e7eb;
-        border-radius: 14px;
+        padding: 24px;
+        background: linear-gradient(135deg, #fff 0%, #f9fafb 100%);
+        border: 3px solid #e5e7eb;
+        border-radius: 16px;
         cursor: pointer;
-        transition: all 0.2s;
-        text-align: left;
+        transition: all 0.3s;
+        text-align: center;
         width: 100%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       }
       .diag-option:hover {
         border-color: #2563eb;
-        background: #eff6ff;
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
       }
       .diag-option.selected {
         border-color: #2563eb;
-        background: #eff6ff;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1), 0 4px 12px rgba(37, 99, 235, 0.2);
       }
       /* 診断完了まで非表示 */
       .hidden-until-diagnosis {
