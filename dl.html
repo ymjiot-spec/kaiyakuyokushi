@@ -246,7 +246,7 @@
     <section class="hidden-until-diagnosis" style="background: #f3f4f6; padding: 40px 16px;">
       <div style="max-width: 480px; margin: 0 auto; text-align: center;">
         <p style="font-size: 13px; color: #9ca3af; margin: 0 0 16px;">それでも解約をご希望の方はこちら</p>
-        <a href="#" class="cancel-link">解約手続きへ進む</a>
+        <button id="cancel-btn" class="cancel-link" style="cursor:pointer;border:1px solid #d1d5db;">解約手続きへ進む</button>
       </div>
     </section>
   </main>
@@ -260,6 +260,57 @@
     <p style="font-size: 11px; color: #9ca3af; margin: 0;">© 2025 スターサービス株式会社 All Rights Reserved.</p>
   </footer>
 
+  <!-- 解約確認モーダル -->
+  <div id="cancel-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+    <div style="background:#fff;border-radius:16px;padding:32px 24px;max-width:480px;margin:16px;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+      <h3 style="font-size:1.3rem;font-weight:800;color:#111827;margin:0 0 16px;text-align:center;">解約手続きの確認</h3>
+      <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:16px;border-radius:8px;margin-bottom:20px;">
+        <p style="font-size:14px;color:#78350f;line-height:1.8;margin:0 0 12px;"><strong>ご注意ください</strong></p>
+        <ul style="font-size:13px;color:#92400e;line-height:1.8;margin:0;padding-left:20px;">
+          <li>解約後は同じ電話番号での再契約はできません</li>
+          <li>契約期間内の解約の場合、解約金が発生する場合があります</li>
+          <li>解約は月末での処理となります</li>
+        </ul>
+      </div>
+      <p style="font-size:14px;color:#4b5563;line-height:1.8;margin:0 0 24px;text-align:center;">本当に解約手続きに進みますか？</p>
+      <div style="display:flex;gap:12px;flex-direction:column;">
+        <button id="cancel-confirm" style="display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(135deg,#dc2626 0%,#b91c1c 100%);border:none;border-radius:12px;cursor:pointer;box-shadow:0 4px 14px rgba(220,38,38,0.3);">解約手続きへ進む</button>
+        <button id="cancel-close" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px;font-size:14px;font-weight:600;color:#6b7280;background:#fff;border:2px solid #e5e7eb;border-radius:12px;cursor:pointer;">キャンセル</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/diagnosis.js?v=3" defer></script>
+  <script>
+    // 解約モーダル制御
+    document.addEventListener('DOMContentLoaded', function() {
+      const cancelBtn = document.getElementById('cancel-btn');
+      const cancelModal = document.getElementById('cancel-modal');
+      const cancelClose = document.getElementById('cancel-close');
+      const cancelConfirm = document.getElementById('cancel-confirm');
+
+      if (cancelBtn && cancelModal) {
+        cancelBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          cancelModal.style.display = 'flex';
+        });
+
+        cancelClose.addEventListener('click', function() {
+          cancelModal.style.display = 'none';
+        });
+
+        cancelModal.addEventListener('click', function(e) {
+          if (e.target === cancelModal) {
+            cancelModal.style.display = 'none';
+          }
+        });
+
+        cancelConfirm.addEventListener('click', function() {
+          // 実際の解約ページへ遷移
+          window.location.href = 'https://support.starservice.jp/hc/ja/requests/new';
+        });
+      }
+    });
+  </script>
 </body>
 </html>

@@ -334,8 +334,8 @@
 
     // 次世代への移行メッセージ
     html += '<div style="background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);border-radius:16px;padding:24px;margin-bottom:32px;text-align:center;box-shadow:0 4px 12px rgba(16,185,129,0.15);">';
-    html += '  <div style="font-size:16px;font-weight:900;color:#065f46;margin-bottom:8px;">✨ 古い通信スタイルから、次世代のDコースへ。</div>';
-    html += '  <p style="font-size:14px;color:#047857;line-height:1.9;margin:0;">eSIM対応、独自帯域、5G対応予定。DLコースは進化し続けます。</p>';
+    html += '  <div style="font-size:16px;font-weight:900;color:#065f46;margin-bottom:8px;">DLコースは進化し続けます</div>';
+    html += '  <p style="font-size:14px;color:#047857;line-height:1.9;margin:0;">eSIM対応、独自帯域、5G対応予定。<br>このまま安心してご利用ください。</p>';
     html += '</div>';
 
     // メッセージ
@@ -402,7 +402,7 @@
     // 次世代への移行メッセージ
     html += '<div style="background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);border-radius:16px;padding:24px;margin-bottom:32px;text-align:center;box-shadow:0 4px 12px rgba(16,185,129,0.15);">';
     html += '  <div style="font-size:16px;font-weight:900;color:#065f46;margin-bottom:8px;">✨ だから、今アップデートすべき</div>';
-    html += '  <p style="font-size:14px;color:#047857;line-height:1.9;margin:0;">古い通信スタイルから、次世代のDコースへ。<br>同じ料金で、ギガが2倍（120GB）に。速度制限の心配から解放されます。<br>eSIM（即日開通）・5G（Coming Soon）で、さらに進化します。</p>';
+    html += '  <p style="font-size:14px;color:#047857;line-height:1.9;margin:0;">同じ料金で、ギガが2倍（120GB）に。速度制限の心配から解放されます。<br>eSIM（即日開通）・5G（Coming Soon）で、さらに進化します。</p>';
     html += '</div>';
 
     // CTAボタン
@@ -522,7 +522,7 @@
     // 次世代への移行メッセージ
     html += '<div style="background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%);border-radius:16px;padding:24px;margin-bottom:32px;text-align:center;box-shadow:0 4px 12px rgba(16,185,129,0.15);">';
     html += '  <div style="font-size:16px;font-weight:900;color:#065f46;margin-bottom:8px;">✨ だから、今アップデートすべき</div>';
-    html += '  <p style="font-size:14px;color:#047857;line-height:1.9;margin:0;">古い通信スタイルから、次世代のDコースへ。<br>使わないギガに払うのはもったいない。あなたに合ったプランで賢く節約しましょう。<br>eSIM（即日開通）・5G（Coming Soon）で、さらに進化します。</p>';
+    html += '  <p style="font-size:14px;color:#047857;line-height:1.9;margin:0;">使わないギガに払うのはもったいない。あなたに合ったプランで賢く節約しましょう。<br>eSIM（即日開通）・5G（Coming Soon）で、さらに進化します。</p>';
     html += '</div>';
 
     // CTAボタン
