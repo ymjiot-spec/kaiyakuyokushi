@@ -3,544 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="スターモバイル vs docomo 1対1比較。料金、データ量、通話、サポート体制を徹底比較します。">
-  <title>スターモバイル vs docomo 比較 | スターサービス</title>
+  <meta name="description" content="解約前にご確認ください。ドコモの「実質○○円」と、スターモバイル DLコースの料金を比較します。">
+  <title>解約前にご確認ください | スターモバイル DLコース</title>
   <style>
-    :root {
-      --color-star: #4361ee;
-      --color-docomo: #c00;
-      --color-white: #fff;
-      --color-gray-50: #f9fafb;
-      --color-gray-100: #f3f4f6;
-      --color-gray-200: #e5e7eb;
-      --color-gray-300: #d1d5db;
-      --color-gray-400: #9ca3af;
-      --color-gray-500: #6b7280;
-      --color-gray-600: #4b5563;
-      --color-gray-700: #374151;
-      --color-gray-800: #1f2937;
-      --color-gray-900: #111827;
-      --spacing-xs: 8px;
-      --spacing-sm: 16px;
-      --spacing-md: 24px;
-      --spacing-lg: 32px;
-      --spacing-xl: 48px;
-      --spacing-2xl: 64px;
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-      --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--color-gray-900);
-      background: var(--color-gray-50);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ヘッダー */
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 1020;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      padding: 0 var(--spacing-sm);
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .header__logo {
-      width: auto;
-      height: 60px;
-      object-fit: contain;
-    }
-
-    .header__nav {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    }
-
-    .header__link {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      padding: 4px 8px;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--color-gray-600);
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .header__link:hover {
-      background: var(--color-gray-100);
-      color: var(--color-gray-900);
-    }
-
-    @media (min-width: 768px) {
-      .header__inner {
-        padding: 0 var(--spacing-md);
-      }
-      .header__link {
-        padding: 8px 16px;
-        font-size: 14px;
-      }
-    }
-
-    /* コンテナ */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--spacing-sm);
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        padding: 0 var(--spacing-md);
-      }
-    }
-
-    /* ヒーロー */
-    .hero {
-      padding: var(--spacing-xl) 0;
-      text-align: center;
-      background: linear-gradient(135deg, var(--color-star) 0%, #2563eb 100%);
-      color: var(--color-white);
-    }
-
-    .hero__breadcrumb {
-      font-size: 13px;
-      margin-bottom: var(--spacing-sm);
-      opacity: 0.9;
-    }
-
-    .hero__breadcrumb a {
-      color: var(--color-white);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .hero__title {
-      font-size: 28px;
-      font-weight: 800;
-      margin: 0 0 var(--spacing-sm) 0;
-    }
-
-    .hero__subtitle {
-      font-size: 16px;
-      opacity: 0.95;
-      margin: 0;
-    }
-
-    @media (min-width: 768px) {
-      .hero__title {
-        font-size: 40px;
-      }
-      .hero__subtitle {
-        font-size: 18px;
-      }
-    }
-
-    /* 比較テーブル */
-    .comparison {
-      padding: var(--spacing-2xl) 0;
-    }
-
-    .comparison__table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--color-white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-    }
-
-    .comparison__table thead {
-      background: var(--color-gray-100);
-    }
-
-    .comparison__table th {
-      padding: var(--spacing-md);
-      font-size: 14px;
-      font-weight: 700;
-      text-align: left;
-      color: var(--color-gray-700);
-      border-bottom: 2px solid var(--color-gray-200);
-    }
-
-    .comparison__table th:first-child {
-      width: 30%;
-    }
-
-    .comparison__table td {
-      padding: var(--spacing-md);
-      font-size: 15px;
-      border-bottom: 1px solid var(--color-gray-200);
-    }
-
-    .comparison__table tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    .comparison__table .highlight-star {
-      background: rgba(67, 97, 238, 0.05);
-      font-weight: 600;
-      color: var(--color-star);
-    }
-
-    .comparison__table .highlight-docomo {
-      background: rgba(204, 0, 0, 0.05);
-      font-weight: 600;
-      color: var(--color-docomo);
-    }
-
-    .comparison__label {
-      font-weight: 700;
-      color: var(--color-gray-900);
-    }
-
-    /* 価格強調 */
-    .price {
-      font-size: 24px;
-      font-weight: 800;
-    }
-
-    .price__unit {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--color-gray-600);
-    }
-
-    /* メリット・デメリット */
-    .pros-cons {
-      padding: var(--spacing-2xl) 0;
-      background: var(--color-white);
-    }
-
-    .pros-cons__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--spacing-lg);
-    }
-
-    @media (min-width: 768px) {
-      .pros-cons__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .pros-cons__section {
-      padding: var(--spacing-lg);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .pros-cons__section--star {
-      background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(67, 97, 238, 0.02) 100%);
-      border: 2px solid rgba(67, 97, 238, 0.2);
-    }
-
-    .pros-cons__section--docomo {
-      background: linear-gradient(135deg, rgba(204, 0, 0, 0.05) 0%, rgba(204, 0, 0, 0.02) 100%);
-      border: 2px solid rgba(204, 0, 0, 0.2);
-    }
-
-    .pros-cons__title {
-      font-size: 20px;
-      font-weight: 800;
-      margin: 0 0 var(--spacing-md) 0;
-    }
-
-    .pros-cons__title--star {
-      color: var(--color-star);
-    }
-
-    .pros-cons__title--docomo {
-      color: var(--color-docomo);
-    }
-
-    .pros-cons__list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .pros-cons__item {
-      padding: var(--spacing-sm) 0;
-      padding-left: var(--spacing-md);
-      position: relative;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .pros-cons__item::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      font-weight: 800;
-      color: var(--color-star);
-    }
-
-    .pros-cons__section--docomo .pros-cons__item::before {
-      color: var(--color-docomo);
-    }
-
-    /* CTA */
-    .cta {
-      padding: var(--spacing-2xl) 0;
-      text-align: center;
-    }
-
-    .cta__title {
-      font-size: 24px;
-      font-weight: 800;
-      margin: 0 0 var(--spacing-lg) 0;
-    }
-
-    .cta__buttons {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-      align-items: center;
-    }
-
-    @media (min-width: 768px) {
-      .cta__buttons {
-        flex-direction: row;
-        justify-content: center;
-      }
-    }
-
-    .cta__button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 56px;
-      padding: 16px 40px;
-      font-size: 16px;
-      font-weight: 700;
-      border-radius: var(--radius-md);
-      text-decoration: none;
-      transition: all 0.2s;
-      box-shadow: var(--shadow-md);
-    }
-
-    .cta__button--primary {
-      background: linear-gradient(135deg, var(--color-star) 0%, #2563eb 100%);
-      color: var(--color-white);
-    }
-
-    .cta__button--primary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .cta__button--secondary {
-      background: var(--color-white);
-      color: var(--color-gray-700);
-      border: 2px solid var(--color-gray-300);
-    }
-
-    .cta__button--secondary:hover {
-      border-color: var(--color-gray-400);
-      background: var(--color-gray-50);
-    }
-
-    /* フッター */
-    .footer {
-      padding: var(--spacing-lg) 0;
-      background: var(--color-gray-900);
-      color: var(--color-gray-400);
-      text-align: center;
-    }
-
-    .footer__text {
-      font-size: 13px;
-      margin: 0;
+    :root{--color-primary:#c00;--color-white:#fff;--color-gray-900:#111827}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN',sans-serif;font-size:16px;line-height:1.6;color:#111827;-webkit-font-smoothing:antialiased;background:#fff}
+    .header{position:sticky;top:0;z-index:1020;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px)}
+    .header__inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 16px;max-width:1200px;margin:0 auto}
+    .header__nav{display:flex;align-items:center;gap:2px;flex-shrink:0}
+    .header__link{display:inline-flex;align-items:center;min-height:44px;padding:4px 8px;font-size:11px;font-weight:500;color:#4b5563;border-radius:8px;text-decoration:none;white-space:nowrap}
+    .header__link:hover{background:#f3f4f6;color:#111827}
+    @media(min-width:768px){.header__inner{padding:0 24px}.header__link{padding:8px 16px;font-size:14px}}
+    .section{padding:48px 16px}
+    .section-inner{max-width:720px;margin:0 auto}
+    .plan-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+    .plan-table th,.plan-table td{padding:12px 8px;border:1px solid #e5e7eb;text-align:center;vertical-align:middle}
+    .plan-table th{background:#f9fafb;font-weight:700;font-size:13px;color:#374151}
+    .plan-table .col-official{background:#fff5f5}
+    .plan-table .col-regular{background:#fefce8}
+    .plan-table .col-kakeho{background:#fff7ed}
+    .plan-table .col-dl{background:#eff6ff;font-weight:700;color:#1e40af}
+    .plan-card{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:32px 24px;text-align:center}
+    .plan-card--primary{border-color:#c00;background:linear-gradient(180deg,#fff5f5 0%,#fff 100%)}
+    .plan-card--secondary{border-color:#2563eb;background:linear-gradient(180deg,#eff6ff 0%,#fff 100%)}
+    .plan-grid{display:grid;grid-template-columns:1fr;gap:24px;margin:32px 0}
+    @media(min-width:640px){.plan-grid{grid-template-columns:1fr 1fr}}
+    .argument-box{background:#f9fafb;border-radius:16px;padding:32px 24px;margin:24px 0}
+    .argument-title{font-size:1.1rem;font-weight:800;color:#111827;margin:0 0 16px;line-height:1.6}
+    .argument-title em{font-style:normal;color:#c00;display:block;font-size:0.85rem;font-weight:700;margin-bottom:4px}
+    .argument-body{font-size:15px;color:#374151;line-height:1.9;margin:0}
+    .discount-box{background:#fffbeb;border:2px solid #fde68a;border-radius:16px;padding:32px 24px;margin:24px 0}
+    .discount-list{list-style:none;padding:0;margin:16px 0 0}
+    .discount-list li{padding:8px 0;font-size:15px;color:#374151;border-bottom:1px solid #fde68a}
+    .discount-list li:last-child{border-bottom:none}
+    .check-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:16px;padding:32px 24px;margin:24px 0}
+    .check-list{list-style:none;padding:0;margin:16px 0 0}
+    .check-list li{padding:8px 0;font-size:15px;color:#374151}
+    .footnotes{background:#f9fafb;padding:32px 16px;font-size:12px;color:#9ca3af;line-height:1.8}
+    .footnotes-inner{max-width:720px;margin:0 auto}
+    @media(max-width:767px){
+      .plan-table{font-size:11px}
+      .plan-table th,.plan-table td{padding:8px 4px}
     }
   </style>
 </head>
 <body>
-  <!-- ヘッダー -->
   <header class="header" role="banner">
     <div class="header__inner">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <img src="../images/logo.png" alt="スターサービス" class="header__logo">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="../images/logo.png" alt="スターサービス" style="width:auto;height:60px;object-fit:contain;border:none;">
       </div>
-      <nav class="header__nav" role="navigation">
-        <a href="../index.html" class="header__link">比較トップに戻る</a>
+      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+        <a href="../dl.html" class="header__link">DLコースに戻る</a>
         <a href="https://www.starservice.jp/" class="header__link" target="_blank">公式サイト</a>
       </nav>
     </div>
   </header>
-
   <main role="main">
+
     <!-- ヒーロー -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero__breadcrumb">
-          <a href="../index.html">比較トップ</a> / docomo
+    <section style="background: linear-gradient(160deg, #c00 0%, #a00 40%, #800 100%); padding: 0; overflow: hidden; position: relative;">
+      <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none;"></div>
+      <div style="position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 48px 16px 40px; text-align: center;">
+        <h1 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin: 0 0 12px; line-height: 1.6;">お手続きの前に、<br>もう一度ご検討ください</h1>
+        <p style="font-size: 1.15rem; font-weight: 700; color: rgba(255,255,255,0.95); margin: 0 0 16px; line-height: 1.6;">ドコモの「実質○○円」、<br>本当にその金額で済みますか？</p>
+        <p style="display: inline-block; padding: 4px 12px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 8px; font-weight: 800; color: #92400e; font-size: 0.95rem; margin: 0 0 16px;">『知っていたら、スターモバイルを解約しなかった』</p>
+        <p style="font-size: 12px; color: rgba(255,255,255,0.6); margin: 16px 0 0; line-height: 1.7; max-width: 520px; margin-left: auto; margin-right: auto;">このページは他社サービスを批判するものではなく、お客さまが正確な料金情報をもとに比較・検討いただくことを目的としています。掲載料金はすべて各社公式サイトの公開情報に基づいています。</p>
+      </div>
+    </section>
+
+    <!-- 料金プランおさらい -->
+    <section class="section" style="background:#fff;">
+      <div class="section-inner">
+        <h2 style="font-size:1.4rem;font-weight:800;color:#111827;margin:0 0 8px;text-align:center;line-height:1.5;">まず、ドコモの料金プランをおさらい</h2>
+        <p style="font-size:14px;color:#6b7280;margin:0 0 24px;text-align:center;line-height:1.8;">ドコモには4つのプランがあり、さらに段階制の料金が重なります。各プランの「公式表記の価格」と「割引前の正規料金＋かけ放題」を比較しています。</p>
+
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+          <table class="plan-table">
+            <thead>
+              <tr>
+                <th style="min-width:120px;"></th>
+                <th class="col-official" style="min-width:90px;">公式「実質」表記</th>
+                <th class="col-regular" style="min-width:90px;">割引前の正規料金</th>
+                <th class="col-kakeho" style="min-width:90px;">正規＋かけ放題</th>
+                <th class="col-dl" style="min-width:90px;">DLコース 5,720円</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700;text-align:left;">ドコモMAX（〜1GB）</td>
+                <td class="col-official">2,178円</td>
+                <td class="col-regular">5,698円</td>
+                <td class="col-kakeho">7,678円</td>
+                <td class="col-dl" rowspan="5" style="font-size:1.2rem;font-weight:900;color:#1e40af;">5,720円<br><span style="font-size:11px;font-weight:500;color:#6b7280;">かけ放題込み</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;text-align:left;">ドコモMAX（〜3GB）</td>
+                <td class="col-official">3,278円</td>
+                <td class="col-regular">6,798円</td>
+                <td class="col-kakeho">8,778円</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;text-align:left;">ドコモMAX（無制限）</td>
+                <td class="col-official">4,928円</td>
+                <td class="col-regular">8,448円</td>
+                <td class="col-kakeho">10,428円</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;text-align:left;">ポイ活MAX（無制限）</td>
+                <td class="col-official">実質2,728円〜</td>
+                <td class="col-regular">11,748円</td>
+                <td class="col-kakeho">13,728円</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;text-align:left;">ポイ活20（20GB）</td>
+                <td class="col-official">実質2,068円〜</td>
+                <td class="col-regular">7,898円</td>
+                <td class="col-kakeho">9,878円</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;text-align:left;">ドコモmini（10GB）</td>
+                <td class="col-official">2,090円</td>
+                <td class="col-regular">3,850円</td>
+                <td class="col-kakeho">5,830円</td>
+                <td class="col-dl" style="font-size:1.2rem;font-weight:900;color:#1e40af;">5,720円<br><span style="font-size:11px;font-weight:500;color:#6b7280;">かけ放題込み</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <h1 class="hero__title">スターモバイル vs docomo</h1>
-        <p class="hero__subtitle">料金・サービス内容を1対1で比較</p>
+
+        <div style="background:#fff5f5;border-radius:12px;padding:20px;margin:24px 0;text-align:center;">
+          <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;">ドコモMAXは「1GBしか使わなくても」正規料金5,698円。かけ放題を足すと7,678円。<br>DLコースは60GB＋24時間かけ放題で5,720円。同じドコモ回線で、この差です。</p>
+        </div>
+
+        <div style="text-align:center;margin:16px 0 0;">
+          <a href="https://www.docomo.ne.jp/charge/" target="_blank" rel="noopener" style="font-size:14px;color:#c00;font-weight:600;text-decoration:none;">ドコモ公式サイトで確認する →</a>
+        </div>
       </div>
     </section>
 
-    <!-- 比較テーブル -->
-    <section class="comparison">
-      <div class="container">
-        <table class="comparison__table">
-          <thead>
-            <tr>
-              <th>項目</th>
-              <th class="highlight-star">スターモバイル（DSコース）</th>
-              <th class="highlight-docomo">docomo（irumo 3GB）</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="comparison__label">月額料金</td>
-              <td class="highlight-star">
-                <span class="price">1,078円</span>
-                <span class="price__unit">（税込）</span>
-              </td>
-              <td class="highlight-docomo">
-                <span class="price">2,167円</span>
-                <span class="price__unit">（税込）</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="comparison__label">データ量</td>
-              <td class="highlight-star">月間3GB</td>
-              <td class="highlight-docomo">月間3GB</td>
-            </tr>
-            <tr>
-              <td class="comparison__label">通話料金</td>
-              <td class="highlight-star">30秒22円</td>
-              <td class="highlight-docomo">30秒22円</td>
-            </tr>
-            <tr>
-              <td class="comparison__label">かけ放題オプション</td>
-              <td class="highlight-star">
-                5分: 880円<br>
-                10分: 1,320円<br>
-                24時間: 1,870円
-              </td>
-              <td class="highlight-docomo">
-                5分: 880円<br>
-                無制限: 1,980円
-              </td>
-            </tr>
-            <tr>
-              <td class="comparison__label">回線品質</td>
-              <td class="highlight-star">ドコモ回線（独自帯域）</td>
-              <td class="highlight-docomo">ドコモ本家回線</td>
-            </tr>
-            <tr>
-              <td class="comparison__label">契約期間</td>
-              <td class="highlight-star">なし（いつでも解約可能）</td>
-              <td class="highlight-docomo">なし</td>
-            </tr>
-            <tr>
-              <td class="comparison__label">サポート</td>
-              <td class="highlight-star">オンライン・電話</td>
-              <td class="highlight-docomo">店舗・オンライン・電話</td>
-            </tr>
-            <tr>
-              <td class="comparison__label">年間コスト</td>
-              <td class="highlight-star">
-                <span class="price">12,936円</span>
-              </td>
-              <td class="highlight-docomo">
-                <span class="price">26,004円</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="comparison__label">年間差額</td>
-              <td colspan="2" style="text-align: center; font-weight: 800; font-size: 20px; color: var(--color-star);">
-                スターモバイルの方が 13,068円 お得
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <!-- 表示価格＝請求額 -->
+    <section class="section" style="background:linear-gradient(180deg,#f9fafb 0%,#fff 100%);">
+      <div class="section-inner">
+        <h2 style="font-size:1.4rem;font-weight:800;color:#111827;margin:0 0 4px;text-align:center;">スターモバイルは、表示価格＝請求額です</h2>
+        <p style="font-size:14px;color:#6b7280;margin:0 0 32px;text-align:center;">割引条件なし。この金額が毎月そのまま請求されます</p>
 
-    <!-- メリット・デメリット -->
-    <section class="pros-cons">
-      <div class="container">
-        <div class="pros-cons__grid">
-          <!-- スターモバイル -->
-          <div class="pros-cons__section pros-cons__section--star">
-            <h2 class="pros-cons__title pros-cons__title--star">スターモバイルのメリット</h2>
-            <ul class="pros-cons__list">
-              <li class="pros-cons__item">月額料金が約半額（年間13,068円の節約）</li>
-              <li class="pros-cons__item">ドコモ回線の独自帯域で混雑時も快適</li>
-              <li class="pros-cons__item">契約期間の縛りなし</li>
-              <li class="pros-cons__item">10分かけ放題オプションあり（docomoにはない）</li>
-              <li class="pros-cons__item">シンプルな料金体系</li>
-            </ul>
+        <div class="plan-grid">
+          <div class="plan-card plan-card--primary">
+            <div style="display:inline-block;padding:4px 12px;background:#c00;color:#fff;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:12px;">現在のプラン</div>
+            <div style="font-size:14px;font-weight:700;color:#374151;margin-bottom:4px;">DLコース</div>
+            <div style="font-size:2.2rem;font-weight:900;color:#c00;line-height:1;">5,720<span style="font-size:0.9rem;font-weight:600;color:#6b7280;">円/月</span></div>
+            <div style="font-size:12px;color:#9ca3af;margin:4px 0 16px;">税込・かけ放題込みの総額</div>
+            <div style="text-align:left;font-size:13px;color:#374151;line-height:2;">
+              📶 60GB（1日2GB）<br>📞 24時間かけ放題 込み<br>📡 ドコモ回線<br>📱 eSIM対応
+            </div>
+            <div style="margin-top:16px;padding:12px;background:#fff5f5;border-radius:8px;font-size:13px;color:#92400e;font-weight:600;">ドコモmini 10GBの正規料金とほぼ同額で6倍のデータ量</div>
           </div>
-
-          <!-- docomo -->
-          <div class="pros-cons__section pros-cons__section--docomo">
-            <h2 class="pros-cons__title pros-cons__title--docomo">docomoのメリット</h2>
-            <ul class="pros-cons__list">
-              <li class="pros-cons__item">全国の店舗でサポート対応</li>
-              <li class="pros-cons__item">ドコモ本家回線（最優先）</li>
-              <li class="pros-cons__item">dポイント連携</li>
-              <li class="pros-cons__item">家族割・光セット割適用可能</li>
-              <li class="pros-cons__item">ブランド信頼性</li>
-            </ul>
+          <div class="plan-card plan-card--secondary">
+            <div style="display:inline-block;padding:4px 12px;background:#2563eb;color:#fff;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:12px;">プラン変更で移行可</div>
+            <div style="font-size:14px;font-weight:700;color:#374151;margin-bottom:4px;">Mコース</div>
+            <div style="font-size:2.2rem;font-weight:900;color:#2563eb;line-height:1;">3,520<span style="font-size:0.9rem;font-weight:600;color:#6b7280;">円/月</span></div>
+            <div style="font-size:12px;color:#9ca3af;margin:4px 0 16px;">税込・10分かけ放題込みの総額</div>
+            <div style="text-align:left;font-size:13px;color:#374151;line-height:2;">
+              📶 30GB（1日1GB）<br>📞 10分かけ放題 込み<br>📡 ドコモ回線<br>🔄 MNP不要・プラン変更のみ
+            </div>
+            <div style="margin-top:16px;padding:12px;background:#eff6ff;border-radius:8px;font-size:13px;color:#1e40af;font-weight:600;">ドコモmini 10GBの正規料金より安く、データ量3倍</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container">
-        <h2 class="cta__title">どちらを選びますか？</h2>
-        <div class="cta__buttons">
-          <a href="../ds.html" class="cta__button cta__button--primary">
-            スターモバイルを継続する
-          </a>
-          <a href="../index.html" class="cta__button cta__button--secondary">
-            他のキャリアも比較する
-          </a>
+    <!-- 知っていたら① -->
+    <section class="section" style="background:#fff;">
+      <div class="section-inner">
+        <div class="argument-box">
+          <h3 class="argument-title"><em>知っていたらドコモに乗り換えなかった ①</em>ドコモの公式表記は「実質」価格。割引前の正規料金はずっと高い</h3>
+          <p class="argument-body">ドコモMAXだけでも〜1GB・〜3GB・無制限の3段階。ポイ活20も2段階、ドコモminiも2段階。4プラン合計で9パターン以上の料金に、5種類の割引とポイント還元が重なります。さらに驚くべきは、ドコモMAXの最低段階（〜1GB）ですら割引前は月額5,698円。かけ放題を付ければ7,678円です。1GBも使わなくてもこの金額です。</p>
+          <p class="argument-body" style="margin-top:16px;">DLコースなら60GB＋24時間かけ放題込みで5,720円。スターモバイルのプランは2つだけ、料金もそれぞれ1つだけ。表示価格がそのまま毎月の請求額です。</p>
+        </div>
+
+        <div class="discount-box">
+          <h4 style="font-size:1rem;font-weight:800;color:#92400e;margin:0 0 8px;">ドコモの「安い料金」に必要な条件</h4>
+          <p style="font-size:14px;color:#374151;margin:0;line-height:1.7;">公式表記の価格を実現するには、以下の割引をすべて満たす必要があります。</p>
+          <ul class="discount-list">
+            <li>みんなドコモ割（家族3回線以上）<strong style="float:right;color:#c00;">-1,210円</strong></li>
+            <li>ドコモ光 or home 5G セット割<strong style="float:right;color:#c00;">-1,210円</strong></li>
+            <li>dカードGOLD支払い<strong style="float:right;color:#c00;">-550円</strong></li>
+            <li>長期利用割（20年以上）<strong style="float:right;color:#c00;">-220円</strong></li>
+            <li>ドコモでんきセット割<strong style="float:right;color:#c00;">-110円</strong></li>
+          </ul>
+          <p style="font-size:13px;color:#6b7280;margin:16px 0 0;line-height:1.8;">これらに加え、ポイ活プランの「実質○○円」はdカード・d払いで月5万円以上使った場合のポイント還元を差し引いた金額です。ポイントは即座に値引きされるわけではなく、後日「期間・用途限定」のdポイントとして付与されます。</p>
+          <p style="font-size:14px;color:#374151;margin:12px 0 0;font-weight:700;">条件が1つでも外れれば料金は上がります。スターモバイルの価格には、こうした条件は一切ありません。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 知っていたら② -->
+    <section class="section" style="background:#f9fafb;">
+      <div class="section-inner">
+        <div class="argument-box" style="background:#fff;">
+          <h3 class="argument-title"><em>知っていたらドコモに乗り換えなかった ②</em>乗り換えても通信品質は変わらない。変わるのは料金だけ</h3>
+          <p class="argument-body">スターモバイルのDLコース・Mコースはドコモ回線を利用しています。つまり、ドコモに乗り換えてもつながるエリア・通話品質・通信速度のベースは同じです。回線品質を理由に乗り換えるなら、ドコモではなくau・ソフトバンク・楽天モバイルなど別回線を選ぶ必要があります。</p>
+          <p class="argument-body" style="margin-top:16px;">同じドコモ回線のまま、変わるのは料金と手続きの手間だけ。しかも料金は上がる可能性が高い。それでも乗り換える理由はありますか？</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 知っていたら③ -->
+    <section class="section" style="background:#fff;">
+      <div class="section-inner">
+        <div class="argument-box">
+          <h3 class="argument-title"><em>知っていたらドコモに乗り換えなかった ③</em>解約→MNP→新規契約の手間は不要。プラン変更で月額を下げられる</h3>
+          <p class="argument-body">ドコモへの乗り換えには、MNP予約番号の取得・本人確認・新規契約・SIM差し替えが必要です。さらに、4つのプランから自分に最適なものを選び、割引条件を確認する作業もあります。</p>
+          <p class="argument-body" style="margin-top:16px;">月額を下げたいなら、Mコース（3,520円）へのプラン変更で完了します。電話番号もSIMもそのまま。わざわざ解約する必要があるか、もう一度考えてみてください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 逆にメリットがある人 -->
+    <section class="section" style="background:#f9fafb;">
+      <div class="section-inner">
+        <div class="check-box">
+          <h3 style="font-size:1.1rem;font-weight:800;color:#166534;margin:0 0 4px;">逆に、こういう方はドコモへの転出でメリットがあります</h3>
+          <p style="font-size:13px;color:#6b7280;margin:0 0 8px;">以下の条件をすべて満たす方</p>
+          <ul class="check-list">
+            <li>☑ ドコモ光（またはhome 5G）を契約中</li>
+            <li>☑ 家族3人以上がドコモ回線を利用中</li>
+            <li>☑ dカードGOLDで支払い中</li>
+            <li>☑ 月のデータ通信量が60GBを大幅に超える</li>
+            <li>☑ d経済圏（dポイント・d払い・ドコモでんき等）をフル活用中</li>
+          </ul>
+          <p style="font-size:14px;color:#374151;margin:16px 0 0;line-height:1.8;">これらをすべて満たしている方は、ドコモの割引料金を実現できる可能性があります。ただし、1つでも欠けると料金は跳ね上がります。また、ポイ活プランの割引の多くはポイント還元であり、直接の値引きではない点にもご注意ください。</p>
+          <p style="font-size:15px;color:#111827;margin:12px 0 0;font-weight:700;">上記すべてに該当しない場合、スターモバイルの方がシンプルかつ確実に安くなります。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2つのプラン -->
+    <section class="section" style="background:#fff;">
+      <div class="section-inner">
+        <h2 style="font-size:1.4rem;font-weight:800;color:#111827;margin:0 0 4px;text-align:center;">あなたが選べる2つのプラン</h2>
+        <p style="font-size:14px;color:#6b7280;margin:0 0 32px;text-align:center;">どちらも割引条件なし・MNP手続き不要。表示価格＝請求額です</p>
+
+        <div class="plan-grid">
+          <div class="plan-card plan-card--primary">
+            <div style="display:inline-block;padding:4px 12px;background:#c00;color:#fff;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:12px;">現在のプラン</div>
+            <div style="font-size:14px;font-weight:700;color:#374151;margin-bottom:4px;">DLコース</div>
+            <div style="font-size:2.2rem;font-weight:900;color:#c00;line-height:1;">5,720<span style="font-size:0.9rem;font-weight:600;color:#6b7280;">円/月</span></div>
+            <div style="font-size:12px;color:#9ca3af;margin:4px 0 16px;">税込・かけ放題込みの総額</div>
+            <div style="text-align:left;font-size:13px;color:#374151;line-height:2;">
+              📶 60GB（1日2GB）<br>📞 24時間かけ放題 込み<br>📡 ドコモ回線<br>📱 eSIM対応
+            </div>
+          </div>
+          <div class="plan-card plan-card--secondary">
+            <div style="display:inline-block;padding:4px 12px;background:#2563eb;color:#fff;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:12px;">プラン変更で移行可</div>
+            <div style="font-size:14px;font-weight:700;color:#374151;margin-bottom:4px;">Mコース</div>
+            <div style="font-size:2.2rem;font-weight:900;color:#2563eb;line-height:1;">3,520<span style="font-size:0.9rem;font-weight:600;color:#6b7280;">円/月</span></div>
+            <div style="font-size:12px;color:#9ca3af;margin:4px 0 16px;">税込・10分かけ放題込みの総額</div>
+            <div style="text-align:left;font-size:13px;color:#374151;line-height:2;">
+              📶 30GB（1日1GB）<br>📞 10分かけ放題 込み<br>📡 ドコモ回線<br>🔄 MNP不要・プラン変更のみ
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- フッター -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <p class="footer__text">
-        &copy; 2025 スターサービス. All rights reserved.
-      </p>
+  <!-- 注釈 -->
+  <div class="footnotes">
+    <div class="footnotes-inner">
+      <p style="margin:0;">※表示価格はすべて税込です。※「正規料金」は割引適用前の標準月額です。「正規＋かけ放題」は正規料金にかけ放題オプション（1,980円/月）を加算した金額です。ドコモMAX(〜1GB):5,698円+1,980円、ドコモMAX(無制限):8,448円+1,980円、ポイ活MAX(無制限):11,748円+1,980円、ポイ活20(20GB):7,898円+1,980円、ドコモmini(10GB):3,850円+1,980円。※公式「実質」表記の価格は各種割引（みんなドコモ割・ドコモ光セット割・dカードお支払割・長期利用割・ドコモでんきセット割）をすべて適用した金額です。※ポイ活プランの「実質」価格はdカード/d払い利用によるポイント還元額を差し引いた参考値であり、直接の値引きではありません。※2026年2月時点のNTTドコモ公式サイト掲載価格に基づきます。※スターモバイルDLコース・Mコースはドコモ回線を利用したサービスです。</p>
     </div>
+  </div>
+
+  <footer style="background:#f3f4f6;padding:24px 16px;text-align:center;">
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:12px;">
+      <a href="#" style="font-size:12px;color:#9ca3af;text-decoration:none;">利用規約</a>
+      <a href="#" style="font-size:12px;color:#9ca3af;text-decoration:none;">プライバシーポリシー</a>
+      <a href="#" style="font-size:12px;color:#9ca3af;text-decoration:none;">特定商取引法に基づく表記</a>
+    </div>
+    <p style="font-size:11px;color:#9ca3af;margin:0;">© 2025 スターサービス株式会社 All Rights Reserved.</p>
   </footer>
 </body>
 </html>
