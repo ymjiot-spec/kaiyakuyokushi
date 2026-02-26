@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="スターモバイル vs docomo 1対1比較。料金、データ量、通話、サポート体制を徹底比較します。">
+  <title>スターモバイル vs docomo 比較 | スターサービス</title>
+  <style>
+    :root {
+      --color-star: #4361ee;
+      --color-docomo: #c00;
+      --color-white: #fff;
+      --color-gray-50: #f9fafb;
+      --color-gray-100: #f3f4f6;
+      --color-gray-200: #e5e7eb;
+      --color-gray-300: #d1d5db;
+      --color-gray-400: #9ca3af;
+      --color-gray-500: #6b7280;
+      --color-gray-600: #4b5563;
+      --color-gray-700: #374151;
+      --color-gray-800: #1f2937;
+      --color-gray-900: #111827;
+      --spacing-xs: 8px;
+      --spacing-sm: 16px;
+      --spacing-md: 24px;
+      --spacing-lg: 32px;
+      --spacing-xl: 48px;
+      --spacing-2xl: 64px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-gray-900);
+      background: var(--color-gray-50);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ヘッダー */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0 var(--spacing-sm);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header__logo {
+      width: auto;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .header__link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--color-gray-600);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .header__link:hover {
+      background: var(--color-gray-100);
+      color: var(--color-gray-900);
+    }
+
+    @media (min-width: 768px) {
+      .header__inner {
+        padding: 0 var(--spacing-md);
+      }
+      .header__link {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+
+    /* コンテナ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-sm);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 var(--spacing-md);
+      }
+    }
+
+    /* ヒーロー */
+    .hero {
+      padding: var(--spacing-xl) 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-star) 0%, #2563eb 100%);
+      color: var(--color-white);
+    }
+
+    .hero__breadcrumb {
+      font-size: 13px;
+      margin-bottom: var(--spacing-sm);
+      opacity: 0.9;
+    }
+
+    .hero__breadcrumb a {
+      color: var(--color-white);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .hero__title {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 var(--spacing-sm) 0;
+    }
+
+    .hero__subtitle {
+      font-size: 16px;
+      opacity: 0.95;
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      .hero__title {
+        font-size: 40px;
+      }
+      .hero__subtitle {
+        font-size: 18px;
+      }
+    }
+
+    /* 比較テーブル */
+    .comparison {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .comparison__table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .comparison__table thead {
+      background: var(--color-gray-100);
+    }
+
+    .comparison__table th {
+      padding: var(--spacing-md);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      color: var(--color-gray-700);
+      border-bottom: 2px solid var(--color-gray-200);
+    }
+
+    .comparison__table th:first-child {
+      width: 30%;
+    }
+
+    .comparison__table td {
+      padding: var(--spacing-md);
+      font-size: 15px;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+
+    .comparison__table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison__table .highlight-star {
+      background: rgba(67, 97, 238, 0.05);
+      font-weight: 600;
+      color: var(--color-star);
+    }
+
+    .comparison__table .highlight-docomo {
+      background: rgba(204, 0, 0, 0.05);
+      font-weight: 600;
+      color: var(--color-docomo);
+    }
+
+    .comparison__label {
+      font-weight: 700;
+      color: var(--color-gray-900);
+    }
+
+    /* 価格強調 */
+    .price {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .price__unit {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-gray-600);
+    }
+
+    /* メリット・デメリット */
+    .pros-cons {
+      padding: var(--spacing-2xl) 0;
+      background: var(--color-white);
+    }
+
+    .pros-cons__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+
+    @media (min-width: 768px) {
+      .pros-cons__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .pros-cons__section {
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pros-cons__section--star {
+      background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(67, 97, 238, 0.02) 100%);
+      border: 2px solid rgba(67, 97, 238, 0.2);
+    }
+
+    .pros-cons__section--docomo {
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.05) 0%, rgba(204, 0, 0, 0.02) 100%);
+      border: 2px solid rgba(204, 0, 0, 0.2);
+    }
+
+    .pros-cons__title {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0 0 var(--spacing-md) 0;
+    }
+
+    .pros-cons__title--star {
+      color: var(--color-star);
+    }
+
+    .pros-cons__title--docomo {
+      color: var(--color-docomo);
+    }
+
+    .pros-cons__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pros-cons__item {
+      padding: var(--spacing-sm) 0;
+      padding-left: var(--spacing-md);
+      position: relative;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .pros-cons__item::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--color-star);
+    }
+
+    .pros-cons__section--docomo .pros-cons__item::before {
+      color: var(--color-docomo);
+    }
+
+    /* CTA */
+    .cta {
+      padding: var(--spacing-2xl) 0;
+      text-align: center;
+    }
+
+    .cta__title {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 var(--spacing-lg) 0;
+    }
+
+    .cta__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .cta__buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .cta__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 16px 40px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta__button--primary {
+      background: linear-gradient(135deg, var(--color-star) 0%, #2563eb 100%);
+      color: var(--color-white);
+    }
+
+    .cta__button--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta__button--secondary {
+      background: var(--color-white);
+      color: var(--color-gray-700);
+      border: 2px solid var(--color-gray-300);
+    }
+
+    .cta__button--secondary:hover {
+      border-color: var(--color-gray-400);
+      background: var(--color-gray-50);
+    }
+
+    /* フッター */
+    .footer {
+      padding: var(--spacing-lg) 0;
+      background: var(--color-gray-900);
+      color: var(--color-gray-400);
+      text-align: center;
+    }
+
+    .footer__text {
+      font-size: 13px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <img src="../images/logo.png" alt="スターサービス" class="header__logo">
+      </div>
+      <nav class="header__nav" role="navigation">
+        <a href="../index.html" class="header__link">比較トップに戻る</a>
+        <a href="https://www.starservice.jp/" class="header__link" target="_blank">公式サイト</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main">
+    <!-- ヒーロー -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__breadcrumb">
+          <a href="../index.html">比較トップ</a> / docomo
+        </div>
+        <h1 class="hero__title">スターモバイル vs docomo</h1>
+        <p class="hero__subtitle">料金・サービス内容を1対1で比較</p>
+      </div>
+    </section>
+
+    <!-- 比較テーブル -->
+    <section class="comparison">
+      <div class="container">
+        <table class="comparison__table">
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th class="highlight-star">スターモバイル（DSコース）</th>
+              <th class="highlight-docomo">docomo（irumo 3GB）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="comparison__label">月額料金</td>
+              <td class="highlight-star">
+                <span class="price">1,078円</span>
+                <span class="price__unit">（税込）</span>
+              </td>
+              <td class="highlight-docomo">
+                <span class="price">2,167円</span>
+                <span class="price__unit">（税込）</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="comparison__label">データ量</td>
+              <td class="highlight-star">月間3GB</td>
+              <td class="highlight-docomo">月間3GB</td>
+            </tr>
+            <tr>
+              <td class="comparison__label">通話料金</td>
+              <td class="highlight-star">30秒22円</td>
+              <td class="highlight-docomo">30秒22円</td>
+            </tr>
+            <tr>
+              <td class="comparison__label">かけ放題オプション</td>
+              <td class="highlight-star">
+                5分: 880円<br>
+                10分: 1,320円<br>
+                24時間: 1,870円
+              </td>
+              <td class="highlight-docomo">
+                5分: 880円<br>
+                無制限: 1,980円
+              </td>
+            </tr>
+            <tr>
+              <td class="comparison__label">回線品質</td>
+              <td class="highlight-star">ドコモ回線（独自帯域）</td>
+              <td class="highlight-docomo">ドコモ本家回線</td>
+            </tr>
+            <tr>
+              <td class="comparison__label">契約期間</td>
+              <td class="highlight-star">なし（いつでも解約可能）</td>
+              <td class="highlight-docomo">なし</td>
+            </tr>
+            <tr>
+              <td class="comparison__label">サポート</td>
+              <td class="highlight-star">オンライン・電話</td>
+              <td class="highlight-docomo">店舗・オンライン・電話</td>
+            </tr>
+            <tr>
+              <td class="comparison__label">年間コスト</td>
+              <td class="highlight-star">
+                <span class="price">12,936円</span>
+              </td>
+              <td class="highlight-docomo">
+                <span class="price">26,004円</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="comparison__label">年間差額</td>
+              <td colspan="2" style="text-align: center; font-weight: 800; font-size: 20px; color: var(--color-star);">
+                スターモバイルの方が 13,068円 お得
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- メリット・デメリット -->
+    <section class="pros-cons">
+      <div class="container">
+        <div class="pros-cons__grid">
+          <!-- スターモバイル -->
+          <div class="pros-cons__section pros-cons__section--star">
+            <h2 class="pros-cons__title pros-cons__title--star">スターモバイルのメリット</h2>
+            <ul class="pros-cons__list">
+              <li class="pros-cons__item">月額料金が約半額（年間13,068円の節約）</li>
+              <li class="pros-cons__item">ドコモ回線の独自帯域で混雑時も快適</li>
+              <li class="pros-cons__item">契約期間の縛りなし</li>
+              <li class="pros-cons__item">10分かけ放題オプションあり（docomoにはない）</li>
+              <li class="pros-cons__item">シンプルな料金体系</li>
+            </ul>
+          </div>
+
+          <!-- docomo -->
+          <div class="pros-cons__section pros-cons__section--docomo">
+            <h2 class="pros-cons__title pros-cons__title--docomo">docomoのメリット</h2>
+            <ul class="pros-cons__list">
+              <li class="pros-cons__item">全国の店舗でサポート対応</li>
+              <li class="pros-cons__item">ドコモ本家回線（最優先）</li>
+              <li class="pros-cons__item">dポイント連携</li>
+              <li class="pros-cons__item">家族割・光セット割適用可能</li>
+              <li class="pros-cons__item">ブランド信頼性</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2 class="cta__title">どちらを選びますか？</h2>
+        <div class="cta__buttons">
+          <a href="../ds.html" class="cta__button cta__button--primary">
+            スターモバイルを継続する
+          </a>
+          <a href="../index.html" class="cta__button cta__button--secondary">
+            他のキャリアも比較する
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="footer__text">
+        &copy; 2025 スターサービス. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
