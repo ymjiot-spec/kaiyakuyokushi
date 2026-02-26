@@ -1,778 +1,107 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="スターサービス Uコースの解約をご検討中のお客様へ。解約前にコース変更のご検討をお願いいたします。">
-  <title>解約をご検討中のお客様へ | Uコース | スターサービス</title>
+  <meta name="description" content="スターサービス Uコースをご利用中のお客様へ。解約前にご確認ください。">
+  <title>Uコースをご利用中の方へ | スターサービス</title>
   <style>
-    :root {
-      --color-primary: #4361ee;
-      --color-au: #ff5722;
-      --color-white: #fff;
-      --color-gray-900: #111827
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--color-gray-900);
-      -webkit-font-smoothing: antialiased
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 1020;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: none
-    }
-
-    .header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      padding: 0 16px;
-      max-width: 1200px;
-      margin: 0 auto
-    }
-
-    .header__logo {
-      display: flex;
-      align-items: center;
-      gap: 12px
-    }
-
-    .header__logo-icon {
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, #4361ee 0%, #7c3aed 100%);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 18px
-    }
-
-    .header__logo-text {
-      font-size: 18px;
-      font-weight: 700;
-      color: #111827;
-      letter-spacing: -0.02em
-    }
-
-    .hero {
-      position: relative;
-      padding: 48px 16px;
-      background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%);
-      text-align: center;
-      overflow: hidden
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: .5
-    }
-
-    .hero__content {
-      position: relative;
-      z-index: 1
-    }
-
-    .hero__title {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 16px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
-    }
-
-    .hero__subtitle {
-      font-size: 1.125rem;
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.8;
-      margin: 0
-    }
-
-    @media(min-width:768px) {
-      .header__inner {
-        height: 72px;
-        padding: 0 24px
-      }
-
-      .header__logo-icon {
-        width: 60px;
-        height: 60px
-      }
-
-      .header__logo-text {
-        font-size: 20px
-      }
-
-      .hero {
-        padding: 80px 24px
-      }
-
-      .hero__title {
-        font-size: 3rem
-      }
-    }
-
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN',sans-serif;font-size:16px;line-height:1.6;color:#111827;-webkit-font-smoothing:antialiased;background:#fff}
+    .header{position:sticky;top:0;z-index:1020;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px)}
+    .header__inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 16px;max-width:1200px;margin:0 auto}
+    .header__link{display:inline-flex;align-items:center;min-height:44px;padding:4px 8px;font-size:11px;font-weight:500;color:#4b5563;border-radius:8px;text-decoration:none;white-space:nowrap}
+    .header__link:hover{background:#f3f4f6;color:#111827}
+    @media(min-width:768px){.header__inner{padding:0 24px}.header__link{padding:8px 16px;font-size:14px}}
   </style>
-  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="css/style.css">
-  </noscript>
 </head>
-
 <body>
   <header class="header" role="banner">
     <div class="header__inner">
-      <div class="header__logo">
-        <img src="images/logo.png" alt="スターサービス" class="header__logo-icon"
-          style="width:auto;height:60px;object-fit:contain;border:none;">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="images/logo.png" alt="スターサービス" style="width:auto;height:60px;object-fit:contain;border:none;">
       </div>
-      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+      <nav role="navigation" aria-label="メインナビゲーション">
         <a href="https://www.starservice.jp/" class="header__link" target="_blank">公式サイト</a>
-        <a href="#" class="header__link">お問い合わせ</a>
       </nav>
     </div>
   </header>
+
   <main role="main">
-    <section class="hero">
-      <div class="hero__content">
-        <div class="hero__course-badge">
-          <span class="hero__carrier-badge" style="background-color: var(--color-au);">au回線</span>
-          <span class="hero__course-name">Uコース</span>
+
+    <!-- ① 見出し -->
+    <section style="background: linear-gradient(160deg, #ff5722 0%, #e64a19 40%, #bf360c 100%); padding: 0; overflow: hidden; position: relative;">
+      <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none;"></div>
+      <div style="background: linear-gradient(90deg, #ff5722 0%, #ff7043 50%, #ff5722 100%); padding: 8px 16px; text-align: center;">
+        <span style="font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: 0.05em;">au回線 ─ 全国広域カバー</span>
+      </div>
+      <div style="position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 48px 16px 40px; text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 24px; margin-bottom: 20px;">
+          <span style="font-size: 12px; color: rgba(255,255,255,0.8); font-weight: 600;">au回線</span>
+          <span style="font-size: 14px; font-weight: 800; color: #fff;">Uコース</span>
         </div>
-        <h1 class="hero__title">解約をご検討中のお客様へ</h1>
-        <p class="hero__subtitle" style="font-size: 0.9rem; opacity: 0.85; font-weight: 700;">「知っていたらスターサービスを解約しなかった」というお客さまの声をもとにご案内します。</p>
+        <h1 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin: 0 0 12px; line-height: 1.5;">Uコースをご利用中の方へ</h1>
+        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.8;">電波の安定性を重視される方に<br>選ばれているコースです。</p>
       </div>
     </section>
 
-    <section class="reason-selector" aria-labelledby="reason-title">
-      <div class="container">
-        <h2 id="reason-title" class="reason-selector__title">解約を検討されている理由を教えてください</h2>
-        <div class="reason-selector__options" role="group" aria-label="解約理由の選択"
-          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;">
-          <button class="reason-card" data-reason="price" type="button" aria-pressed="false" style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">💰</span>
-            <span class="reason-card__text">料金が高い</span>
-          </button>
-          <button class="reason-card" data-reason="data-shortage" type="button" aria-pressed="false"
-            style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">📶</span>
-            <span class="reason-card__text">データ量が足りない</span>
-          </button>
-          <button class="reason-card" data-reason="data-excess" type="button" aria-pressed="false"
-            style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">📉</span>
-            <span class="reason-card__text">データ量が余っている</span>
-          </button>
-          <button class="reason-card" data-reason="switch" type="button" aria-pressed="false" style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">🔄</span>
-            <span class="reason-card__text">他社に乗り換えたい</span>
-          </button>
-          <button class="reason-card" data-reason="other" type="button" aria-pressed="false" style="width: 160px;">
-            <span class="reason-card__icon" aria-hidden="true">❓</span>
-            <span class="reason-card__text">その他</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="proposal" id="proposal-price" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__icon">💰</div>
-          <h2 class="proposal__title">料金でお悩みのあなたへ</h2>
-          <p class="proposal__description">ドコモ回線の<strong>Dシリーズ</strong>がおすすめです。</p>
-        </div>
-        <div class="proposal__recommendations" style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; padding-top: 24px;">
-          <div class="course-card" style="width: 100%; max-width: 350px;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DMコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>3,520円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間30GB（1日1GB）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>5分通話かけ放題付き</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-            </div>
+    <!-- ② Uコースの価値（3点） -->
+    <section style="background: #fff; padding: 56px 16px;">
+      <div style="max-width: 560px; margin: 0 auto;">
+        <h2 style="font-size: 1.2rem; font-weight: 800; color: #111827; margin: 0 0 32px; text-align: center; line-height: 1.5;">Uコースの特長</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="padding: 20px 24px; background: #f9fafb; border-radius: 12px;">
+            <div style="font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 6px;">au回線を利用</div>
+            <div style="font-size: 14px; color: #6b7280; line-height: 1.8;">KDDIのau回線を使用しており、全国の広いエリアで通信が可能です。</div>
           </div>
-          <div class="course-card" style="width: 100%; max-width: 350px;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DSコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>1,078円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間3GB</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>通話料 30秒22円（税込）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-            </div>
+          <div style="padding: 20px 24px; background: #f9fafb; border-radius: 12px;">
+            <div style="font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 6px;">山間部や郊外で強い傾向</div>
+            <div style="font-size: 14px; color: #6b7280; line-height: 1.8;">au回線は地方や山間部でも比較的つながりやすく、生活圏が郊外の方に適しています。</div>
           </div>
-        </div>
-        <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #6b7280;">※コース変更にはサポートデスクへのご相談が必要です。<br>解約を検討していたが、〇〇コースを契約したいとお伝えいただくとスムーズです。</p>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: #ff5722; box-shadow: 0 4px 14px rgba(255,87,34,0.4);" style="background: #ff5722; box-shadow: 0 4px 14px rgba(255,87,34,0.4);" target="_blank">サポートデスクに相談する</a>
-        </div>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="#competitor-title" class="btn btn--primary btn--lg" onclick="document.getElementById('below-reason').hidden=false;document.getElementById('competitor-section').hidden=false;document.getElementById('cancellation-section').hidden=false;">↓ 他社との料金比較を見る</a>
-        </div>
-        <p class="proposal__description" style="text-align: center; margin-top: 24px;">Uコースは月額5,346円（税込）で月間30GB。<br><strong style="color: #ef4444;">通話料は30秒10円（非課税）で業界最安水準です。</strong><br>他社と比べてみてください。</p>
-      </div>
-    </section>
-
-    <section class="proposal" id="proposal-data-shortage" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__icon">📶</div>
-          <h2 class="proposal__title">データ量が足りないあなたへ</h2>
-          <p class="proposal__description">より大容量をお求めの方には、ドコモ回線の<strong>Dシリーズ</strong>がおすすめです。</p>
-        </div>
-        <div class="proposal__recommendations"
-          style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
-          <div class="course-card" style="width: 100%; max-width: 380px;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DXコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>5,720円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"
-                  style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 16px !important; border-radius: 8px; margin-bottom: 8px;">
-                  <span class="course-card__feature-icon" style="font-size: 1.2rem;">✓</span><span
-                    style="font-size: 1.3rem !important; font-weight: 700 !important; color: #b45309;">月間120GB（1日4GB）</span>
-                </li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>通話料
-                    30秒22円（税込）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>かけ放題オプションあり</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-              <!-- 1日4GBでできること -->
-              <div style="margin-top: 12px; padding: 16px; background: linear-gradient(135deg, #ede9fe 0%, #dbeafe 100%); border-radius: 12px;">
-                <div style="font-size: 13px; font-weight: 700; color: #4338ca; margin-bottom: 10px; text-align: center;">📱 1日4GBでこれだけ使える！</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                  <div style="background: white; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 1.2rem;">🎬</div>
-                    <div style="font-size: 11px; color: #6b7280;">YouTube(720p)</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #4338ca;">約4時間</div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 1.2rem;">📺</div>
-                    <div style="font-size: 11px; color: #6b7280;">Netflix(標準画質)</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #4338ca;">約5.5時間</div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 1.2rem;">📸</div>
-                    <div style="font-size: 11px; color: #6b7280;">TikTok/Instagram</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #4338ca;">約8時間</div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 1.2rem;">💻</div>
-                    <div style="font-size: 11px; color: #6b7280;">Zoom(ビデオ通話)</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #4338ca;">約6.5時間</div>
-                  </div>
-                </div>
-                <p style="margin: 8px 0 0; font-size: 10px; color: #9ca3af; text-align: center;">※通信量は利用環境・画質設定等により異なります。上記は一般的な目安です。</p>
-              </div>
-            </div>
-          </div>
-          <div class="course-card" style="width: 100%; max-width: 380px;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DLコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>5,720円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"
-                  style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 16px !important; border-radius: 8px; margin-bottom: 8px;">
-                  <span class="course-card__feature-icon" style="font-size: 1.2rem;">✓</span><span
-                    style="font-size: 1.3rem !important; font-weight: 700 !important; color: #b45309;">月間60GB（1日2GB）</span>
-                </li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>24時間通話かけ放題付き</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-              <!-- 24時間かけ放題の価値 -->
-              <div style="margin-top: 12px; padding: 16px; background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-radius: 12px;">
-                <div style="font-size: 13px; font-weight: 700; color: #065f46; margin-bottom: 10px; text-align: center;">📞 24時間かけ放題でこれだけお得！</div>
-                <div style="display: grid; gap: 8px;">
-                  <div style="background: white; border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.2rem;">🏢</span>
-                    <div>
-                      <div style="font-size: 12px; color: #6b7280;">仕事の電話を1日30分かけたら</div>
-                      <div style="font-size: 1rem; font-weight: 800; color: #065f46;">月約26,400円分が無料</div>
-                    </div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.2rem;">👨‍👩‍👧</span>
-                    <div>
-                      <div style="font-size: 12px; color: #6b7280;">家族と毎日10分話したら</div>
-                      <div style="font-size: 1rem; font-weight: 800; color: #065f46;">月約13,200円分が無料</div>
-                    </div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.2rem;">🏥</span>
-                    <div>
-                      <div style="font-size: 12px; color: #6b7280;">病院・役所への電話も</div>
-                      <div style="font-size: 1rem; font-weight: 800; color: #065f46;">時間を気にせず安心</div>
-                    </div>
-                  </div>
-                </div>
-                <p style="margin: 8px 0 0; font-size: 10px; color: #9ca3af; text-align: center;">※通話料は30秒22円（税込）で計算した場合の目安です。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #6b7280;">※コース変更にはサポートデスクへのご相談が必要です。<br>解約を検討していたが、〇〇コースを契約したいとお伝えいただくとスムーズです。</p>
-      <div style="text-align: center; margin-top: 16px;">
-        <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: #ff5722; box-shadow: 0 4px 14px rgba(255,87,34,0.4);"
-          target="_blank">サポートデスクに相談する</a>
-      </div>
-      </div>
-    </section>
-
-    <section class="proposal" id="proposal-data-excess" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__icon">📉</div>
-          <h2 class="proposal__title">データ量が余っているあなたへ</h2>
-          <p class="proposal__description">データ量が余っている場合、ドコモ回線の<strong>Dシリーズ</strong>がおすすめです。</p>
-        </div>
-        <div class="proposal__recommendations"
-          style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; padding-top: 24px;">
-          <div class="course-card" style="width: 100%; max-width: 350px;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DMコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>3,520円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span
-                    class="course-card__feature-icon">✓</span><span>月間30GB（1日1GB）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>5分通話かけ放題付き</span>
-                </li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>バランス重視の方に</span>
-                </li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="course-card" style="width: 100%; max-width: 350px;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DSコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>1,078円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間3GB</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>通話料
-                    30秒22円（税込）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>ライトユーザー向け</span>
-                </li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        </ul>
-      </div>
-      </div>
-      </div>
-      <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #6b7280;">
-        ※コース変更にはサポートデスクへのご相談が必要です。<br>解約を検討していたが、〇〇コースを契約したいとお伝えいただくとスムーズです。</p>
-      <div style="text-align: center; margin-top: 16px;">
-        <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: #ff5722; box-shadow: 0 4px 14px rgba(255,87,34,0.4);"
-          target="_blank">サポートデスクに相談する</a>
-      </div>
-      </div>
-    </section>
-
-    <section class="proposal" id="proposal-switch" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__icon">🔄</div>
-          <h2 class="proposal__title">他社への乗り換えをご検討中のあなたへ</h2>
-        </div>
-
-        <!-- Dシリーズ全コース -->
-        <div style="text-align: center; margin-bottom: 16px;">
-          <div style="font-size: 16px; font-weight: 700; color: #111827;">🔁 ドコモ回線のDシリーズへの変更もおすすめ</div>
-          <p style="font-size: 13px; color: #6b7280; margin-top: 4px;">独自帯域設計で混雑時も安定・eSIM対応で即日開通</p>
-        </div>
-        <div class="d-switch-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 900px; margin: 0 auto; padding-top: 8px;">
-          <div class="course-card" style="width: 100%;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DXコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>5,720円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間120GB（1日4GB）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>かけ放題オプションあり</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-              <div style="margin-top: 12px; padding: 16px; background: linear-gradient(135deg, #ede9fe 0%, #dbeafe 100%); border-radius: 12px;">
-                <div style="font-size: 13px; font-weight: 700; color: #4338ca; margin-bottom: 10px; text-align: center;">📱 1日4GBでこれだけ使える！</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                  <div style="background: white; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 1.2rem;">🎬</div>
-                    <div style="font-size: 11px; color: #6b7280;">YouTube(720p)</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #4338ca;">約4時間</div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 1.2rem;">📺</div>
-                    <div style="font-size: 11px; color: #6b7280;">Netflix(標準画質)</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #4338ca;">約5.5時間</div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 1.2rem;">📸</div>
-                    <div style="font-size: 11px; color: #6b7280;">TikTok/Instagram</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #4338ca;">約8時間</div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 1.2rem;">💻</div>
-                    <div style="font-size: 11px; color: #6b7280;">Zoom(ビデオ通話)</div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #4338ca;">約6.5時間</div>
-                  </div>
-                </div>
-                <p style="margin: 8px 0 0; font-size: 10px; color: #9ca3af; text-align: center;">※通信量は利用環境・画質設定等により異なります。上記は一般的な目安です。</p>
-              </div>
-            </div>
-          </div>
-          <div class="course-card" style="width: 100%;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DLコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>5,720円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間60GB（1日2GB）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>24時間かけ放題付き</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-              <div style="margin-top: 12px; padding: 16px; background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-radius: 12px;">
-                <div style="font-size: 13px; font-weight: 700; color: #065f46; margin-bottom: 10px; text-align: center;">📞 24時間かけ放題でこれだけお得！</div>
-                <div style="display: grid; gap: 8px;">
-                  <div style="background: white; border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.2rem;">🏢</span>
-                    <div>
-                      <div style="font-size: 12px; color: #6b7280;">仕事の電話を1日30分かけたら</div>
-                      <div style="font-size: 1rem; font-weight: 800; color: #065f46;">月約26,400円分が無料</div>
-                    </div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.2rem;">👨‍👩‍👧</span>
-                    <div>
-                      <div style="font-size: 12px; color: #6b7280;">家族と毎日10分話したら</div>
-                      <div style="font-size: 1rem; font-weight: 800; color: #065f46;">月約13,200円分が無料</div>
-                    </div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.2rem;">🏥</span>
-                    <div>
-                      <div style="font-size: 12px; color: #6b7280;">病院・役所への電話も</div>
-                      <div style="font-size: 1rem; font-weight: 800; color: #065f46;">時間を気にせず安心</div>
-                    </div>
-                  </div>
-                </div>
-                <p style="margin: 8px 0 0; font-size: 10px; color: #9ca3af; text-align: center;">※通話料は30秒22円（税込）で計算した場合の目安です。</p>
-              </div>
-            </div>
-          </div>
-          <div class="course-card" style="width: 100%;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DMコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>3,520円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間30GB（1日1GB）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>5分かけ放題付き</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-              <!-- Uコースからの節約額 -->
-              <div style="margin-top: 12px; padding: 16px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px;">
-                <div style="font-size: 13px; font-weight: 700; color: #92400e; margin-bottom: 10px; text-align: center;">💰 Uコースからの変更で</div>
-                <div style="display: grid; gap: 8px;">
-                  <div style="background: white; border-radius: 8px; padding: 12px; text-align: center;">
-                    <div style="font-size: 12px; color: #6b7280;">毎月</div>
-                    <div style="font-size: 1.3rem; font-weight: 800; color: #b45309;">1,826円おトク</div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 12px; text-align: center;">
-                    <div style="font-size: 12px; color: #6b7280;">年間で</div>
-                    <div style="font-size: 1.3rem; font-weight: 800; color: #dc2626;">21,912円の節約！</div>
-                  </div>
-                </div>
-                <p style="margin: 8px 0 0; font-size: 10px; color: #9ca3af; text-align: center;">※Uコース月額5,346円との差額</p>
-              </div>
-            </div>
-          </div>
-          <div class="course-card" style="width: 100%;">
-            <div class="course-card__header" style="background-color: #c00;">
-              <div class="course-card__name">DSコース</div>
-              <div class="course-card__carrier">ドコモ回線 / eSIM対応</div>
-            </div>
-            <div class="course-card__body">
-              <div class="course-card__price">月額 <strong>1,078円</strong>（税込）</div>
-              <ul class="course-card__features">
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>月間3GB</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>通話料 30秒22円（税込）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>eSIM対応（即日開通可能）</span></li>
-                <li class="course-card__feature"><span class="course-card__feature-icon">✓</span><span>独自帯域設計で安定性重視</span></li>
-              </ul>
-              <!-- Uコースからの節約額 -->
-              <div style="margin-top: 12px; padding: 16px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px;">
-                <div style="font-size: 13px; font-weight: 700; color: #92400e; margin-bottom: 10px; text-align: center;">💰 Uコースからの変更で</div>
-                <div style="display: grid; gap: 8px;">
-                  <div style="background: white; border-radius: 8px; padding: 12px; text-align: center;">
-                    <div style="font-size: 12px; color: #6b7280;">毎月</div>
-                    <div style="font-size: 1.3rem; font-weight: 800; color: #b45309;">4,268円おトク</div>
-                  </div>
-                  <div style="background: white; border-radius: 8px; padding: 12px; text-align: center;">
-                    <div style="font-size: 12px; color: #6b7280;">年間で</div>
-                    <div style="font-size: 1.3rem; font-weight: 800; color: #dc2626;">51,216円の節約！</div>
-                  </div>
-                </div>
-                <p style="margin: 8px 0 0; font-size: 10px; color: #9ca3af; text-align: center;">※Uコース月額5,346円との差額</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #6b7280;">※コース変更にはサポートデスクへのご相談が必要です。<br>解約を検討していたが、〇〇コースを契約したいとお伝えいただくとスムーズです。</p>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: #ff5722; box-shadow: 0 4px 14px rgba(255,87,34,0.4);" target="_blank">サポートデスクに相談する</a>
-        </div>
-
-        <!-- Uコースのメリット -->
-        <p class="proposal__description" style="text-align: center; margin-top: 32px;">乗り換え前に、Uコースならではのメリットをご確認ください。</p>
-        <div style="max-width: 800px; margin: 0 auto 24px; padding: 24px; background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%); border-radius: 16px;">
-          <div style="font-size: 16px; font-weight: 700; color: #9a3412; margin-bottom: 16px; text-align: center;">✨ Uコースのここがすごい</div>
-          <div style="display: grid; gap: 10px;">
-            <div style="background: white; border-radius: 10px; padding: 14px; display: flex; align-items: center; gap: 12px;">
-              <span style="font-size: 1.3rem;">📞</span>
-              <div>
-                <div style="font-size: 14px; font-weight: 700; color: #111827;">通話料30秒10円（非課税）</div>
-                <div style="font-size: 12px; color: #6b7280;">他社の半額以下。通話が多い方は断然お得</div>
-              </div>
-            </div>
-            <div style="background: white; border-radius: 10px; padding: 14px; display: flex; align-items: center; gap: 12px;">
-              <span style="font-size: 1.3rem;">📶</span>
-              <div>
-                <div style="font-size: 14px; font-weight: 700; color: #111827;">月間30GBの大容量</div>
-                <div style="font-size: 12px; color: #6b7280;">動画もSNSもたっぷり使える</div>
-              </div>
-            </div>
-            <div style="background: white; border-radius: 10px; padding: 14px; display: flex; align-items: center; gap: 12px;">
-              <span style="font-size: 1.3rem;">🗼</span>
-              <div>
-                <div style="font-size: 14px; font-weight: 700; color: #111827;">au回線で全国広いエリアカバー</div>
-                <div style="font-size: 12px; color: #6b7280;">山間部・地方でも安定した通信</div>
-              </div>
-            </div>
+          <div style="padding: 20px 24px; background: #f9fafb; border-radius: 12px;">
+            <div style="font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 6px;">シンプルな設計</div>
+            <div style="font-size: 14px; color: #6b7280; line-height: 1.8;">月間30GB、通話料30秒10円（非課税）。わかりやすい料金体系です。</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="proposal" id="proposal-other" hidden aria-hidden="true">
-      <div class="container">
-        <div class="proposal__header">
-          <div class="proposal__icon">❓</div>
-          <h2 class="proposal__title">お困りごとがございましたら</h2>
-          <p class="proposal__description">お気軽にサポートデスクまでご相談ください。</p>
-        </div>
-        <div style="text-align: center; margin-top: 24px;">
-          <a href="https://support.starservice.jp/hc/ja/requests/new" class="btn btn--primary btn--lg" style="background: #ff5722; box-shadow: 0 4px 14px rgba(255,87,34,0.4);"
-            target="_blank">サポートデスクに相談する</a>
+    <!-- ③ 向いている人 -->
+    <section style="background: #f9fafb; padding: 56px 16px;">
+      <div style="max-width: 560px; margin: 0 auto;">
+        <h2 style="font-size: 1.2rem; font-weight: 800; color: #111827; margin: 0 0 32px; text-align: center; line-height: 1.5;">こんな方に選ばれています</h2>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="padding: 16px 24px; background: #fff; border-radius: 12px; font-size: 15px; color: #374151; line-height: 1.7;">地方にお住まいで、通信の安定性を重視される方</div>
+          <div style="padding: 16px 24px; background: #fff; border-radius: 12px; font-size: 15px; color: #374151; line-height: 1.7;">建物内でも途切れにくい通信を求める方</div>
+          <div style="padding: 16px 24px; background: #fff; border-radius: 12px; font-size: 15px; color: #374151; line-height: 1.7;">仕事で通話を多く使い、安定した接続が必要な方</div>
         </div>
       </div>
     </section>
 
-    <section class="carrier-merits" aria-labelledby="carrier-merits-title" id="below-reason" hidden>
-      <div class="container">
-        <h2 id="carrier-merits-title" class="carrier-merits__title">Uコース × au回線のメリット</h2>
-        <div class="carrier-merits__card">
-          <div class="carrier-merits__header">
-            <div class="carrier-merits__name" style="color: var(--color-au);">au回線</div>
-          </div>
-          <div class="carrier-merits__list">
-            <div class="carrier-merits__item">
-              <div class="carrier-merits__icon">✓</div>
-              <div class="carrier-merits__text">通話料30秒10円（非課税）で業界最安水準</div>
-            </div>
-            <div class="carrier-merits__item">
-              <div class="carrier-merits__icon">✓</div>
-              <div class="carrier-merits__text">月間30GBの大容量データ</div>
-            </div>
-            <div class="carrier-merits__item">
-              <div class="carrier-merits__icon">✓</div>
-              <div class="carrier-merits__text">au回線で全国広いエリアカバー</div>
-            </div>
-            <div class="carrier-merits__item">
-              <div class="carrier-merits__icon">✓</div>
-              <div class="carrier-merits__text">山間部・地方でも安定した通信</div>
-            </div>
-          </div>
-        </div>
+    <!-- ④ 軽い損失回避 -->
+    <section style="background: #fff; padding: 48px 16px;">
+      <div style="max-width: 560px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 14px; color: #6b7280; line-height: 2; margin: 0;">解約後に再契約される場合、<br>契約条件が変更となる可能性があります。<br>お手続きの前に、今一度ご確認ください。</p>
       </div>
     </section>
 
-    <!-- 他社比較セクション -->
-    <section class="competitor-comparison" aria-labelledby="competitor-title" id="competitor-section" hidden>
-      <div class="container">
-        <h2 id="competitor-title" class="competitor-comparison__title">🔍 他社との料金比較</h2>
-        <div class="competitor-comparison__table-wrapper">
-          <table class="competitor-comparison__table">
-            <thead>
-              <tr>
-                <th scope="col">比較<span class="mobile-br"></span>項目</th>
-                <th scope="col" class="highlight-col">スターサービス<br>Uコース</th>
-                <th scope="col">UQモバイル<br>トクトクプラン</th>
-                <th scope="col">ワイモバイル<br>シンプル2 M</th>
-                <th scope="col">ahamo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>データ量</td>
-                <td class="highlight-col"><strong>30GB</strong></td>
-                <td>15GB<br><small>※30GB相当で<br>利用した場合の<br>参考比較</small></td>
-                <td>30GB</td>
-                <td>30GB</td>
-              </tr>
-              <tr>
-                <td>通話料金</td>
-                <td class="highlight-col"><strong
-                    style="color: #ef4444; font-size: 1.1em;">30秒10円</strong><br><small>（指定通話方式）</small></td>
-                <td>30秒22円</td>
-                <td>30秒22円</td>
-                <td>30秒22円</td>
-              </tr>
-              <tr>
-                <td>5分通話<span class="mobile-br"></span>×月20回</td>
-                <td class="highlight-col"><strong style="color: #ef4444;">約2,000円</strong></td>
-                <td>約4,400円</td>
-                <td>約4,400円</td>
-                <td>約4,400円</td>
-              </tr>
-              <tr>
-                <td>月額<span class="mobile-br"></span>基本料</td>
-                <td class="highlight-col"><strong>約5,346円</strong></td>
-                <td>約3,465円</td>
-                <td>約4,015円</td>
-                <td>約2,970円</td>
-              </tr>
-              <tr style="background: #fff7ed;">
-                <td><strong>月額<span class="mobile-br"></span>＋通話料合計</strong></td>
-                <td class="highlight-col"><strong style="color: #ef4444; font-size: 1.2em;">約7,346円</strong></td>
-                <td><strong>約7,800円</strong></td>
-                <td><strong>約8,400円</strong></td>
-                <td><strong>約7,300円</strong></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div style="text-align: left; margin-top: 12px; font-size: 13px; color: #6b7280; line-height: 1.8;">
-          <p style="margin: 0;">※本比較は、Uコース（30GB）と同等のデータ容量・通話利用条件を想定した参考比較です。</p>
-          <p style="margin: 0;">※通話料金は従量課金（30秒22円）で試算しています。</p>
-          <p style="margin: 0;">※各社料金は2024年〜2025年時点の公開情報を基にした目安です。</p>
-          <p style="margin: 0;">※実際の請求金額は利用状況・割引条件等により異なります。</p>
-        </div>
-        <div class="competitor-comparison__highlight">
-          <p><strong>💡 通話をよくする方はUコースが断然お得！</strong></p>
-          <p>通話料30秒10円は他社の半額以下。月に20回×5分の通話で<strong style="color: #ef4444;">年間約28,800円の差</strong>が出ます。<br>かけ放題オプションなしでも通話料を大幅に節約できます。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cancellation" aria-labelledby="cancellation-title" id="cancellation-section" hidden>
-      <div class="container">
-        <h2 id="cancellation-title" class="cancellation__title">それでも解約をご希望の場合</h2>
-        <div class="cancellation__notice">
-          <h3 class="cancellation__notice-title">⚠️ 解約時のご注意</h3>
-          <ul class="cancellation__notice-list">
-            <li>契約期間: 36ヶ月</li>
-            <li>契約期間内の解約の場合、解約金が発生する場合があります</li>
-          </ul>
-          <div style="text-align: center; margin-top: 16px;">
-            <a href="#" class="btn btn--danger btn--lg" data-modal-target="cancel-modal"
-              style="background-color: #ef4444; color: white;">解約手続きへ進む</a>
-          </div>
-        </div>
+    <!-- ⑤ ボタン設計 -->
+    <section style="background: #f9fafb; padding: 48px 16px;">
+      <div style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+        <a href="https://support.starservice.jp/hc/ja/requests/new" target="_blank" style="display: flex; align-items: center; justify-content: center; min-height: 56px; padding: 16px 24px; font-size: 16px; font-weight: 700; color: #fff; background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%); border-radius: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(255,87,34,0.3); transition: all 0.2s;">利用状況を確認する</a>
+        <a href="index.html" style="display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; font-size: 14px; font-weight: 600; color: #374151; background: #fff; border: 2px solid #e5e7eb; border-radius: 12px; text-decoration: none; transition: all 0.2s;">他コースを見る</a>
+        <a href="https://support.starservice.jp/hc/ja/requests/new" target="_blank" style="display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 24px; font-size: 13px; font-weight: 500; color: #9ca3af; background: transparent; border: 1px solid #d1d5db; border-radius: 10px; text-decoration: none; transition: all 0.2s;">それでも解約する</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner">
-      <div class="footer__links">
-        <a href="#" class="footer__link">利用規約</a>
-        <a href="#" class="footer__link">プライバシーポリシー</a>
-        <a href="#" class="footer__link">特定商取引法に基づく表記</a>
-        <a href="#" class="footer__link">お問い合わせ</a>
-      </div>
-      <p class="footer__copyright">© 2025 スターサービス株式会社 All Rights Reserved.</p>
+  <footer style="background: #f3f4f6; padding: 24px 16px; text-align: center;">
+    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px;">
+      <a href="#" style="font-size: 12px; color: #9ca3af; text-decoration: none;">利用規約</a>
+      <a href="#" style="font-size: 12px; color: #9ca3af; text-decoration: none;">プライバシーポリシー</a>
+      <a href="#" style="font-size: 12px; color: #9ca3af; text-decoration: none;">特定商取引法に基づく表記</a>
     </div>
+    <p style="font-size: 11px; color: #9ca3af; margin: 0;">© 2025 スターサービス株式会社 All Rights Reserved.</p>
   </footer>
-
-  <div class="modal" id="cancel-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-modal-title"
-    aria-hidden="true">
-    <div class="modal__backdrop"></div>
-    <div class="modal__content">
-      <div class="modal__header">
-        <h2 class="modal__title" id="cancel-modal-title">確認</h2><button class="modal__close" type="button"
-          aria-label="閉じる">×</button>
-      </div>
-      <div class="modal__body">
-        <p>本当に解約に進んでよろしいですか？</p>
-      </div>
-      <div class="modal__footer"><button class="btn btn--outline" type="button"
-          onclick="StarService.closeModal(document.getElementById('cancel-modal'))">キャンセル</button><a href="#"
-          class="btn btn--danger" style="background-color: #ef4444; color: white;">解約に進む</a></div>
-    </div>
-  </div>
-
-  <script src="js/courseData.js" defer></script>
-  <script src="js/main.js" defer></script>
 </body>
-
 </html>
