@@ -77,154 +77,69 @@
       </div>
     </section>
 
-    <!-- 2. 2ステップ診断 -->
-    <section style="background: linear-gradient(180deg, #f9fafb 0%, #fff 100%); padding: 40px 16px;">
-      <div style="max-width: 560px; margin: 0 auto;">
-        <div style="text-align: center; margin-bottom: 32px;">
-          <div style="display: inline-block; padding: 4px 14px; background: linear-gradient(135deg, #c00 0%, #e00 100%); color: #fff; font-size: 12px; font-weight: 700; border-radius: 20px;">✦ 10秒カンタン診断</div>
-          <h2 style="font-size: 1.2rem; font-weight: 800; color: #111827; margin: 12px 0 4px;">解約の前に、今のプランが<br>本当にあなたに合っているか<br>診断してみませんか？</h2>
-        </div>
+    <!-- セクション1: 比較トップ -->
+    <section style="background: #fff; padding: 48px 16px;">
+      <div style="max-width: 640px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: #111827; margin: 0 0 12px; line-height: 1.4;">乗り換え先は、もう決まっていますか？</h2>
+        <p style="font-size: 15px; color: #6b7280; margin: 0;">解約前に、主要キャリアと1対1で比較できます。</p>
+      </div>
+    </section>
 
-        <div id="diagnosis-form" data-current-course="ds">
-          <!-- STEP 1: ギガの確認 -->
-          <div id="step1-giga">
-            <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">📊 STEP 1: ギガの確認<br><br>過去にスマホの速度制限がかかって<br>困ったことはありますか？</h3>
-            <div style="display: grid; gap: 12px;">
-              <button type="button" data-giga="yes" class="diag-option">
-                <span style="font-size: 2rem;">😰</span>
-                <div>
-                  <div style="font-size: 16px; font-weight: 800; color: #111827;">YES</div>
-                  <div style="font-size: 13px; color: #6b7280;">よくある・あった</div>
-                </div>
-              </button>
-              <button type="button" data-giga="no" class="diag-option">
-                <span style="font-size: 2rem;">😊</span>
-                <div>
-                  <div style="font-size: 16px; font-weight: 800; color: #111827;">NO</div>
-                  <div style="font-size: 13px; color: #6b7280;">一度もない</div>
-                </div>
-              </button>
-            </div>
+    <!-- 3大キャリア カードエリア -->
+    <section style="background: #fff; padding: 0 16px 56px;">
+      <div id="carrier-grid" style="max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <a href="compare/docomo.html" class="carrier-card" style="aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fff; border: 2px solid #e5e7eb; border-radius: 16px; text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s; padding: 24px;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <span style="font-size: 18px; font-weight: 800; color: #c00;">docomo</span>
           </div>
-
-          <!-- STEP 2: 通話の確認 -->
-          <div id="step2-call" style="display: none; margin-top: 32px;">
-            <h3 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 20px; text-align: center; line-height: 1.6;">📞 STEP 2: 通話の確認<br><br>『24時間いつでも、何分でも』<br>無料通話ができる機能は、<br>今後も絶対に必要ですか？</h3>
-            <div style="display: grid; gap: 12px;">
-              <button type="button" data-call="yes" class="diag-option">
-                <span style="font-size: 2rem;">☎️</span>
-                <div>
-                  <div style="font-size: 16px; font-weight: 800; color: #111827;">YES</div>
-                  <div style="font-size: 13px; color: #6b7280;">絶対に必要</div>
-                </div>
-              </button>
-              <button type="button" data-call="no" class="diag-option">
-                <span style="font-size: 2rem;">📱</span>
-                <div>
-                  <div style="font-size: 16px; font-weight: 800; color: #111827;">NO</div>
-                  <div style="font-size: 13px; color: #6b7280;">なくても大丈夫</div>
-                </div>
-              </button>
-            </div>
+          <span style="font-size: 13px; font-weight: 600; color: #6b7280;">1on1比較を見る</span>
+        </a>
+        <a href="compare/au.html" class="carrier-card" style="aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fff; border: 2px solid #e5e7eb; border-radius: 16px; text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s; padding: 24px;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <span style="font-size: 22px; font-weight: 800; color: #ff6600;">au</span>
           </div>
-        </div>
+          <span style="font-size: 13px; font-weight: 600; color: #6b7280;">1on1比較を見る</span>
+        </a>
+        <a href="compare/softbank.html" class="carrier-card" style="aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fff; border: 2px solid #e5e7eb; border-radius: 16px; text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.3s; padding: 24px;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <span style="font-size: 12px; font-weight: 800; color: #0078d7;">SoftBank</span>
+          </div>
+          <span style="font-size: 13px; font-weight: 600; color: #6b7280;">1on1比較を見る</span>
+        </a>
       </div>
     </section>
 
     <style>
-      .diag-option {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 16px;
-        background: #fff;
-        border: 2px solid #e5e7eb;
-        border-radius: 14px;
-        cursor: pointer;
-        transition: all 0.2s;
-        text-align: left;
-        width: 100%;
-      }
-      .diag-option:hover {
-        border-color: #2563eb;
-        background: #eff6ff;
-      }
-      .diag-option.selected {
-        border-color: #2563eb;
-        background: #eff6ff;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-      }
-      /* 診断完了まで非表示 */
-      .hidden-until-diagnosis {
-        display: none !important;
-      }
-      .revealed {
-        animation: fadeIn 0.5s ease-in;
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
+      .carrier-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important; border-color: #9ca3af !important; }
+      @media (max-width: 767px) { #carrier-grid { grid-template-columns: 1fr !important; max-width: 280px !important; } }
     </style>
 
-    <!-- 3. 診断結果エリア -->
-    <section id="diagnosis-result" hidden style="background: #fff; padding: 40px 16px;"></section>
-
-    <!-- eSIMセクション -->
-    <section class="hidden-until-diagnosis" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 40px 16px;">
-      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 1.1rem; font-weight: 800; color: #1e3a6e; margin: 0 0 12px;">📱 これからはeSIM</h2>
-        <p style="font-size: 14px; color: #374151; line-height: 1.9; margin: 0 0 20px;">
-          マイページから即日切り替え申請が可能。<br>
-          カードの到着を待つ必要はありません。<br>
-          マイページから申請するだけの簡単操作で、最短即日に開通。
-        </p>
-        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-          <span style="font-size: 1.2rem;">⚡</span>
-          <span style="font-size: 13px; font-weight: 700; color: #1e40af;">最短即日開通</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 独自帯域セクション -->
-    <section class="hidden-until-diagnosis" style="background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%); padding: 40px 16px;">
-      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 1.1rem; font-weight: 800; color: #1e3a6e; margin: 0 0 12px;">📡 自社管理の【独自帯域】だから、お昼も夕方もずっと快適</h2>
-        <p style="font-size: 14px; color: #374151; line-height: 1.9; margin: 0 0 20px;">
-          一般的な格安SIMのように他社の帯域を単に借りているだけではありません。<br>
-          自社で通信環境を直接コントロール。<br>
-          お昼や夕方の混雑時でもストレスのない通信をお楽しみください。
-        </p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-          <div style="background: #fff; border-radius: 12px; padding: 16px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-            <div style="font-size: 1.5rem;">⚡</div>
-            <div style="font-size: 12px; font-weight: 700; color: #1e3a6e; margin-top: 4px;">混雑時も安定</div>
+    <!-- セクション3: 乗り換えした人の本音3選 -->
+    <section style="background: linear-gradient(180deg, #f9fafb 0%, #fff 100%); padding: 56px 16px;">
+      <div style="max-width: 760px; margin: 0 auto;">
+        <h2 style="font-size: 1.3rem; font-weight: 800; color: #111827; text-align: center; margin: 0 0 32px;">実際に乗り換えた方の本音</h2>
+        <div style="display: grid; gap: 16px;">
+          <div style="padding: 24px; background: #fff; border-left: 4px solid #4361ee; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #4361ee; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; margin-bottom: 8px;">1</div>
+            <p style="font-size: 15px; font-weight: 700; color: #1f2937; line-height: 1.7; margin: 0;">思ったより安くならなかった</p>
+            <p style="font-size: 13px; color: #6b7280; line-height: 1.7; margin: 8px 0 0;">基本料金は安くても、通話料やオプションを含めると総額が変わらないケースがあります。</p>
           </div>
-          <div style="background: #fff; border-radius: 12px; padding: 16px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-            <div style="font-size: 1.5rem;">🔧</div>
-            <div style="font-size: 12px; font-weight: 700; color: #1e3a6e; margin-top: 4px;">継続的な帯域増強</div>
+          <div style="padding: 24px; background: #fff; border-left: 4px solid #4361ee; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #4361ee; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; margin-bottom: 8px;">2</div>
+            <p style="font-size: 15px; font-weight: 700; color: #1f2937; line-height: 1.7; margin: 0;">オプションを付けたら結局高かった</p>
+            <p style="font-size: 13px; color: #6b7280; line-height: 1.7; margin: 8px 0 0;">かけ放題や留守番電話など、必要なオプションを追加すると想定以上の金額になることがあります。</p>
           </div>
-          <div style="background: #fff; border-radius: 12px; padding: 16px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-            <div style="font-size: 1.5rem;">📊</div>
-            <div style="font-size: 12px; font-weight: 700; color: #1e3a6e; margin-top: 4px;">トラフィック常時監視</div>
+          <div style="padding: 24px; background: #fff; border-left: 4px solid #4361ee; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #4361ee; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; margin-bottom: 8px;">3</div>
+            <p style="font-size: 15px; font-weight: 700; color: #1f2937; line-height: 1.7; margin: 0;">通信品質が想像と違った</p>
+            <p style="font-size: 13px; color: #6b7280; line-height: 1.7; margin: 8px 0 0;">乗り換え先の回線品質が期待と異なり、速度低下や接続不安定を感じる方もいます。</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 5G Coming Soon -->
-    <section class="hidden-until-diagnosis" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 40px 16px;">
-      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 1.1rem; font-weight: 800; color: #92400e; margin: 0 0 12px;">🚀 さらに進化するDコース。5G対応、Coming Soon。</h2>
-        <p style="font-size: 14px; color: #78350f; line-height: 1.9; margin: 0;">
-          自社管理だからこそ可能な5G導入を予定。<br>
-          より高速で快適な通信環境を、近日中にお届けします。
-        </p>
       </div>
     </section>
 
     <!-- 解約検討ブロック -->
-    <section class="hidden-until-diagnosis" style="background: #f3f4f6; padding: 40px 16px;">
+    <section style="background: #f3f4f6; padding: 40px 16px;">
       <div style="max-width: 480px; margin: 0 auto; text-align: center;">
         <p style="font-size: 13px; color: #9ca3af; margin: 0 0 16px;">それでも解約をご希望の方はこちら</p>
         <a href="#" class="cancel-link">解約手続きへ進む</a>
@@ -240,7 +155,5 @@
     </div>
     <p style="font-size: 11px; color: #9ca3af; margin: 0;">© 2025 スターサービス株式会社 All Rights Reserved.</p>
   </footer>
-
-  <script src="js/diagnosis.js" defer></script>
 </body>
 </html>
